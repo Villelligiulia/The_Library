@@ -113,8 +113,10 @@
             <li class="nav-item">
               <a class="nav-link" href="">
                 <i class="fas fa-shopping-cart"></i> Cart
-
-                <span class="badge badge-info">${{ total_price}}</span>
+                <span class="badge badge-info">
+                  {% if total_price %} ${{ total_price|floatformat:2 }} {% else
+                  %} $0ef.00 {% endif %}
+                </span>
               </a>
             </li>
             <li class="nav-item">
@@ -144,7 +146,13 @@
       </button>
     </div>
 
-    {% endfor %} {% include 'books/includes/main-nav.html' %}
+    {% endfor %}
+    <div class="container-fluid img-section d-none d-lg-block">
+      <div class="row">
+        <div class="col-6 col-lg-4 my-auto py-1 py-lg-0"></div>
+      </div>
+    </div>
+    {% include 'books/includes/main-nav.html' %}
 
     <!-- List of books -->
     <div class="container">{% block content %} {% endblock %}</div>
