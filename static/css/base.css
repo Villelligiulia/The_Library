@@ -1,0 +1,22 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    background-color: #bebaba;
+}
+
+h5 {
+    font-weight: bold;
+}
+
+a,
+a:hover {
+    color: #ffffffd0;
+}
+
+
+
+.btn {
+    background-color: #45101ad2;
+    color: #ffffffd0;
+
+}

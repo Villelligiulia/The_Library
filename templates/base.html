@@ -9,13 +9,19 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    {% endblock %} {% block extra_meta %} {% endblock %} {% block corecss%}
-
+    {% endblock %} {% block extra_meta %} {% endblock %} {% block corecss %}
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital@0;1&family=Fasthand&family=Special+Elite&display=swap"
+      rel="stylesheet"
     />
     {% endblock %} {% block extra_css %} {% endblock %} {% block corejs %}
     <script
@@ -33,19 +39,26 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://kit.fontawesome.com/40e96c6555.js"
+      crossorigin="anonymous"
+    ></script>
 
-    {% endblock %} {% block extra_js %} {% endblock %}
+    {% endblock %}
 
     <title>The Library {% block extra_title %}{% endblock %}</title>
   </head>
 
   <body>
     {% block page_header %} {% endblock %}
+
+    <!-- Navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
         <a class="navbar-brand" href="{% url 'book_list' %}">
           <h1 class="d-none d-lg-inline">The Library</h1>
         </a>
+
         <button
           class="navbar-toggler"
           type="button"
@@ -76,29 +89,35 @@
                 class="dropdown-menu dropdown-menu-right"
                 aria-labelledby="navbarDropdownAccount"
               >
-                {% if request.user.is_authenticated %}
-                <a class="dropdown-item" href="#">Library Management</a>
+                {% if request.user.is_authenticated %} {% if
+                request.user.is_superuser %}
+                <a class="dropdown-item" href="">Library Management</a> {% endif
+                %}
 
-                <a href="#">Go to Profile</a>
+                <a href="">Go to Profile</a>
 
                 <a class="dropdown-item" href="{% url 'account_logout'%}"
                   >Logout</a
                 >
                 {% else %}
-                <a class="dropdown-item" href="#">Register</a>
-                <a class="dropdown-item" href="#">Login</a>
+                <a class="dropdown-item" href="{% url 'account_signup' %}"
+                  >Register</a
+                >
+                <a class="dropdown-item" href="{% url 'account_login' %}"
+                  >Login</a
+                >
                 {% endif %}
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="">
                 <i class="fas fa-shopping-cart"></i> Cart
 
                 <span class="badge badge-info">${{ total_price}}</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="">
                 <i class="fas fa-credit-card"></i> Checkout
               </a>
             </li>
@@ -106,7 +125,6 @@
         </div>
       </div>
     </nav>
-
     {% for message in messages %}
 
     <div
@@ -129,5 +147,7 @@
 
     <!-- List of books -->
     <div class="container">{% block content %} {% endblock %}</div>
+
+    {% block extra_js %} {% endblock %} {% block postloadjs %} {% endblock %}
   </body>
 </html>
