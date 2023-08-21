@@ -1,0 +1,56 @@
+{% extends 'base.html'%} {% load static %} {% include
+'bookshop/includes/main-nav.html' %} {% block content %}
+<div class="container">
+  <div class="row">
+    {% for book in books %}
+    <div class="col-lg-4 col-md-6">
+      <div class="card h-90 border-0">
+        <img
+          src="{{ book.cover_image.url }}"
+          alt="{{ book.title }} Cover Image"
+          class="card-img-top"
+          width="450"
+          height="300"
+        />
+        <div class="card-body pb-0">
+          <h5 class="card-title">{{ book.title }}</h5>
+          <p class="card-text">{{ book.category }}</p>
+        </div>
+        <div class="card-footer bg-white pt-0 border-0 text-left">
+          <div class="row">
+            <div class="col">
+              <p class="lead mb-0 text-left font-weight-bold">
+                ${{ book.price }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer bg-white pt-0 border-0 text-left">
+          <div class="row">
+            <div class="col">
+              {% if book.ratings %}
+              <small class="text-muted"
+                ><i class="fas fa-star mr-1"></i>{{ book.ratings }} / 5</small
+              >
+              {% else %}
+              <small class="text-muted">No Rating</small>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="card-footer bg-white pt-0 border-0 text-left">
+          <div class="row">
+            <div class="col">
+              <a href="" class="btn">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% empty %}
+    <p>No books available.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
