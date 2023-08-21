@@ -1,0 +1,60 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    background-color: #bebaba;
+}
+
+h5 {
+    font-weight: bold;
+}
+
+a,
+a:hover {
+    color: #ffffffd0;
+}
+
+
+
+.btn {
+    background-color: #45101ad2;
+    color: #ffffffd0;
+
+}
+
+/* Navbars */
+.navbar {
+    background-color: #45101ad2;
+
+    border: 8px double rgb(159, 140, 63);
+    z-index: 1;
+}
+
+.navbar-brand {
+    font-size: 24px;
+
+
+}
+
+.nav-link {
+    font-size: 18px;
+
+}
+
+
+
+.dropdown-menu {
+    background-color: #222;
+    border: none;
+
+}
+
+.dropdown-item {
+    color: #fff;
+
+}
+
+
+
+.navbar-toggler-right {
+    margin-left: auto;
+}
