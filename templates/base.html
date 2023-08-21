@@ -55,9 +55,10 @@
     <!-- Navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
-        <a class="navbar-brand" href="{% url 'book_list' %}">
+        <a class="navbar-brand" href="">
           <h1 class="d-none d-lg-inline">The Library</h1>
         </a>
+        {% include 'books/includes/searchforms.html' %}
 
         <button
           class="navbar-toggler"
@@ -143,7 +144,7 @@
       </button>
     </div>
 
-    {% endfor %} {% block typewriter %} {% endblock %}
+    {% endfor %} {% include 'books/includes/main-nav.html' %}
 
     <!-- List of books -->
     <div class="container">{% block content %} {% endblock %}</div>
