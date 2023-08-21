@@ -40,7 +40,94 @@
   </head>
 
   <body>
-    {% block page_header %} {% endblock %} {% block content %} {% endblock %} {%
-    block postloadjs %} {% endblock %}
+    {% block page_header %} {% endblock %}
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="{% url 'book_list' %}">
+          <h1 class="d-none d-lg-inline">The Library</h1>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span><i class="fa-solid fa-info"></i></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownAccount"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                My Account
+              </a>
+              <div
+                class="dropdown-menu dropdown-menu-right"
+                aria-labelledby="navbarDropdownAccount"
+              >
+                {% if request.user.is_authenticated %}
+                <a class="dropdown-item" href="#">Library Management</a>
+
+                <a href="#">Go to Profile</a>
+
+                <a class="dropdown-item" href="{% url 'account_logout'%}"
+                  >Logout</a
+                >
+                {% else %}
+                <a class="dropdown-item" href="#">Register</a>
+                <a class="dropdown-item" href="#">Login</a>
+                {% endif %}
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fas fa-shopping-cart"></i> Cart
+
+                <span class="badge badge-info">${{ total_price}}</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fas fa-credit-card"></i> Checkout
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    {% for message in messages %}
+
+    <div
+      class="alert {{messages.tags}} alert-dismissible fade show typewriter typewriter-text"
+      id="msg"
+      role="alert"
+    >
+      {{ message | safe}}
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      >
+        X
+      </button>
+    </div>
+
+    {% endfor %} {% block typewriter %} {% endblock %}
+
+    <!-- List of books -->
+    <div class="container">{% block content %} {% endblock %}</div>
   </body>
 </html>
