@@ -87,6 +87,41 @@ a:hover {
     }
 }
 
+/* typewriter effect */
+
+.typewriter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    /* Adjust the margin as desired */
+}
+
+
+
+.typewriter-text {
+    display: inline-block;
+    animation: typewriter 7s steps(25);
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #ffc107;
+    /* Update the border color to a suitable vintage color */
+    padding-right: 10px;
+    /* Adjust the padding as desired */
+    position: relative;
+
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
 .img-section {
     background-image: url('/books/media/the-library.jpg');
     height: calc(80vh - 164px);

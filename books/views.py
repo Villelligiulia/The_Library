@@ -1,7 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, redirect, get_object_or_404
 from .models import Book, Category, Author
 from django.contrib import messages
 from django.db.models import Q
+from .forms import ReviewForm
 
 
 def book_list(request):
@@ -48,3 +49,17 @@ def search_book(request):
     }
 
     return render(request, 'books/book_list.html', context)
+
+
+def book_detail(request, book_id):
+    book = get_object_or_404(Book, id=book_id)
+    review_form = ReviewForm(request.POST or None)
+    if request.method == 'POST':
+        if review_form.is_valid():
+            review = review_form.save(commit=False)
+            review.user = request.user
+            review.book = book
+            review.save()
+            messages.success(request, 'Your review has been submitted.')
+            return redirect('book_detail', book_id=book_id)
+    return render(request, 'bookshop/book_detail.html', {'book': book, 'review_form': review_form})
