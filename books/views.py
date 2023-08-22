@@ -3,6 +3,7 @@ from .models import Book, Category, Author
 from django.contrib import messages
 from django.db.models import Q
 from .forms import ReviewForm
+from django.db.models import Avg
 
 
 def book_list(request):
@@ -73,3 +74,14 @@ def all_categories(request):
 
     }
     return render(request, 'books/all-categories.html', context)
+
+
+def best_sellers(request):
+    lowest_priced_books = Book.objects.order_by('price')[:5]
+    best_seller_books = Book.objects.annotate(
+        avg_rating=Avg('ratings')).order_by('-avg_rating')[:21]
+    context = {
+        'best_seller_books': best_seller_books,
+        'lowest_priced_books': lowest_priced_books,
+    }
+    return render(request, 'books/best_sellers.html', context)
