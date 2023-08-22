@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block typewriter %}
+<div class="typewriter">
+  <h2>
+    <span class="typewriter-text" style="color: black">All Categories </span>
+  </h2>
+</div>
+{% endblock %} {% block content %}
+
+<div class="row">
+  {% for category in categorys %}
+  <div class="col-md-4">
+    <div class="category-card">
+      <a href="{% url 'book_list' %}?category={{ category.name }}"
+        ><img
+          src="{{ category.image.url }}"
+          alt="{{ category.name }} Image"
+          class="category-image"
+      /></a>
+    </div>
+  </div>
+  {% if forloop.counter|divisibleby:3 and not forloop.last %}
+</div>
+<div class="row">{% endif %} {% endfor %}</div>
+{% endblock %}
