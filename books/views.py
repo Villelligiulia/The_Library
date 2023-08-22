@@ -62,4 +62,4 @@ def book_detail(request, book_id):
             review.save()
             messages.success(request, 'Your review has been submitted.')
             return redirect('book_detail', book_id=book_id)
-    return render(request, 'bookshop/book_detail.html', {'book': book, 'review_form': review_form})
+    return render(request, 'books/book_detail.html', {'book': book, 'review_form': review_form})

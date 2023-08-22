@@ -1,7 +1,7 @@
 body {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-    background-color: #bebaba;
+    background-color: moccasin;
 }
 
 h5 {
@@ -140,6 +140,39 @@ a:hover {
 }
 
 
+/* content container  */
+.content-container {
+    background: #f1dfdf;
+
+    padding: 50px;
+
+}
+
+/* book_detail.html */
+.main-div-content {
+    background: #dab8bbad;
+    padding: 15px;
+    color: #525524;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.333);
+}
+
+.div-detail {
+    margin-bottom: 15px;
+    margin-top: 10px;
+
+}
+
+.detail-main {
+    color: #45101ad2;
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.book-detail-pic {
+    border: 10px double rgb(159, 140, 63);
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.527);
+}
 
 
 
@@ -158,4 +191,9 @@ a:hover {
     max-width: 100%;
     height: auto;
     margin-bottom: 10px;
+}
+
+.input-group {
+    width: fit-content;
+    margin-left: 10px;
 }

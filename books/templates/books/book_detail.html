@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+<h1>{{ book.title }}</h1>
+<div class='main-div-content'>
+    <div class="div-detail"> <span class="detail-main">Author:</span> <span>{{ book.author }}</span></div>
+    <div class="div-detail"><span class="detail-main">Price:</span> <span> ${{ book.price }}</span></div>
+
+    <div class="div-detail"><span class="detail-main">Description:</span> <span>{{ book.description }}</span></div>
+
+    <div class="div-detail"><span class="detail-main" style="font-weight: 600;">Ratings:</span> <span>{{ book.ratings }}</span></div>
+    <img class="book-detail-pic" src="{{ book.cover_image.url }}" alt="{{ book.title }} Cover Image">
+
+    <!-- Reviews -->
+    <h2 class="detail-main" style="font-weight: 600;">Reviews</h2>
+    {% for review in book.review_set.all %}
+    <div class="div-detail"><span class="detail-main">Rating:</span> <span>{{ review.rating }}</span>
+        
+        <div class="div-detail"><span class="detail-main">Comment:</span> <span>{{ review.comment }}</span></div>
+        <div class="div-detail"><span class="detail-main">By:</span> <span>{{ review.user.username }}</span></div>
+        {% empty %}
+        <p>No reviews yet.</p>
+        {% endfor %}
+
+        {% if user.is_authenticated %}
+        <!-- Add a Review -->
+        <h2 class="detail-main" style="font-weight: 600;">Add a Review</h2>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                {% endfor %}
+        </ul>
+        {% endif %}
+        <form method="post">
+            {% csrf_token %}
+            {{ review_form.as_p }}
+            <button type="submit" class="btn" name="review_form">Submit Review</button>
+        </form>
+        {% else %}
+        <p><a href="{% url 'account_login' %}">Log in</a> to leave a review.</p>
+        {% endif %}
+    </div>
+
+    <!-- Add to Cart -->
+    <h2 class="div-detail">Add to Cart</h2>
+    <form class="form" action="" method="POST">
+        {% csrf_token %}
+
+        {{ cart_form.as_p }}
+        <div style="display: flex; ">
+        <p class="mt-3"><strong>Quantity:</strong></p>
+        <div class="form-group w-50">
+            <div class="input-group">
+                <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99"
+                    data-item_id="{{ book.id }}" id="id_qty_{{ book.id }}">
+            </div>
+        </div>
+        </div>
+        <button type="submit" class='btn' name="cart_form">Add to Cart</button>
+    </form>
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+    </ul>
+    {% endif %}
+    {% endblock %}
