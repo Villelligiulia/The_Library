@@ -63,3 +63,13 @@ def book_detail(request, book_id):
             messages.success(request, 'Your review has been submitted.')
             return redirect('book_detail', book_id=book_id)
     return render(request, 'books/book_detail.html', {'book': book, 'review_form': review_form})
+
+
+def all_categories(request):
+
+    categorys = Category.objects.order_by('name')
+    context = {
+        'categorys': categorys,
+
+    }
+    return render(request, 'books/all-categories.html', context)
