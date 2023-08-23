@@ -199,3 +199,25 @@ a:hover {
     height: auto;
     margin-bottom: 10px;
 }
+
+/* best-sellers.html */
+.best-seller-title-container {
+    background-color: #45101ad2;
+    border: 8px double rgb(159, 140, 63);
+    padding: 10px;
+    margin: 10px;
+}
+
+.best-sellers-title {
+    text-align: center;
+
+    margin: 20px;
+    color: #fafafafa;
+}
+
+.best-seller {
+    background-color: #525524;
+    z-index: 2;
+    color: white;
+    width: max-content;
+}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% block typewriter %}
+<div class="typewriter">
+  <h2>
+    <span class="typewriter-text" style="color: black"
+      >Checkout our Best Offers!!</span
+    >
+  </h2>
+</div>
+{% endblock %} {% block content %} {% include 'books/includes/carousel.html' %}
+<div class="best-seller-title-container">
+  <h1 class="best-sellers-title">Best Sellers</h1>
+</div>
+<div class="row">
+  {% for book in best_seller_books %}
+  <div class="col-md-4">
+    <div class="card">
+      <img
+        src="{{ book.cover_image.url }}"
+        class="card-img-top"
+        alt="{{ book.title }}"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ book.title }}</h5>
+        <p class="card-text">Author: {{ book.author }}</p>
+        <p class="card-text">Price: ${{ book.price }}</p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
