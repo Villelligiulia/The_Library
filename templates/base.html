@@ -146,13 +146,13 @@
       </button>
     </div>
 
-    {% endfor %}
+    {% endfor %} {% block typewriter %} {% endblock %}{% if show_picture %}
     <div class="container-fluid img-section d-none d-lg-block">
       <div class="row">
         <div class="col-6 col-lg-4 my-auto py-1 py-lg-0"></div>
       </div>
     </div>
-    {% include 'books/includes/main-nav.html' %}
+    {% endif %} {% include 'books/includes/main-nav.html' %}
 
     <!-- List of books -->
     <div class="content-container">{% block content %} {% endblock %}</div>

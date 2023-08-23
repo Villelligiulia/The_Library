@@ -140,6 +140,8 @@ a:hover {
 }
 
 
+
+
 /* content container  */
 .content-container {
     background: #f1dfdf;
@@ -174,7 +176,12 @@ a:hover {
     box-shadow: 0 8px 14px rgba(0, 0, 0, 0.527);
 }
 
+.input-group {
+    width: fit-content;
+    margin-left: 10px;
+}
 
+/* all-categories.html */
 
 .category-card {
     border: 10px double rgb(159, 140, 63) !important;
@@ -191,9 +198,4 @@ a:hover {
     max-width: 100%;
     height: auto;
     margin-bottom: 10px;
-}
-
-.input-group {
-    width: fit-content;
-    margin-left: 10px;
 }
