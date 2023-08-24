@@ -130,6 +130,13 @@ a:hover {
     background-size: cover;
 }
 
+.cards-container {
+    background-color: #45101ad2;
+    border: 8px double rgb(159, 140, 63);
+    padding: 10px;
+    margin: 10px;
+}
+
 /* books layout */
 .card {
     border: 10px double rgb(159, 140, 63) !important;
@@ -240,11 +247,4 @@ a:hover {
 .best-seller-price {
     text-align: center;
     color: #fafafafa;
-}
-
-.cards-container {
-    background-color: #45101ad2;
-    border: 8px double rgb(159, 140, 63);
-    padding: 10px;
-    margin: 10px;
 }
