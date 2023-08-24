@@ -30,15 +30,13 @@
         class="carousel-item {% if forloop.first %}active{% endif %} best-seller-container"
       >
         <!-- Render the book details in the carousel item -->
-        <img
-          src="{{ book.cover_image.url }}"
-          class="d-block mx-auto"
-          alt="{{ book.title }}"
-        />
-        <div class="carousel-caption best-seller">
-          <h5>{{ book.title }}</h5>
-          <p>Price: ${{ book.price }}</p>
-        </div>
+        <p class="best-seller-price">Price: ${{ book.price }}</p>
+        <a href="{% url 'book_detail' book_id=book.id %}"
+          ><img
+            src="{{ book.cover_image.url }}"
+            class="d-block mx-auto"
+            alt="{{ book.title }}"
+        /></a>
       </div>
       {% endfor %}
     </div>
