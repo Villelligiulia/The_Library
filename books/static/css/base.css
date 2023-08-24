@@ -1,7 +1,8 @@
 body {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-    background-color: moccasin;
+    background-color: rgb(85 85 85 / 69%);
+
 }
 
 h5 {
@@ -12,6 +13,11 @@ a,
 a:hover {
     color: #ffffffd0;
 }
+
+p {
+    color: rgba(255, 255, 255, .5)
+}
+
 
 
 
@@ -130,7 +136,7 @@ a:hover {
     background-size: cover;
 }
 
-.cards-container {
+.custom-container {
     background-color: #45101ad2;
     border: 8px double rgb(159, 140, 63);
     padding: 10px;
@@ -151,8 +157,6 @@ a:hover {
 
 /* content container  */
 .content-container {
-    background: #f1dfdf;
-
     padding: 50px;
 
 }

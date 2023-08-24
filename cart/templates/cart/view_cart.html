@@ -1,27 +1,32 @@
 {% extends 'base.html' %} {% block content %}
-<h1>Shopping Cart</h1>
-{% if items %}
-<ul>
-  {% for item in items %}
-  <li>
-    <a
-      style="color: black; font-size: 20px"
-      href="{% url 'book_detail' book_id=item.book.id %}"
-      >{{ item.book.title }}
-    </a>
-    - ${{ item.book.price }} - X {{ item.quantity }}
+<div class="custom-container" style="width: 50% !important">
+  <h1 style="color: #fafafa">Shopping Cart</h1>
+  {% if items %}
+  <ul>
+    {% for item in items %}
+    <li>
+      <a
+        style="color: black; font-size: 20px"
+        href="{% url 'book_detail' book_id=item.book.id %}"
+        >{{ item.book.title }}
+      </a>
+      - ${{ item.book.price }} - X {{ item.quantity }}
 
-    <form action="" method="POST">
-      {% csrf_token %}
-      <button type="submit">Remove from Cart</button>
-    </form>
-  </li>
-  {% empty %}
-  <li>Your cart is empty.</li>
-  {% endfor %}
-</ul>
-<p>Total: ${{ total_price }}</p>
-<a href="">Proceed to Checkout</a>
-{% else %}
-<p>Your cart is empty.</p>
-{% endif %} {% endblock %}
+      <form action="" method="POST">
+        {% csrf_token %}
+        <button type="submit">Remove from Cart</button>
+      </form>
+    </li>
+    {% empty %}
+    <li>
+      <p>Your cart is empty.</p>
+    </li>
+    {% endfor %}
+  </ul>
+  <p>Total: ${{ total_price }}</p>
+  <a href="">Proceed to Checkout</a>
+  {% else %}
+  <p>Your cart is empty.</p>
+  {% endif %}
+</div>
+{% endblock %}
