@@ -12,7 +12,11 @@
       </a>
       - ${{ item.book.price }} - X {{ item.quantity }}
 
-      <form action="" method="POST" style="display: contents">
+      <form
+        action="{% url 'remove_from_cart' item.book.id %}"
+        method="POST"
+        style="display: contents"
+      >
         {% csrf_token %}
         <button
           type="submit"

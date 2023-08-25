@@ -66,3 +66,20 @@ def view_cart(request):
     }
 
     return render(request, 'cart/view_cart.html', context)
+
+
+def remove_from_cart(request, book_id):
+    book_id = str(book_id)
+
+    cart = get_cart(request)
+    cart_item = cart.get(book_id)
+
+    if cart_item:
+        del cart[book_id]
+        save_cart(request, cart)
+        messages.success(
+            request, f"{cart_item['title']} has been removed from your cart.")
+    else:
+        messages.info(request, "Item is not in your cart.")
+
+    return redirect('view_cart')
