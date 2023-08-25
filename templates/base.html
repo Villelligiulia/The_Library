@@ -115,8 +115,8 @@
               <a class="nav-link" href="{% url 'view_cart' %}">
                 <i class="fas fa-shopping-cart"></i> Cart
                 <span class="badge badge-info">
-                  {% if total_price %} ${{ total_price|floatformat:2 }} {% else
-                  %} $0ef.00 {% endif %}
+                  {% if total_price %} ${{ total_price|floatformat:2 }} {%else%}
+                  $0.00 {% endif %}
                 </span>
               </a>
             </li>
@@ -130,24 +130,13 @@
       </div>
     </nav>
     {% for message in messages %}
-
     <div
-      class="alert {{messages.tags}} alert-dismissible fade show typewriter typewriter-text"
-      id="msg"
+      class="alert alert-dismissible fade show typewriter typewriter-text {{ message.tags }}"
       role="alert"
     >
-      {{ message | safe}}
-      <button
-        type="button"
-        class="btn-close"
-        data-bs-dismiss="alert"
-        aria-label="Close"
-      >
-        X
-      </button>
+      {{ message | safe }}
     </div>
-
-    {% endfor %} {% block typewriter %} {% endblock %}{% if show_picture %}
+    {% endfor %}{% block typewriter %} {% endblock %}{% if show_picture %}
     <div class="container-fluid img-section d-none d-lg-block">
       <div class="row">
         <div class="col-6 col-lg-4 my-auto py-1 py-lg-0"></div>
@@ -196,6 +185,14 @@
           // Call the typewriter function
           typeWriter();
         }
+      });
+      $(document).ready(function () {
+        $(".alert").each(function () {
+          const alertElement = $(this);
+          setTimeout(function () {
+            alertElement.alert("close");
+          }, 17000); //
+        });
       });
     </script>
     {% block postloadjs %} {% endblock %}
