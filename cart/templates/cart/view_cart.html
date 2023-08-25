@@ -1,20 +1,25 @@
 {% extends 'base.html' %} {% block content %}
-<div class="custom-container" style="width: 50% !important">
+<div class="custom-container" style="width: fit-content; padding: 20px">
   <h1 style="color: #fafafa">Shopping Cart</h1>
   {% if items %}
-  <ul>
+  <ul style="color: rgba(255, 255, 255, 0.5)">
     {% for item in items %}
     <li>
       <a
-        style="color: black; font-size: 20px"
+        class="cart-content"
         href="{% url 'book_detail' book_id=item.book.id %}"
         >{{ item.book.title }}
       </a>
       - ${{ item.book.price }} - X {{ item.quantity }}
 
-      <form action="" method="POST">
+      <form action="" method="POST" style="display: contents">
         {% csrf_token %}
-        <button type="submit">Remove from Cart</button>
+        <button
+          type="submit"
+          style="background-color: transparent; color: #fafafa"
+        >
+          <i class="fa-solid fa-trash-can"></i>
+        </button>
       </form>
     </li>
     {% empty %}
@@ -27,6 +32,10 @@
   <a href="">Proceed to Checkout</a>
   {% else %}
   <p>Your cart is empty.</p>
-  {% endif %}
 </div>
-{% endblock %}
+
+<div style="margin-left: 9px">
+  <a href="{% url 'book_list' %}" class="btn">Go to Library</a>
+</div>
+
+{% endif %} {% endblock %}
