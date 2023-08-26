@@ -1,0 +1,22 @@
+<!-- checkout_success.html -->
+{% extends 'base.html' %} 
+{% block content %}
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8 ">
+      <h1 class="mb-4">Order Successfully Processed</h1>
+      <p>
+        Thank you for your order. Your order number is: {{ order.order_number }}
+      </p>
+      <p>An email confirmation has been sent to: {{ order.email }}</p>
+      {% if save_to_profile %}
+      <p>you can check your profile here</p>
+      {% else %}
+      <a href="{% url 'book_list' %}" class="btn btn-black rounded-0"
+        >Continue Shopping</a
+      >
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

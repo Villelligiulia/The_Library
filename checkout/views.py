@@ -77,13 +77,17 @@ def checkout(request):
 
             )
         order.save()
-        
+        for item in items:
+            book = item['book']
+            quantity = item['quantity']
+            OrderLineItem.objects.create(
+                order=order, book=book, quantity=quantity)
 
-            # Clear the cart
+        # Clear the cart
         request.session['cart'] = {}
 
-    # Redirect the user to the homepage after successful checkout
-        return redirect(reverse('book_list'))
+    # Redirect the user to the to checkout_success after successful checkout
+        return redirect(reverse('checkout_success', args=[order.order_number]))
 
     else:
 
@@ -105,3 +109,24 @@ def checkout(request):
 
         }
         return render(request, 'checkout/checkout.html', context)
+
+
+def checkout_success(request, order_number):
+    """
+    Handle successful checkouts
+    """
+    save_info = request.session.get('save_info')
+    order = get_object_or_404(Order, order_number=order_number)
+    messages.success(request, f'Order successfully processed! \
+        Thank you for shopping with us !!')
+
+    if 'cart' in request.session:
+        del request.session['cart']
+
+    template = 'checkout/checkout_success.html'
+    context = {
+        'order': order,
+        'save_to_profile': order.save_to_profile,
+    }
+
+    return render(request, template, context)
