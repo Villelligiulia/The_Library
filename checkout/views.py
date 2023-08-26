@@ -1,3 +1,6 @@
+import os
+import stripe
+
 from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404, reverse
 from checkout.forms import CheckoutForm
@@ -6,9 +9,12 @@ from decimal import Decimal
 from books.models import Book
 from django.conf import settings
 from django.http import HttpResponse
+from cart.context import cart_content
 
 
 def checkout(request):
+    stripe_public_key = settings.STRIPE_PUBLIC_KEY
+    stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     # Check if the cart is empty
     cart = request.session.get('cart', {})
@@ -16,6 +22,16 @@ def checkout(request):
         messages.error(
             request, 'At the moment our cart is empty. Please add items to your cart.')
         return redirect('book_list')
+
+    current_cart = cart_content(request)
+    total = current_cart['total_price']
+    stripe_total = round(total * 100)
+    stripe.api_key = stripe_secret_key
+    intent = stripe.PaymentIntent.create(
+        amount=stripe_total,
+        currency=settings.STRIPE_CURRENCY,
+    )
+    print(intent)
 
     # Retrieve cart items and total price
     items = []
@@ -53,40 +69,35 @@ def checkout(request):
                 country=form.cleaned_data['country'],
                 postal_code=form.cleaned_data['postal_code'],
                 save_to_profile=save_to_profile,
-                # Save the checkout form data
-                # checkout_first_name=form.cleaned_data['first_name'],
-                # checkout_last_name=form.cleaned_data['last_name'],
-                # checkout_email=form.cleaned_data['email'],
-                # checkout_address=form.cleaned_data['address'],
-                # checkout_city=form.cleaned_data['city'],
-                # checkout_state=form.cleaned_data['state'],
-                # checkout_country=form.cleaned_data['country'],
-                # checkout_postal_code=form.cleaned_data['postal_code'],
-                # checkout_save_to_profile=save_to_profile,
+
+
 
 
 
 
             )
         order.save()
+        
+
+            # Clear the cart
+        request.session['cart'] = {}
+
+    # Redirect the user to the homepage after successful checkout
+        return redirect(reverse('book_list'))
 
     else:
 
         initial_data = {
 
         }
-        # Retrieve previously saved checkout information from the session
-        # saved_checkout_info = request.session.get('checkout_info', {})
-        # if saved_checkout_info:
-        #     initial_data.update(saved_checkout_info)
 
         form = CheckoutForm(initial_data=initial_data)
 
         context = {
             'form': form,
             'cart_items': items,
-            'stripe_public_key': 'pk_test_51NVUjTHUoRQfHTrndrNbpraiAjwcAq1xN5F4lsj0Qobv2yTh6iMJAm6X5iuhUxTdMJaP0UT8Z7sKKQVU67eFQphU00t0Tc1Cpm',
-            'client_secret': 'test client secret',
+            'stripe_public_key': stripe_public_key,
+            'client_secret': intent.client_secret,
 
 
 
