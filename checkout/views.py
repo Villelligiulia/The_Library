@@ -85,6 +85,8 @@ def checkout(request):
         context = {
             'form': form,
             'cart_items': items,
+            'stripe_public_key': 'pk_test_51NVUjTHUoRQfHTrndrNbpraiAjwcAq1xN5F4lsj0Qobv2yTh6iMJAm6X5iuhUxTdMJaP0UT8Z7sKKQVU67eFQphU00t0Tc1Cpm',
+            'client_secret': 'test client secret',
 
 
 
