@@ -265,3 +265,37 @@ p {
     color: rgba(255, 255, 255, .5);
     text-decoration-line: none;
 }
+
+/* checkout.html */
+.checout-outer-div {
+
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.385);
+}
+
+.checkout-div {
+
+    background: #e9ecef;
+}
+
+.order-summary-div {
+    padding-right: 200px !important;
+    background: #e9ecef
+}
+.order-summary-div a,p {
+    color:#212529;
+
+}
+
+.order-summary-div a:hover{
+    color:#454d54;
+    text-decoration-line:none;
+
+}
+
+/* media-query */
+@media (max-width: 769px) {
+    .checkout-outer-div {
+        margin-top: 80px;
+        
+    }
+}

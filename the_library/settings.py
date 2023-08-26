@@ -46,6 +46,10 @@ INSTALLED_APPS = [
     'books',
     'cart',
     'checkout',
+
+
+    # Other
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -59,6 +63,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'the_library.urls'
+
+CRISPY_TEMPLATE_TAG = 'bootstrap4'
 
 TEMPLATES = [
     {
@@ -75,6 +81,11 @@ TEMPLATES = [
                 'cart.context.total_price',
                 'cart.context.cart_content',
             ],
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
+
+            ]
         },
     },
 ]
