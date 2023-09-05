@@ -113,7 +113,6 @@ def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
-
     # Retrieve cart items and total price
     items = []
 
@@ -135,6 +134,16 @@ def checkout(request):
                 country=form.cleaned_data['country'],
                 postal_code=form.cleaned_data['postal_code'],
                 save_to_profile=save_to_profile,
+                # Save the checkout form
+                checkout_first_name=form.cleaned_data['first_name'],
+                checkout_last_name=form.cleaned_data['last_name'],
+                checkout_email=form.cleaned_data['email'],
+                checkout_address=form.cleaned_data['address'],
+                checkout_city=form.cleaned_data['city'],
+                checkout_state=form.cleaned_data['state'],
+                checkout_country=form.cleaned_data['country'],
+                checkout_postal_code=form.cleaned_data['postal_code'],
+                checkout_save_to_profile=save_to_profile,
             )
 
             order.save()
@@ -169,6 +178,9 @@ def checkout(request):
         print(intent, 'sora lellaaaa')
 
         initial_data = {}
+        saved_checkout_info = request.session.get('checkout_info', {})
+        if saved_checkout_info:
+            initial_data.update(saved_checkout_info)
 
         # Initialize the form for the GET request
         form = CheckoutForm(initial=initial_data)
