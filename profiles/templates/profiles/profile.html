@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% block content %}
+<div class="row">
+  <div class="col-md-6">
+    <div class="custom-container checkout-div">
+      {% if show_profile_info %}
+      <h2>Profile Information</h2>
+
+      <p>First Name: {{ order.first_name }}</p>
+      <p>Last Name: {{ order.last_name }}</p>
+      <p>Email: {{ order.email }}</p>
+      <p>Address: {{ order.address }}</p>
+      <p>Postal Code: {{ order.postal_code }}</p>
+      <p>City: {{ order.city }}</p>
+      <p>State: {{ order.state }}</p>
+      <p>Country: {{ order.country }}</p>
+
+      {% else %}
+      <h2>Profile Information</h2>
+      <h3>
+        You don't have any profile information saved at the moment. Click on
+        "Edit Profil" to change your Profile info:
+      </h3>
+
+      {% endif %}
+    </div>
+
+    <a href="" class="btn" style="margin-left: 10px">Edit Profile</a>
+  </div>
+</div>
+
+{% endblock %}

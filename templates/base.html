@@ -93,25 +93,24 @@
                 class="dropdown-menu dropdown-menu-right"
                 aria-labelledby="navbarDropdownAccount"
               >
-                {% if request.user.is_authenticated %} {% if
-                request.user.is_superuser %}
-                <a class="dropdown-item" href="">Library Management</a> {% endif
-                %}
-
-                <a href="">Go to Profile</a>
-
-                <a class="dropdown-item" href="{% url 'account_logout'%}"
-                  >Logout</a
-                >
+                <!-- Disable automatic formatting -->
+                {% if request.user.is_authenticated %}
+                    {% if request.user.is_superuser %}
+                <!-- Keep this indented -->
+                    <a class="dropdown-item" href="{% url 'profile' %}">Library Management</a>
+                <!-- End indentation -->
+                    {% endif %}
+                <!-- Keep this indented -->
+                    <a class="dropdown-item" href="{% url 'profile' %}">Go to Profile</a>
+                    <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
+                <!-- End indentation -->
                 {% else %}
-                <a class="dropdown-item" href="{% url 'account_signup' %}"
-                  >Register</a
-                >
-                <a class="dropdown-item" href="{% url 'account_login' %}"
-                  >Login</a
-                >
+                <!-- Keep this indented -->
+                    <a class="dropdown-item" href="{% url 'account_signup' %}">Register</a>
+                    <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
+                <!-- End indentation -->
                 {% endif %}
-              </div>
+                <!-- Re-enable automatic formatting -->
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'view_cart' %}">

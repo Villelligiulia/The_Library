@@ -123,6 +123,13 @@ def checkout(request):
         if form.is_valid():
             save_to_profile = form.cleaned_data.get('save_to_profile', False)
 
+            if save_to_profile:
+
+                request.session['checkout_info'] = form.cleaned_data
+
+            else:
+                request.session['checkout_info'] = None
+
             order = Order(
                 user=request.user,
                 first_name=form.cleaned_data['first_name'],

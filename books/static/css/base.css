@@ -58,13 +58,15 @@ p {
 
 
 .dropdown-menu {
-    background-color: #222;
+    background-color: #fff;
     border: none;
 
 }
 
+
 .dropdown-item {
     color: #fff;
+    background-color: #45101ad2;
 
 }
 
