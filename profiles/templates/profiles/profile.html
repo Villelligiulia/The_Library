@@ -13,22 +13,61 @@
       <p>City: {{ order.city }}</p>
       <p>State: {{ order.state }}</p>
       <p>Country: {{ order.country }}</p>
+    </div>
+    <a href="{% url 'edit_profile' %}" class="btn" style="margin-left: 10px"
+      >Edit Profile</a
+    >
+  </div>
 
+  <div class="col-md-6">
+    <div class="order-history custom-container checkout-div">
+        
       <h2>Order History</h2>
       <ul>
+        <hr>
         {% for order in order_history %}
+        {% with order_num=forloop.counter %}
+        <h5>#{{ order_num }}</h5>
+        
+      
         <li>
-          Order Number: {{ order.order_number }}
+          <p>Order Number: {{ order.order_number }}</p>
+        </li>
           <br />
-          Order Date: {{ order.created_at }}
+          <li>
+          <p>Order Date: {{ order.created_at }}</p>
+          </li>
           <br />
-          Books Purchased:
+          <li>
+            {% for item in order.lineitems.all %}
+            {% if item.quantity < 2 %}
+          <p>Book Purchased:</p>
+          {% else %}
+        <p>Books Purchased:<p>
+        {% endif %}
+        {% endfor %}
+
           <ul>
             {% for item in order.lineitems.all %}
-            <li>{{ item.book.title }} - Quantity: {{ item.quantity }}</li>
+            
+              <p>{{ item.book.title }} 
+               
+                - Quantity: {{ item.quantity }}</p>
+            
+            
             {% endfor %}
+          </li>
           </ul>
+          <li>
+          <p>Email: {{ order.email}}</p>
+          </li>
+          <br />
+          <li>
+          <p>Delivery Address: {{order.address}}</p>
+          <br />
         </li>
+        <hr>
+        {% endwith %}
         {% endfor %}
       </ul>
 
@@ -38,13 +77,9 @@
         You don't have any profile information saved at the moment. Click on
         "Edit Profil" to change your Profile info:
       </h3>
-
+    
       {% endif %}
     </div>
-
-    <a href="{% url 'edit_profile' %}" class="btn" style="margin-left: 10px"
-      >Edit Profile</a
-    >
   </div>
 </div>
 

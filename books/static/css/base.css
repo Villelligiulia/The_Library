@@ -9,6 +9,13 @@ h5 {
     font-weight: bold;
 }
 
+
+hr {
+    background-color: #45101ad2;
+    height: 1px;
+
+}
+
 a,
 a:hover {
     color: #ffffffd0;
@@ -16,6 +23,10 @@ a:hover {
 
 p {
     color: rgba(255, 255, 255, .5)
+}
+
+li {
+    list-style: none;
 }
 
 
@@ -327,4 +338,10 @@ p {
     justify-content: center;
     margin: 0;
     height: 100%;
+}
+
+/* profile.html */
+
+.order-history {
+    width: fit-content;
 }
