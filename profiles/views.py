@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect 
+from django.shortcuts import render, redirect
 from checkout.views import checkout
 from checkout.models import Order
 from checkout.forms import CheckoutForm
