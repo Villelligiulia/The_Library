@@ -14,6 +14,24 @@
       <p>State: {{ order.state }}</p>
       <p>Country: {{ order.country }}</p>
 
+      <h2>Order History</h2>
+      <ul>
+        {% for order in order_history %}
+        <li>
+          Order Number: {{ order.order_number }}
+          <br />
+          Order Date: {{ order.created_at }}
+          <br />
+          Books Purchased:
+          <ul>
+            {% for item in order.lineitems.all %}
+            <li>{{ item.book.title }} - Quantity: {{ item.quantity }}</li>
+            {% endfor %}
+          </ul>
+        </li>
+        {% endfor %}
+      </ul>
+
       {% else %}
       <h2>Profile Information</h2>
       <h3>

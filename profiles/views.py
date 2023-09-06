@@ -10,9 +10,11 @@ def profile(request):
 
     user = request.user
     order = Order.objects.filter(user=user).latest('created_at')
+    order_history = user.userprofile.order_history.all()
     # True or False based on the save_to_profile value
     show_profile_info = order.save_to_profile
     context = {'user': user, 'order': order,
+    'order_history': order_history,
                'show_profile_info': show_profile_info}
     return render(request, 'profiles/profile.html', context)
 

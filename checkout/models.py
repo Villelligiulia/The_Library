@@ -11,11 +11,11 @@ class Order(models.Model):
     first_name = models.CharField(max_length=100, null=False, blank=False)
     last_name = models.CharField(max_length=100, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
-
     address = models.CharField(max_length=200, null=False, blank=False)
     city = models.CharField(max_length=100, null=False, blank=False)
     state = models.CharField(max_length=100, null=False, blank=False)
-    country = CountryField(blank_label='Country *',max_length=100, null=False, blank=True)
+    country = CountryField(blank_label='Country *',
+                           max_length=100, null=False, blank=True)
     postal_code = models.CharField(max_length=20, null=False, blank=True)
     order_number = models.CharField(max_length=32, editable=False)
     created_at = models.DateTimeField(auto_now_add=True)
