@@ -39,13 +39,15 @@
           </li>
           <br />
           <li>
-            {% for item in order.lineitems.all %}
-            {% if item.quantity < 2 %}
-          <p>Book Purchased:</p>
-          {% else %}
-        <p>Books Purchased:<p>
+       
+        {% if book.quantity > 1 or book.title > 1 %}
+        <p>Books Purchased:</p>
+        {% else %}
+        <p>Book Purchased</p>
+        
+       
         {% endif %}
-        {% endfor %}
+      
 
           <ul>
             {% for item in order.lineitems.all %}

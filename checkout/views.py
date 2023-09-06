@@ -11,8 +11,13 @@ from books.models import Book
 from django.conf import settings
 from django.http import HttpResponse
 from cart.context import cart_content
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.conf import settings
+import logging
 
 import json
+
 
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
@@ -71,6 +76,8 @@ def checkout(request):
             # Clear the cart
             request.session['cart'] = {}
 
+            _send_confirmation_email(order)
+
             # Redirect the user to the checkout_success page after successful checkout
             return redirect(reverse('checkout_success', args=[order.order_number]))
 
@@ -105,6 +112,8 @@ def checkout(request):
             'cart_items': items,
             'stripe_public_key': stripe_public_key,
             'client_secret': intent.client_secret,
+
+
         }
 
         return render(request, 'checkout/checkout.html', context)
@@ -119,6 +128,8 @@ def checkout_success(request, order_number):
     messages.success(request, f'Order successfully processed! \
         Thank you for shopping with us !!')
 
+    _send_confirmation_email(order)
+
     if 'cart' in request.session:
         del request.session['cart']
 
@@ -129,3 +140,28 @@ def checkout_success(request, order_number):
     }
 
     return render(request, template, context)
+
+
+logger = logging.getLogger(__name__)
+
+
+def _send_confirmation_email(order):
+    """Send the user a confirmation email"""
+    cust_email = order.email
+    subject = render_to_string(
+        'checkout/confirmation_emails/confirmation_email_subject.txt',
+        {'order': order})
+    body = render_to_string(
+        'checkout/confirmation_emails/confirmation_email_body.txt',
+        {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
+
+    try:
+        send_mail(
+            subject,
+            body,
+            settings.DEFAULT_FROM_EMAIL,
+            [cust_email]
+        )
+        logger.info(f"Confirmation email sent to {cust_email}")
+    except Exception as e:
+        logger.error(f"Error sending confirmation email: {str(e)}")

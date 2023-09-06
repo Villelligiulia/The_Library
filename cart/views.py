@@ -63,6 +63,7 @@ def view_cart(request):
     context = {
         'items': items,
         'total_price': total_price,
+
     }
 
     return render(request, 'cart/view_cart.html', context)
