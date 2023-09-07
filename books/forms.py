@@ -1,5 +1,5 @@
 from django import forms
-from .models import Review
+from .models import Review, Book
 from django.core.exceptions import ValidationError
 
 
@@ -14,3 +14,13 @@ class ReviewForm(forms.ModelForm):
         if rating < 1 or rating > 5:
             raise forms.ValidationError("Rating must be between 1 and 5.")
         return rating
+
+
+class BookForm(forms.ModelForm):
+    # Add the custom_author field
+    author_name = forms.CharField(max_length=100, required=False)
+
+    class Meta:
+        model = Book
+        # Exclude the original author field
+        exclude = ['author']
