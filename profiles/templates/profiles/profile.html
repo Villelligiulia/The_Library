@@ -1,6 +1,12 @@
-{% extends 'base.html' %} {% block content %}
-<div class="row">
-  <div class="col-md-6">
+{% extends 'base.html' %} 
+<!-- indent here -->
+
+{% block content_container_class%}
+<!-- indent here -->
+background{%endblock %}
+<!-- indent here -->{% block content %}
+<div class="row" style="display:flex; justify-content:space-evenly">
+   <div class="col-md-12 col-lg-3">
     <div class="custom-container checkout-div">
       {% if show_profile_info %}
       <h2>Profile Information</h2>
@@ -19,8 +25,8 @@
     >
   </div>
 
-  <div class="col-md-6">
-    <div class="order-history custom-container checkout-div">
+   <div class="col-md-12 col-lg-4">
+    <div class=" custom-container checkout-div" style="overflow-wrap:break-word; height: 450px;overflow: scroll;">
         
       <h2>Order History</h2>
       <ul>

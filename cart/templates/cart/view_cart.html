@@ -35,13 +35,14 @@
   <p class="cart-detail">Total: ${{ total_price|floatformat:2 }}</p>
   <p class="cart-detail">Delivery: $ {{ delivery_cost|floatformat:2}}</p>
   <h5 id="grand-total">Grand Total: $ {{ grand_total|floatformat:2 }}</h5>
-  <a href="{% url 'checkout' %}">Proceed to Checkout</a>
-  {% else %}
-  <p>Your cart is empty.</p>
-</div>
+  <a href="{% url 'checkout' %}" id="cart-checkout-link">Proceed to Checkout</a>
 
+  {% else %}
+  <p style="color: rgba(255, 255, 255, 0.5)">Your cart is empty.</p>
+
+  {% endif %}
+</div>
 <div style="margin-left: 9px">
   <a href="{% url 'book_list' %}" class="btn">Go to Library</a>
 </div>
-
-{% endif %} {% endblock %}
+{% endblock %}

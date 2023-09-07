@@ -51,7 +51,7 @@
     <title>The Library {% block extra_title %}{% endblock %}</title>
   </head>
 
-  <body>
+  <body >
     {% block page_header %} {% endblock %}
 
     <!-- Navigation bar -->
@@ -145,8 +145,8 @@
     </div>
     {% endif %} {% include 'books/includes/main-nav.html' %}
 
-    <!-- List of books -->
-    <div class="content-container">{% block content %} {% endblock %}</div>
+    
+    <div class="{% block content_container_class %}{% endblock %}">{% block content %} {% endblock %}</div>
 
     {% block extra_js %} {% endblock %}
     <!-- Include Bootstrap JavaScript -->

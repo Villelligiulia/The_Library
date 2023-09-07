@@ -5,6 +5,7 @@
 
 {% block content %}
 <h1>{{ book.title }}</h1>
+<div class="detail-container " style="padding:50px;">
 <div class='main-div-content'>
     <div class="div-detail"> <span class="detail-main">Author:</span> <span>{{ book.author }}</span></div>
     <div class="div-detail"><span class="detail-main">Price:</span> <span> ${{ book.price }}</span></div>
@@ -70,4 +71,5 @@
             {% endfor %}
     </ul>
     {% endif %}
+    </div>
     {% endblock %}
