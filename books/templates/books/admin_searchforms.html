@@ -1,0 +1,40 @@
+<form
+  class="d-none d-lg-inline form-inline"
+  method="GET"
+  action="{% url 'admin_search_book' %}"
+>
+  <div class="input-group">
+    <input
+      class="form-control"
+      type="search"
+      name="q"
+      placeholder="Search our site"
+      value="{{ search_term }}"
+    />
+    <div class="input-group-append">
+      <button class="btn btn-outline-light" type="submit">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+  </div>
+</form>
+<form
+  class="form-inline d-inline d-lg-none"
+  method="GET"
+  action="{% url 'admin_search_book' %}"
+>
+  <div class="input-group">
+    <input
+      class="form-control typewriter-input"
+      type="search"
+      name="q"
+      placeholder="The Library"
+      value="{{ search_term }}"
+    />
+    <div class="input-group-append">
+      <button class="btn btn-outline-light" type="submit">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+  </div>
+</form>

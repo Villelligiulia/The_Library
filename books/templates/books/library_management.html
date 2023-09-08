@@ -1,4 +1,6 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
+<!-- indent here -->
+
 <div id="admin-newbook-div">
   <a href="{% url 'create_book'%}" class="btn admin-newbook-button"
     >Create New Book</a
@@ -6,6 +8,46 @@
 </div>
 <div class="container">
   <div class="custom-container-admin">
+    <form
+      class="d-none d-lg-inline form-inline"
+      method="GET"
+      action="{% url 'admin_search_book' %}"
+    >
+      <div class="input-group">
+        <input
+          class="form-control"
+          type="search"
+          name="q"
+          placeholder="Search in your Library"
+          value="{{ search_term }}"
+        />
+        <div class="input-group-append">
+          <button class="btn btn-outline-light" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+    <form
+      class="form-inline d-inline d-lg-none"
+      method="GET"
+      action="{% url 'admin_search_book' %}"
+    >
+      <div class="input-group">
+        <input
+          class="form-control typewriter-input"
+          type="search"
+          name="q"
+          placeholder="Your Library"
+          value="{{ search_term }}"
+        />
+        <div class="input-group-append">
+          <button class="btn btn-outline-light" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
     <div class="row">
       {% for book in books %}
       <div class="col-lg-4 col-md-6">

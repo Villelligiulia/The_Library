@@ -148,3 +148,24 @@ def edit_book(request, book_id):
     else:
         form = BookFormEdit(instance=book)
     return render(request, 'books/edit_book.html', {'form': form, 'book': book})
+
+
+def admin_search_book(request):
+    query = request.GET.get('q')
+    books = Book.objects.all()
+
+    if not query:
+        messages.warning(request, 'Please enter a search term.')
+        return redirect('library_management')
+
+    admin_searched_books = books.filter(Q(title__icontains=query) | Q(
+        author__name__icontains=query))
+
+    if not admin_searched_books:
+        messages.warning(request, f"No books found for '{query}'.")
+
+    context = {
+        'books': admin_searched_books,
+    }
+
+    return render(request, 'books/library_management.html', context)
