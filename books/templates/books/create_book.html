@@ -1,8 +1,15 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 <div class="main-div-content">
-  <form method="post" enctype="multipart/form-data" class="add-book-form">
-    {% csrf_token %} {{ form.as_p }}
-    <button type="submit" class="btn">Save</button>
-  </form>
-  {% endblock %}
+  <div>
+    <form method="post" enctype="multipart/form-data" class="add-book-form">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit" class="btn">Save</button>
+      <span>
+        <a href="{% url 'library_management' %}" class="btn"
+          >Go to your Library</a
+        >
+      </span>
+    </form>
+  </div>
 </div>
+{% endblock %}

@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, redirect, get_object_or_404
+from django.shortcuts import render, redirect, redirect, get_object_or_404, reverse
 from .models import Book, Category, Author
 from django.contrib import messages
 from django.db.models import Q
@@ -99,6 +99,16 @@ def create_book(request):
         if form.is_valid():
             # Extract the author name from the form
             author_name = form.cleaned_data['author_name']
+            title = form.cleaned_data['title']
+
+            # Check if a book with the same title and author already exists
+            existing_book = Book.objects.filter(
+                title=title, author__name=author_name).first()
+
+            if existing_book:
+                messages.error(
+                    request, f"A book '{title}' by {author_name} already exists in the library.")
+                return redirect('create_book')
 
             # Save the form without the author_name field
             book = form.save(commit=False)
@@ -116,8 +126,13 @@ def create_book(request):
             # Link the book to the author and save
             book.author = author
             book.save()
+            messages.success(
+                request, f"{book.title} by {author_name}, has been added to your Library'.")
 
-            return redirect('library_management')
+            new_book_detail_url = reverse('book_detail', args=[book.id])
+
+            # Redirect to the book detail page
+            return redirect(new_book_detail_url)
     else:
         form = BookForm()
     return render(request, 'books/create_book.html', {'form': form})

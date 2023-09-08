@@ -20,14 +20,15 @@ class Category(models.Model):
 
 
 class Book(models.Model):
-    title = models.CharField(max_length=200, default='Untitled')
+    title = models.CharField(max_length=200)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
-    description = models.TextField(blank=True, null=True)
-    price = models.DecimalField(max_digits=8, decimal_places=2, default=0.00)
+    description = models.TextField(blank=False, null=True)
+    price = models.DecimalField(
+        max_digits=8, decimal_places=2, blank=False, null=False)
     cover_image = models.ImageField(
         upload_to='book_covers', default='default_cover.jpg')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    ratings = models.DecimalField(max_digits=3, decimal_places=1, default=0.0)
+    ratings = models.DecimalField(max_digits=3, decimal_places=1)
     quantity = models.IntegerField(default=0)
 
     def __str__(self):

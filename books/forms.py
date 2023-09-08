@@ -7,11 +7,11 @@ class ReviewForm(forms.ModelForm):
     class Meta:
 
         model = Review
-        fields = ['rating', 'comment']
+        fields = ['comment']
         widgets = {
-            
+
             'comment': forms.Textarea(attrs={'rows': 5}),
-            'rating': forms.Textarea(attrs={'rows': 1}),
+
         }
 
     def clean_rating(self):
@@ -23,7 +23,7 @@ class ReviewForm(forms.ModelForm):
 
 class BookForm(forms.ModelForm):
     # Add the custom_author field
-    author_name = forms.CharField(max_length=100, required=False)
+    author_name = forms.CharField(max_length=100, required=True)
 
     class Meta:
         model = Book
