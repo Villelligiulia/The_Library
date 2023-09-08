@@ -169,3 +169,13 @@ def admin_search_book(request):
     }
 
     return render(request, 'books/library_management.html', context)
+
+
+def delete_book(request, book_id):
+    book = get_object_or_404(Book, id=book_id)
+    if request.method == 'POST':
+        book.delete()
+        messages.success(
+            request, f"{book.title} by {book.author}, has been removed from the Library'.")
+        return redirect('library_management')
+    return render(request, 'books/delete_book.html', {'book': book, })

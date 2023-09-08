@@ -8,46 +8,8 @@
 </div>
 <div class="container">
   <div class="custom-container-admin">
-    <form
-      class="d-none d-lg-inline form-inline"
-      method="GET"
-      action="{% url 'admin_search_book' %}"
-    >
-      <div class="input-group">
-        <input
-          class="form-control"
-          type="search"
-          name="q"
-          placeholder="Search in your Library"
-          value="{{ search_term }}"
-        />
-        <div class="input-group-append">
-          <button class="btn btn-outline-light" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
-    <form
-      class="form-inline d-inline d-lg-none"
-      method="GET"
-      action="{% url 'admin_search_book' %}"
-    >
-      <div class="input-group">
-        <input
-          class="form-control typewriter-input"
-          type="search"
-          name="q"
-          placeholder="Your Library"
-          value="{{ search_term }}"
-        />
-        <div class="input-group-append">
-          <button class="btn btn-outline-light" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
+    {% include 'books/includes/admin_searchforms.html' %}
+
     <div class="row">
       {% for book in books %}
       <div class="col-lg-4 col-md-6">
@@ -79,7 +41,7 @@
           <div class="card-footer bg pt-0 border-0 text-left">
             <div class="row">
               <div class="col">
-                <a href="" class="btn btn-admin">Delete</a>
+                <a href="{% url 'delete_book' book.id %}" class="btn btn-admin">Delete</a>
               </div>
             </div>
           </div>
