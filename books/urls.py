@@ -11,4 +11,5 @@ urlpatterns = [
     path('best-sellers/', views.best_sellers, name='best_sellers'),
     path('library_management/', views.library_management,
          name='library_management'),
+    path('library_management/create/', views.create_book, name='create_book'),
 ]

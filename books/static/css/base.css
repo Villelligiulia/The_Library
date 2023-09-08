@@ -218,6 +218,10 @@ li {
     margin-top: 10px;
 }
 
+.detail-book-title {
+    margin: 50px 10px 0 30px;
+}
+
 .book-detail-pic {
     border: 10px double rgb(159, 140, 63);
     box-shadow: 0 8px 14px rgba(0, 0, 0, 0.527);
@@ -229,6 +233,16 @@ li {
 .input-group {
     width: fit-content;
     margin-left: 10px;
+}
+
+.review-form textarea {
+    width: 100%;
+
+}
+
+.review-form #id_rating {
+    width: 25%;
+
 }
 
 /* all-categories.html */
@@ -396,13 +410,8 @@ p {
     width: fit-content;
 }
 
-@media (max-width: 768px) {
 
-    .textarea {
-        width: -webkit-fill-available;
 
-    }
-}
 
 
 /* library_management.html */
@@ -449,7 +458,8 @@ p {
 }
 
 
+/* create_book.html */
 
-
-
-/* Center-align the text on smaller screens */
+.add-book-form #id_description {
+    width: 100%;
+}

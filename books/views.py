@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.db.models import Q
 from .forms import ReviewForm
 from django.db.models import Avg
+from .forms import BookForm
 
 
 def book_list(request):
@@ -90,3 +91,33 @@ def best_sellers(request):
 def library_management(request):
     books = Book.objects.all()
     return render(request, 'books/library_management.html', {'books': books})
+
+
+def create_book(request):
+    if request.method == 'POST':
+        form = BookForm(request.POST, request.FILES)
+        if form.is_valid():
+            # Extract the author name from the form
+            author_name = form.cleaned_data['author_name']
+
+            # Save the form without the author_name field
+            book = form.save(commit=False)
+
+            # Check if the book's author already exists in the database
+            author = None
+            if author_name:
+                author = Book.objects.filter(author__name=author_name).first()
+
+            # Create a new author entry if it doesn't exist
+            if not author:
+                from .models import Author
+                author = Author.objects.create(name=author_name)
+
+            # Link the book to the author and save
+            book.author = author
+            book.save()
+
+            return redirect('library_management')
+    else:
+        form = BookForm()
+    return render(request, 'books/create_book.html', {'form': form})

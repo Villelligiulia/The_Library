@@ -8,6 +8,11 @@ class ReviewForm(forms.ModelForm):
 
         model = Review
         fields = ['rating', 'comment']
+        widgets = {
+            
+            'comment': forms.Textarea(attrs={'rows': 5}),
+            'rating': forms.Textarea(attrs={'rows': 1}),
+        }
 
     def clean_rating(self):
         rating = self.cleaned_data['rating']
@@ -23,4 +28,4 @@ class BookForm(forms.ModelForm):
     class Meta:
         model = Book
         # Exclude the original author field
-        exclude = ['author']
+        exclude = ['author', 'quantity']

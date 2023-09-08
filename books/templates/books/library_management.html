@@ -1,6 +1,8 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 <div id="admin-newbook-div">
-  <a href="" class="btn admin-newbook-button">Create New Book</a>
+  <a href="{% url 'create_book'%}" class="btn admin-newbook-button"
+    >Create New Book</a
+  >
 </div>
 <div class="container">
   <div class="custom-container-admin">
