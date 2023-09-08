@@ -402,8 +402,54 @@ p {
         width: -webkit-fill-available;
 
     }
+}
+
+
+/* library_management.html */
+.card-admin {
+    border: 10px double rgb(159, 140, 63) !important;
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+    padding: 20px !important;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.385) !important;
+    background-color: #45101ad2;
+
+}
+
+.admin-book-detail {
+    color: rgba(255, 255, 255, .5);
+    margin-bottom: 20px !important;
+}
+
+.custom-container-admin {
+    background-color: #fafafafa;
+    border: 8px double rgb(159, 140, 63);
+    padding: 10px;
+    margin: 10px;
+}
+
+.btn-admin {
+    color: #45101ad2;
+    background-color: #ffffffd0;
+    font-weight: 700;
+
+}
+
+.admin-newbook-button {
+    margin: 10px;
+}
+
+#admin-newbook-div {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-admin:hover {
+    color: #45101a75;
+}
 
 
 
 
-    /* Center-align the text on smaller screens */
+
+/* Center-align the text on smaller screens */

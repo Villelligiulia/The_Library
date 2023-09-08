@@ -97,7 +97,7 @@
                 {% if request.user.is_authenticated %}
                     {% if request.user.is_superuser %}
                 <!-- Keep this indented -->
-                    <a class="dropdown-item" href="{% url 'profile' %}">Library Management</a>
+                    <a class="dropdown-item" href="{% url 'library_management' %}">Library Management</a>
                 <!-- End indentation -->
                     {% endif %}
                 <!-- Keep this indented -->

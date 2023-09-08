@@ -1,0 +1,49 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div id="admin-newbook-div">
+  <a href="" class="btn admin-newbook-button">Create New Book</a>
+</div>
+<div class="container">
+  <div class="custom-container-admin">
+    <div class="row">
+      {% for book in books %}
+      <div class="col-lg-4 col-md-6">
+        <div class="card card-admin h-90 border-0">
+          <a href="{% url 'book_detail' book_id=book.id %}">
+            <img
+              src="{{ book.cover_image.url }}"
+              alt="{{ book.title }} Cover Image"
+              class="card-img-top book-list-pic"
+              width="450"
+              height="300"
+          /></a>
+          <div class="card-body pb-0">
+            <h5 class="card-title admin-book-detail" style="color: white">
+              {{ book.title }}
+            </h5>
+            <p class="card-text admin-book-detail">{{ book.category }}</p>
+          </div>
+
+          <div class="card-footer bg pt-0 border-0 text-left">
+            <div class="row">
+              <div class="col">
+                <a href="" class="btn btn-admin">Edit</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer bg pt-0 border-0 text-left">
+            <div class="row">
+              <div class="col">
+                <a href="" class="btn btn-admin">Delete</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% empty %}
+      <p>No books available.</p>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

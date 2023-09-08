@@ -77,7 +77,7 @@ def all_categories(request):
 
 
 def best_sellers(request):
-    lowest_priced_books = Book.objects.order_by('price')[:5]
+    lowest_priced_books = Book.objects.order_by('price')[:7]
     best_seller_books = Book.objects.annotate(
         avg_rating=Avg('ratings')).order_by('-avg_rating')[:21]
     context = {
@@ -85,3 +85,8 @@ def best_sellers(request):
         'lowest_priced_books': lowest_priced_books,
     }
     return render(request, 'books/best_sellers.html', context)
+
+
+def library_management(request):
+    books = Book.objects.all()
+    return render(request, 'books/library_management.html', {'books': books})
