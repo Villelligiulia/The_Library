@@ -5,6 +5,7 @@ from django.db.models import Q
 from .forms import ReviewForm
 from django.db.models import Avg
 from .forms import BookForm, BookFormEdit
+from django.contrib.auth.decorators import login_required
 
 
 def book_list(request):
@@ -88,12 +89,18 @@ def best_sellers(request):
     return render(request, 'books/best_sellers.html', context)
 
 
+@login_required
 def library_management(request):
     books = Book.objects.all()
     return render(request, 'books/library_management.html', {'books': books})
 
 
+@login_required
 def create_book(request):
+    if not request.user.is_superuser:
+        messages.error(request, "Sorry only the Library has access to this service")
+        return redirect(reverse('book_list'))
+
     if request.method == 'POST':
         form = BookForm(request.POST, request.FILES)
         if form.is_valid():
@@ -138,7 +145,14 @@ def create_book(request):
     return render(request, 'books/create_book.html', {'form': form})
 
 
+@login_required
 def edit_book(request, book_id):
+
+    if not request.user.is_superuser:
+        messages.error(
+            request, "Sorry only the Library has access to this service")
+        return redirect(reverse('book_list'))
+
     book = get_object_or_404(Book, id=book_id)
     if request.method == 'POST':
         form = BookFormEdit(request.POST, request.FILES, instance=book)
@@ -171,7 +185,14 @@ def admin_search_book(request):
     return render(request, 'books/library_management.html', context)
 
 
+@login_required
 def delete_book(request, book_id):
+    if not request.user.is_superuser:
+        messages.error(
+            request, "Sorry only the Library has access to this service")
+        return redirect(reverse('book_list'))
+
+    
     book = get_object_or_404(Book, id=book_id)
     if request.method == 'POST':
         book.delete()
@@ -179,3 +200,5 @@ def delete_book(request, book_id):
             request, f"{book.title} by {book.author}, has been removed from the Library'.")
         return redirect('library_management')
     return render(request, 'books/delete_book.html', {'book': book, })
+
+

@@ -2,10 +2,12 @@ from django.shortcuts import render, redirect
 from checkout.views import checkout
 from checkout.models import Order
 from checkout.forms import CheckoutForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
 
+@login_required
 def profile(request):
 
     user = request.user
@@ -14,11 +16,12 @@ def profile(request):
     # True or False based on the save_to_profile value
     show_profile_info = order.save_to_profile
     context = {'user': user, 'order': order,
-    'order_history': order_history,
+               'order_history': order_history,
                'show_profile_info': show_profile_info}
     return render(request, 'profiles/profile.html', context)
 
 
+@login_required
 def edit_profile(request):
     if request.method == 'POST':
         form = CheckoutForm(request.POST)
