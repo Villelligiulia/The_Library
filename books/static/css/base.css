@@ -463,3 +463,33 @@ p {
 .add-book-form #id_description {
     width: 100%;
 }
+
+/* forms */
+.review-form textarea,
+.edit-book-form textarea {
+    width: 100%;
+
+}
+
+.edit-book-form p {
+    color: #45101ad2;
+    font-weight: 600;
+
+    margin-top: 10px;
+
+}
+
+.edit-book-form a {
+    overflow-wrap: break-word;
+}
+
+.edit-book-form input {
+
+    font-size: smaller;
+    width: 20%;
+}
+
+.review-form #id_rating {
+    width: 25%;
+
+}

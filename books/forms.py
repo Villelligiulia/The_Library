@@ -29,3 +29,12 @@ class BookForm(forms.ModelForm):
         model = Book
         # Exclude the original author field
         exclude = ['author', 'quantity']
+
+
+class BookFormEdit(forms.ModelForm):
+    
+
+    class Meta:
+        model = Book
+
+        exclude = ['title', 'author', 'quantity', 'category']

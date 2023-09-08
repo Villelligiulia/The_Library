@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<h1 class="detail-book-title">{{ book.title }}</h1>
+<div class="detail-container" style="padding: 50px">
+  <div class="main-div-content">
+    <div class="div-detail">
+      <span class="detail-main">Author:</span> <span>{{ book.author }}</span>
+    </div>
+    <form method="post" enctype="multipart/form-data" class="edit-book-form detail-main">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit" class="btn">Save Changes</button>
+    </form>
+
+    {% endblock %}
+  </div>
+</div>
+</div>

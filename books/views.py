@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.db.models import Q
 from .forms import ReviewForm
 from django.db.models import Avg
-from .forms import BookForm
+from .forms import BookForm, BookFormEdit
 
 
 def book_list(request):
@@ -64,7 +64,7 @@ def book_detail(request, book_id):
             review.save()
             messages.success(request, 'Your review has been submitted.')
             return redirect('book_detail', book_id=book_id)
-    return render(request, 'books/book_detail.html', {'book': book, 'review_form': review_form})
+    return render(request, 'books/book_detail.html', {'book': book, 'review_form': review_form, })
 
 
 def all_categories(request):
@@ -136,3 +136,15 @@ def create_book(request):
     else:
         form = BookForm()
     return render(request, 'books/create_book.html', {'form': form})
+
+
+def edit_book(request, book_id):
+    book = get_object_or_404(Book, id=book_id)
+    if request.method == 'POST':
+        form = BookFormEdit(request.POST, request.FILES, instance=book)
+        if form.is_valid():
+            form.save()
+            return redirect('library_management')
+    else:
+        form = BookFormEdit(instance=book)
+    return render(request, 'books/edit_book.html', {'form': form, 'book': book})
