@@ -191,6 +191,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+CATEGORY_IMAGES_DIR = os.path.join(BASE_DIR, 'category_images')
+BOOK_COVERS_DIR = os.path.join(BASE_DIR, 'book_covers')
+
 # Bucket Config
 if 'USE_AWS' in os.environ:
     # Cache control
@@ -210,10 +213,13 @@ if 'USE_AWS' in os.environ:
     STATICFILES_LOCATION = 'static'
     DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
     MEDIAFILES_LOCATION = 'media'
+    CATEGORY_IMAGES_LOCATION = 'category_images'
+    BOOK_COVERS_LOCATION = 'book_covers'
 
-    # Override static and media URLs in production
-    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
-    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+
+# Override static and media URLs in production
+STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
 # Stripe settings
 
