@@ -98,7 +98,8 @@ def library_management(request):
 @login_required
 def create_book(request):
     if not request.user.is_superuser:
-        messages.error(request, "Sorry only the Library has access to this service")
+        messages.error(
+            request, "Sorry only the Library has access to this service")
         return redirect(reverse('book_list'))
 
     if request.method == 'POST':
@@ -192,7 +193,6 @@ def delete_book(request, book_id):
             request, "Sorry only the Library has access to this service")
         return redirect(reverse('book_list'))
 
-    
     book = get_object_or_404(Book, id=book_id)
     if request.method == 'POST':
         book.delete()
@@ -200,5 +200,3 @@ def delete_book(request, book_id):
             request, f"{book.title} by {book.author}, has been removed from the Library'.")
         return redirect('library_management')
     return render(request, 'books/delete_book.html', {'book': book, })
-
-

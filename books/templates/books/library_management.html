@@ -41,7 +41,9 @@
           <div class="card-footer bg pt-0 border-0 text-left">
             <div class="row">
               <div class="col">
-                <a href="{% url 'delete_book' book.id %}" class="btn btn-admin">Delete</a>
+                <a href="{% url 'delete_book' book.id %}" class="btn btn-admin"
+                  >Delete</a
+                >
               </div>
             </div>
           </div>
@@ -49,7 +51,9 @@
       </div>
 
       {% empty %}
-      <p>No books available.</p>
+      <p style="color: #45101ad2; justify-content: center">
+        No books available.
+      </p>
       {% endfor %}
     </div>
   </div>
