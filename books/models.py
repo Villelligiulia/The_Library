@@ -26,7 +26,7 @@ class Book(models.Model):
     price = models.DecimalField(
         max_digits=8, decimal_places=2, blank=False, null=False)
     cover_image = models.ImageField(
-        upload_to='media', default='book_covers/default.jpg')
+        upload_to='book_covers', default='book_covers/default.jpg')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     ratings = models.DecimalField(max_digits=3, decimal_places=1)
     quantity = models.IntegerField(default=0)
