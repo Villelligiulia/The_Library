@@ -188,8 +188,8 @@ STATIC_URL = '/static/'
 STATIC_DIRS = [os.path.join(BASE_DIR, 'static'),]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 CATEGORY_IMAGES_DIR = os.path.join(BASE_DIR, 'category_images')
 BOOK_COVERS_DIR = os.path.join(BASE_DIR, 'book_covers')
