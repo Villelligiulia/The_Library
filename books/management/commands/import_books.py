@@ -33,7 +33,7 @@ class Command(BaseCommand):
             if response.status_code == 200:
                 # Save the image locally
                 image_name = image_url.split('/')[-1]
-                image_path = {image_name}
+                image_path = f'book_covers/{image_name}'
                 image_content = ContentFile(response.content)
                 default_storage.save(image_path, image_content)
 
