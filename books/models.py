@@ -13,7 +13,7 @@ class Author(models.Model):
 class Category(models.Model):
     name = models.CharField(max_length=100)
     image = models.ImageField(
-        upload_to='category_images', default='default.jpg')
+        upload_to='media/category_images', default='media/default_category.jpg')
 
     def __str__(self):
         return self.name
