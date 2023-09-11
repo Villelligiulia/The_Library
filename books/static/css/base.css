@@ -125,7 +125,7 @@ li {
 
 
 .background {
-    background-image: url('/media/the-library.jpg');
+    background-image: url('/books/media/the-library.jpg');
 
     color: #555;
     background-repeat: no-repeat;
@@ -134,19 +134,19 @@ li {
 }
 
 .img-section {
-    background-image: url('/media/the-library.jpg');
+    background-image: url('/books/media/the-library.jpg');
     height: calc(80vh - 164px);
     color: #555;
     background-repeat: no-repeat;
     background-size: cover;
-    width: -webkit-fill-available
+
 }
 
 .custom-container {
     background-color: #45101ad2;
     border: 8px double rgb(159, 140, 63);
     padding: 10px;
-    margin: 10px;
+
 }
 
 /* books layout */
