@@ -125,7 +125,7 @@ li {
 
 
 .background {
-    background-image: url('/books/media/the-library.jpg');
+    background-image: url('media/the-library.jpg');
 
     color: #555;
     background-repeat: no-repeat;
@@ -134,7 +134,7 @@ li {
 }
 
 .img-section {
-    background-image: url('/books/media/the-library.jpg');
+    background-image: url('media/the-library.jpg');
     height: calc(80vh - 164px);
     color: #555;
     background-repeat: no-repeat;
@@ -470,4 +470,10 @@ p {
 .review-form #id_rating {
     width: 25%;
 
+}
+
+/* typewriting effect  */
+.message-text {
+    text-align: center;
+    color: black;
 }

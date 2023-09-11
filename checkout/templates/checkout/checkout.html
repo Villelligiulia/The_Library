@@ -10,9 +10,9 @@ background{%endblock %}
 <!-- indent here -->{% block content %}
 
 
-<div class="row" style="background-color:#45101a86">
+<div class="row" style="background-color:#45101a86;">
     <div class="col-md-6 ">
-        <div class="custom-container checkout-outer-div"  style="width: fit-content !important;">
+        <div class="custom-container checkout-outer-div" >
         <div class=" border p-3 order-summary-div " >
         
             <h1 style="max-content">Order Summary</h1>
@@ -35,8 +35,8 @@ background{%endblock %}
     <p class="text-danger">You need to <a href="{% url 'account_login' %}">login</a> or <a href="{% url 'account_signup' %}">create an account</a> to proceed with the checkout.</p>
   {% else %}
     <div class="col-md-6">
-        <div class="custom-container checkout-outer-div"  style="width: fit-content !important;">
-        <div class="border p-3 checkout-div" >
+        <div class="custom-container checkout-outer-div"  >
+        <div class="border  checkout-div" >
             <h1>Checkout</h1>
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                 {% csrf_token %}
