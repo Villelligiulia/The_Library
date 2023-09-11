@@ -130,14 +130,14 @@
         </div>
       </div>
     </nav>
-    {% for message in messages %}
-    <div
-      class="alert alert-dismissible fade show typewriter typewriter-text {{ message.tags }}"
-      role="alert"
-    >
-      {{ message | safe }}
-    </div>
-    {% endfor %}{% block typewriter %} {% endblock %}{% if show_picture %}
+{% for message in messages %}
+<div class="alert alert-dismissible fade show typedtext {{ message.tags }}" role="alert">
+    <button type="button" class="close btn-close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <p id="message-text" class="message-text">{{ message | safe }}</p>
+</div>
+{% endfor %}{% block typewriter %} {% endblock %}{% if show_picture %}
     <div class="container-fluid img-section d-none d-lg-block">
       <div class="row">
         <div class="col-6 col-lg-4 my-auto py-1 py-lg-0"></div>
@@ -195,7 +195,31 @@
           }, 17000); //
         });
       });
-    </script>
+
+// Get all message elements with the 'typewriter' class
+var messageElements = document.querySelectorAll('.typedtext');
+
+// Typing speed (adjust as needed)
+var typingSpeed = 50;
+
+// Function to apply typewriter effect to a message element
+function typeWriter(element, text, i) {
+if (i < text.length) {
+    element.querySelector('.message-text').innerHTML += text.charAt(i);
+    i++;
+    setTimeout(function () {
+        typeWriter(element, text, i);
+    }, typingSpeed);
+}
+}
+
+// Apply typewriter effect to each message element
+messageElements.forEach(function (element) {
+    var messageText = element.querySelector('.message-text').textContent;
+    element.querySelector('.message-text').textContent = '';
+    typeWriter(element, messageText, 0);
+});
+</script>
     {% block postloadjs %} {% endblock %}
   </body>
 </html>

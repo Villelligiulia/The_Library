@@ -174,7 +174,7 @@ def admin_search_book(request):
         return redirect('library_management')
 
     admin_searched_books = books.filter(Q(title__icontains=query) | Q(
-        author__name__icontains=query))
+        author__name__icontains=query) | Q(category__name__icontains=query))
 
     if not admin_searched_books:
         messages.warning(request, f"No books found for '{query}'.")

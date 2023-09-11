@@ -96,58 +96,36 @@ li {
 @media (min-width: 769px) {
     .navbar .navbar-brand {
         margin-right: 20px;
-        /* Adjust the margin as desired */
+
     }
 
     .navbar .nav-link {
         margin-right: 10px;
-        /* Adjust the margin as desired */
+
     }
 
 
     .img-section .search-bar {
         display: block;
-        /* Display the search bar on larger screens */
+
     }
 }
 
 /* typewriter effect */
+.typewrite {
+    text-align: center;
+}
 
-.typewriter-container {
+.btn-close {
+    background-color: #45101ad2 !important;
+    color: #ffffffd0 !important;
 
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    overflow-x: hidden;
-    max-width: 100%;
 }
 
 
-
-.typewriter-text {
-    display: inline-block;
-    animation: typewriter 7s steps(25);
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 2px solid #ffc107;
-    /* Update the border color to a suitable vintage color */
-    padding-right: 10px;
-    /* Adjust the padding as desired */
-    position: relative;
-
-}
-
-@keyframes typewriter {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 100%;
-    }
-}
 
 .background {
-    background-image: url('/media/the-library.jpg');
+    background-image: url('/books/media/the-library.jpg');
 
     color: #555;
     background-repeat: no-repeat;
@@ -156,7 +134,7 @@ li {
 }
 
 .img-section {
-    background-image: url('/media/the-library.jpg');
+    background-image: url('/books/media/the-library.jpg');
     height: calc(80vh - 164px);
     color: #555;
     background-repeat: no-repeat;

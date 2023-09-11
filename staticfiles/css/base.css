@@ -112,7 +112,18 @@ li {
 }
 
 /* typewriter effect */
+.typewrite {
+    text-align: center;
+}
 
+.btn-close {
+    background-color: #45101ad2 !important;
+    color: #ffffffd0 !important;
+
+}
+
+
+/* 
 .typewriter-container {
 
     word-wrap: break-word;
@@ -130,9 +141,9 @@ li {
     overflow: hidden;
     border-right: 2px solid #ffc107;
     /* Update the border color to a suitable vintage color */
-    padding-right: 10px;
-    /* Adjust the padding as desired */
-    position: relative;
+padding-right: 10px;
+/* Adjust the padding as desired */
+position: relative;
 
 }
 
@@ -147,7 +158,7 @@ li {
 }
 
 .background {
-    background-image: url('/media/the-library.jpg');
+    background-image: url('books/media/the-library.jpg');
 
     color: #555;
     background-repeat: no-repeat;
@@ -156,7 +167,7 @@ li {
 }
 
 .img-section {
-    background-image: url('/media/the-library.jpg');
+    background-image: url('books/media/the-library.jpg');
     height: calc(80vh - 164px);
     color: #555;
     background-repeat: no-repeat;
