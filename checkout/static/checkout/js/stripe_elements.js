@@ -1,3 +1,4 @@
+
 var stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
 var clientSecret = $('#id_client_secret').text().slice(1, -1);
 var stripe = Stripe(stripePublicKey);
@@ -7,6 +8,7 @@ var style = {
         color: '#000',
         fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
         fontSmoothing: 'antialiased',
+        borderColor: 'red',
         fontSize: '16px',
         '::placeholder': {
             color: '#aab7c4'
@@ -21,18 +23,11 @@ var style = {
 var card = elements.create('card');
 card.mount('#card-element', { style: style });
 
-// // Handle realtime validation errors on the card element
-
+// Handle real-time validation errors on the card element
 card.addEventListener('change', function (event) {
     var errorDiv = document.getElementById('card-errors');
     if (event.error) {
-        var html = `
-            <span class="icon" role="alert">
-                <i class="fas fa-times"></i>
-            </span>
-            <span>${event.error.message}</span>
-        `;
-        $(errorDiv).html(html);
+        errorDiv.textContent = event.error.message;
     } else {
         errorDiv.textContent = '';
     }
@@ -47,6 +42,7 @@ form.addEventListener('submit', function (ev) {
     $('#submit-button').attr('disabled', true);
     $('#payment-form').fadeToggle(100);
     $('#loading-overlay').fadeToggle(100);
+
     stripe.confirmCardPayment(clientSecret, {
         payment_method: {
             card: card,
@@ -54,18 +50,15 @@ form.addEventListener('submit', function (ev) {
     }).then(function (result) {
         if (result.error) {
             var errorDiv = document.getElementById('card-errors');
-            var html = `
-                <span class="icon" role="alert">
-                <i class="fas fa-times"></i>
-                </span>
-                <span>${result.error.message}</span>`;
-            $(errorDiv).html(html);
+            errorDiv.textContent = result.error.message;
             card.update({ 'disabled': false });
             $('#submit-button').attr('disabled', false);
+            $('#payment-form').fadeToggle(100);
+            $('#loading-overlay').fadeToggle(100);
         } else {
             if (result.paymentIntent.status === 'succeeded') {
                 form.submit();
-                console.log('ciaoooo');
+                console.log('Payment succeeded');
             }
         }
     });

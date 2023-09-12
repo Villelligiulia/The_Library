@@ -15,8 +15,38 @@ from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
 import logging
+from django.views.decorators.csrf import csrf_exempt
+from django.conf import settings
 
-import json
+
+@csrf_exempt
+def stripe_webhook(request):
+
+    if request.method == "POST":
+        payload = request.body
+        sig_header = request.META["HTTP_STRIPE_SIGNATURE"]
+
+        endpoint_secret = settings.STRIPE_WEBHOOK_SECRET
+
+        try:
+            event = stripe.Webhook.construct_event(
+                payload, sig_header, endpoint_secret
+            )
+        except ValueError as e:
+            # Invalid payload
+            return HttpResponse(status=400)
+        except stripe.error.SignatureVerificationError as e:
+            # Invalid signature
+            return HttpResponse(status=400)
+
+        # Handle the specific event type
+        if event.type == "charge.succeeded":
+            # Perform actions when a charge succeeds
+
+            print("Charge succeeded:", event.data.object)
+
+        # Return a 200 OK response to Stripe
+        return HttpResponse(status=200)
 
 
 def checkout(request):

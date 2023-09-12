@@ -10,8 +10,10 @@ background{%endblock %}
 <!-- indent here -->{% block content %}
 
 
-<div class="row" style="background-color:#45101a86;">
-    <div class="col-md-6 ">
+<div class="row" style="background-color:#45101a86;display: flex;
+    justify-content: space-around;margin-right: unset;
+">
+    <div class="col-md-5 ">
         <div class="custom-container checkout-outer-div" >
         <div class=" border p-3 order-summary-div " >
         
@@ -34,7 +36,7 @@ background{%endblock %}
     {% if not user.is_authenticated %}
     <p class="text-danger">You need to <a href="{% url 'account_login' %}">login</a> or <a href="{% url 'account_signup' %}">create an account</a> to proceed with the checkout.</p>
   {% else %}
-    <div class="col-md-6">
+    <div class="col-md-4">
         <div class="custom-container checkout-outer-div"  >
         <div class="border  checkout-div" >
             <h1>Checkout</h1>
