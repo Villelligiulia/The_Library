@@ -135,18 +135,18 @@ li {
 
 .img-section {
     background-image: url('/media/the-library.jpg');
-    height: calc(80vh - 164px);
+    height: calc(110vh - 164px);
     color: #555;
     background-repeat: no-repeat;
     background-size: cover;
-    width: -webkit-fill-available
+
 }
 
 .custom-container {
     background-color: #45101ad2;
     border: 8px double rgb(159, 140, 63);
     padding: 10px;
-    
+
 }
 
 /* books layout */
@@ -165,6 +165,17 @@ li {
 
 }
 
+.custom-container {
+    width: fit-content;
+    padding: 20px;
+    margin-left: 20px;
+}
+
+
+
+.custom-container p {
+    color: rgba(255, 255, 255, 0.5);
+}
 
 
 
@@ -309,6 +320,16 @@ li {
     text-decoration: none;
     /* color: #ffffffd0; */
     color: rgba(255, 255, 255, .5);
+}
+
+.empty-cart {
+    background-image: url('/media/empty-cart.jpg');
+    height: calc(100vh - 164px);
+    color: #555;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
 }
 
 

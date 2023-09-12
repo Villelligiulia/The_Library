@@ -130,15 +130,24 @@ def checkout(request):
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY,
         )
-        print(intent, 'sora lellaaaa')
+        print(intent)
 
         initial_data = {}
         saved_checkout_info = request.session.get('checkout_info', {})
         if saved_checkout_info:
             initial_data.update(saved_checkout_info)
 
+
+
         # Initialize the form for the GET request
         form = CheckoutForm(initial=initial_data)
+
+        for item in cart.values():
+            book = get_object_or_404(Book, id=item['book_id'])
+            items.append({
+                'book': book,
+                'quantity': item['quantity'],
+            })
 
         context = {
             'form': form,

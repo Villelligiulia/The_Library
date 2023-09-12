@@ -3,7 +3,7 @@
 
 {% block content_container_class%}
 <!-- indent here -->
-background{%endblock %}
+img-section{%endblock %}
 <!-- indent here -->{% block content %}
 <div class="row" style="display:flex; justify-content:space-evenly">
    <div class="col-md-12 col-lg-3">
@@ -20,7 +20,7 @@ background{%endblock %}
       <p>State: {{ order.state }}</p>
       <p>Country: {{ order.country }}</p>
     </div>
-    <a href="{% url 'edit_profile' %}" class="btn" style="margin-left: 10px"
+    <a href="{% url 'edit_profile' %}" class="btn" style="margin:10px"
       >Edit Profile</a
     >
   </div>
@@ -82,9 +82,9 @@ background{%endblock %}
       {% else %}
       <h2>Profile Information</h2>
       <h3>
-        You don't have any profile information saved at the moment. Click on
-        "Edit Profil" to change your Profile info:
+        You don't have any profile information saved at the moment. 
       </h3>
+    <a href="{% url 'edit_profile' %}" class="btn" style="margin: 10px">Add Profile Info</a>
     
       {% endif %}
     </div>

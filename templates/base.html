@@ -121,11 +121,7 @@
                 </span>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'checkout'%}">
-                <i class="fas fa-credit-card"></i> Checkout
-              </a>
-            </li>
+            
           </ul>
         </div>
       </div>
@@ -138,7 +134,7 @@
     <p id="message-text" class="message-text">{{ message | safe }}</p>
 </div>
 {% endfor %}{% block typewriter %} {% endblock %}{% if show_picture %}
-    <div class="container-fluid img-section d-none d-lg-block">
+    <div class="container-fluid background d-none d-lg-block">
       <div class="row">
         <div class="col-6 col-lg-4 my-auto py-1 py-lg-0"></div>
       </div>
@@ -199,8 +195,7 @@
 // Get all message elements with the 'typewriter' class
 var messageElements = document.querySelectorAll('.typedtext');
 
-// Typing speed (adjust as needed)
-var typingSpeed = 50;
+var typingSpeed = 100;
 
 // Function to apply typewriter effect to a message element
 function typeWriter(element, text, i) {

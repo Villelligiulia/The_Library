@@ -126,6 +126,7 @@ li {
 
 .background {
     background-image: url('/books/media/the-library.jpg');
+    height: calc(80vh - 164px);
 
     color: #555;
     background-repeat: no-repeat;
@@ -135,7 +136,7 @@ li {
 
 .img-section {
     background-image: url('/books/media/the-library.jpg');
-    height: calc(80vh - 164px);
+    height: calc(110vh - 164px);
     color: #555;
     background-repeat: no-repeat;
     background-size: cover;
@@ -166,7 +167,21 @@ li {
 
 }
 
+/* .custom-container {
+    width: fit-content;
+    padding: 20px;
+    margin-left: 20px;
+} */
 
+
+
+.custom-container p {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.container {
+    overflow-wrap: break-word;
+}
 
 
 /* content container  */
@@ -286,6 +301,17 @@ li {
 }
 
 /* view_cart.html */
+
+.empty-cart {
+    background-image: url('/books/media/empty-cart.jpg');
+    height: calc(100vh - 164px);
+    color: #555;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+}
+
 .cart-content {
     color: #fafafafa;
     font-size: 20px;
@@ -316,6 +342,8 @@ li {
 
 
 /* checkout.html */
+
+
 .checout-outer-div {
 
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.385);
@@ -328,7 +356,9 @@ li {
 
 .order-summary-div {
     padding-right: 200px !important;
-    background: #e9ecef
+    background: #e9ecef;
+    color: #212529;
+
 }
 
 .order-summary-div a,

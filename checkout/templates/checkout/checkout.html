@@ -6,11 +6,11 @@
 
 {% block content_container_class%}
 <!-- indent here -->
-background{%endblock %}
+{%endblock %}
 <!-- indent here -->{% block content %}
 
 
-<div class="row" style="background-color:#45101a86;display: flex;
+<div class="row" style="background-color:#45101a86;display: flex; 
     justify-content: space-around;margin-right: unset;
 ">
     <div class="col-md-5 ">
@@ -22,12 +22,14 @@ background{%endblock %}
             <ul>
                 {% for item in cart_items %}
                 <li>
-                    <a href="{% url 'book_detail' item.book.id %}">{{ item.book.title }}</a> - ${{ item.book.price }} -
+                    <a href="{% url 'book_detail' item.book.id  %}">{{ item.book.title }}</a> - ${{ item.book.price }} -
                     X {{ item.quantity }}
                 </li>
                 {% endfor %}
             </ul>
-            <p>Total: ${{ total_price }}</p>
+            <p >Total: ${{ total_price|floatformat:2 }}</p>
+            <p >Delivery: ${{ delivery_cost|floatformat:2}}</p>
+            <h5 id="grand-total">Grand Total: ${{ grand_total|floatformat:2 }}</h5>
         </div>
 
 </div>
