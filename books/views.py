@@ -9,6 +9,9 @@ from django.contrib.auth.decorators import login_required
 
 
 def book_list(request):
+    """
+    Display a list of books, optionally filtered by category.
+    """
     book_queryset = Book.objects.all()
     lowest_priced_books = Book.objects.order_by('price')[:5]
     categories = Category.objects.all()
@@ -34,6 +37,9 @@ def book_list(request):
 
 
 def search_book(request):
+    """
+    Search for books based on a query string.
+    """
     query = request.GET.get('q')
     books = Book.objects.all()
 
@@ -55,6 +61,10 @@ def search_book(request):
 
 
 def book_detail(request, book_id):
+    """
+    Display details of a specific book, including reviews.
+    Allow users to submit reviews.
+    """
     book = get_object_or_404(Book, id=book_id)
     review_form = ReviewForm(request.POST or None)
     if request.method == 'POST':
@@ -69,6 +79,9 @@ def book_detail(request, book_id):
 
 
 def all_categories(request):
+    """
+    Display books categories
+    """
 
     categorys = Category.objects.order_by('name')
     context = {
@@ -79,6 +92,9 @@ def all_categories(request):
 
 
 def best_sellers(request):
+    """
+    Display best seller books and lowest price books
+    """
     lowest_priced_books = Book.objects.order_by('price')[:7]
     best_seller_books = Book.objects.annotate(
         avg_rating=Avg('ratings')).order_by('-avg_rating')[:21]
@@ -91,12 +107,18 @@ def best_sellers(request):
 
 @login_required
 def library_management(request):
+    """
+    Display book list to perform admin actions
+    """
     books = Book.objects.all()
     return render(request, 'books/library_management.html', {'books': books})
 
 
 @login_required
 def create_book(request):
+    """
+    Allow to create a new book if user is admin
+    """
     if not request.user.is_superuser:
         messages.error(
             request, "Sorry only the Library has access to this service")
@@ -148,6 +170,9 @@ def create_book(request):
 
 @login_required
 def edit_book(request, book_id):
+    """
+    Allow to edit books if user is admin
+    """
 
     if not request.user.is_superuser:
         messages.error(
@@ -166,6 +191,10 @@ def edit_book(request, book_id):
 
 
 def admin_search_book(request):
+    """
+    Perform book search filtered by book title category or author for 
+    library management
+    """
     query = request.GET.get('q')
     books = Book.objects.all()
 
@@ -188,6 +217,9 @@ def admin_search_book(request):
 
 @login_required
 def delete_book(request, book_id):
+    """
+    Allow to delete books if user is admin
+    """
     if not request.user.is_superuser:
         messages.error(
             request, "Sorry only the Library has access to this service")

@@ -10,17 +10,25 @@ CART_SESSION_KEY = 'cart'
 
 
 def get_cart(request):
+    """
+    Retrieve the current shopping cart from the user's session.
+    """
     cart = request.session.get(CART_SESSION_KEY, {})
     return cart
 
 
 def save_cart(request, cart):
+    """
+    Save the updated shopping cart back to the user's session.
+    """
     request.session[CART_SESSION_KEY] = cart
     request.session.modified = True
 
 
 def add_to_cart(request, book_id):
-    # Default quantity to 1 if not provided
+    """
+    Add a book to the shopping cart or update its quantity if it already exists.
+    """
     quantity = int(request.POST.get('quantity', 1))
     book = get_object_or_404(Book, id=book_id)
 
@@ -45,6 +53,9 @@ def add_to_cart(request, book_id):
 
 
 def view_cart(request):
+    """
+    Display the contents of the shopping cart.
+    """
     cart = get_cart(request)
     total_price = Decimal(0)
     items = []
@@ -70,6 +81,9 @@ def view_cart(request):
 
 
 def remove_from_cart(request, book_id):
+    """
+     Remove a book from the shopping cart.
+     """
     book_id = str(book_id)
 
     cart = get_cart(request)

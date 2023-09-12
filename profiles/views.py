@@ -9,6 +9,10 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def profile(request):
+    """
+    Display user profile, optionally display saved info by the user
+    during the checkout process
+    """
 
     user = request.user
     order = Order.objects.filter(user=user).latest('created_at')
@@ -23,6 +27,10 @@ def profile(request):
 
 @login_required
 def edit_profile(request):
+    """
+    Handle edit profile logic :allow user to edit info previously saved
+    during the checkout process
+    """
     if request.method == 'POST':
         form = CheckoutForm(request.POST)
         if form.is_valid():
