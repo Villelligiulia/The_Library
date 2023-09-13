@@ -134,6 +134,15 @@ li {
 
 }
 
+.the-library-red {
+    background-image: url('/books/media/the-library-red.jpg');
+    height: calc(100vh - 164px);
+    color: #555;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
 .img-section {
     background-image: url('/books/media/the-library.jpg');
     height: calc(100vh - 164px);
