@@ -13,7 +13,7 @@ class Author(models.Model):
 class Category(models.Model):
     name = models.CharField(max_length=100)
     image = models.ImageField(
-        upload_to='category_images', default='default_category.jpg')
+        upload_to='category_images', default='/books/media/default.jpg')
 
     def __str__(self):
         return self.name
@@ -26,7 +26,7 @@ class Book(models.Model):
     price = models.DecimalField(
         max_digits=8, decimal_places=2, blank=False, null=False)
     cover_image = models.ImageField(
-        upload_to='book_covers', default='default.jpg')
+        upload_to='book_covers', default='/books/media/default.jpg')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     ratings = models.DecimalField(max_digits=3, decimal_places=1)
     quantity = models.IntegerField(default=0)
