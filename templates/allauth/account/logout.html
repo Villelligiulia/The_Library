@@ -25,7 +25,9 @@ empty-cart {% endblock %}
           value="{{ redirect_field_value }}"
         />
         {% endif %}
-        <button type="submit" class="btn">{% trans 'Sign Out' %}</button>
+        <button type="submit" class="btn" style="margin-bottom: 5px">
+          {% trans 'Sign Out' %}
+        </button>
       </form>
     </div>
 

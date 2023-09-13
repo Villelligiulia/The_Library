@@ -337,7 +337,7 @@ li {
 }
 
 .empty-cart {
-    background-image: url('/media/empty-cart.jpg');
+    background-image: url('/books/media/empty-cart.jpg');
     height: calc(100vh - 164px);
     color: #555;
     background-repeat: no-repeat;
