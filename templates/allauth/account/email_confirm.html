@@ -13,8 +13,9 @@ the-library-red{% endblock %} {% load i18n %} {% load account %}
     >
       <h1>{% trans "Confirm E-mail Address" %}</h1>
 
-      {% if confirmation %} {% user_display confirmation.email_address.user as
-      user_display %}
+      {% if confirmation %}
+      <!-- indent here -->
+      {% user_display confirmation.email_address.user as user_display %}
 
       <p>
         {% blocktrans with confirmation.email_address.email as email %}Please
@@ -43,7 +44,8 @@ the-library-red{% endblock %} {% load i18n %} {% load account %}
         >.{% endblocktrans %}
       </p>
 
-      {% endif %} {% endblock %}
+      {% endif %}
     </div>
   </div>
 </div>
+{% endblock %}
