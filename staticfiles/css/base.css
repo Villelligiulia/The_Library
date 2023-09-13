@@ -142,6 +142,11 @@ li {
 
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+}
+
 .custom-container {
     background-color: #45101ad2;
     border: 8px double rgb(159, 140, 63);

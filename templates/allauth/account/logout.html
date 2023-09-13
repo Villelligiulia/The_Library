@@ -9,11 +9,13 @@ empty-cart {% endblock %}
       class="custom-container"
       style="background-color: #45101a75; color: #fafafa"
     >
-      {% load i18n %} {% trans "Sign Out" %}
+      <!-- {% load i18n %} {% trans "Sign Out" %} -->
 
       <h1>{% trans "Sign Out" %}</h1>
 
-      <p>{% trans 'Are you sure you want to sign out?' %}</p>
+      <p style="color: rgba(255, 255, 255, 0.5)">
+        {% trans 'Are you sure you want to sign out?' %}
+      </p>
 
       <form method="post" action="{% url 'account_logout' %}">
         {% csrf_token %} {% if redirect_field_value %}

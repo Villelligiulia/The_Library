@@ -6,7 +6,7 @@
 img-section{%endblock %}
 <!-- indent here -->
 {% block content %}
-<div class="row" style="background-color: #45101a86">
+<div class="row" style="background-color: #45101a86; margin-right: unset">
   <div class="col-md-12 col-lg-3">
     <div
       class="custom-container checkout-div"
@@ -20,6 +20,14 @@ img-section{%endblock %}
       </form>
     </div>
   </div>
+</div>
+<div style="margin-left: 20px; margin-top: 5px">
+  <a
+    href="{% url 'book_list' %}"
+    style="margin-left: 20px; margin-top: 5px"
+    class="btn"
+    >Go to Library</a
+  >
 </div>
 
 {% endblock %}

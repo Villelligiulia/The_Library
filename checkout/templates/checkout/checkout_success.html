@@ -4,13 +4,13 @@
 
 {% block content_container_class%}
 <!-- indent here -->
-img-section{%endblock %}
+the-library-red{%endblock %}
 <!-- indent here -->{% block content %}
 <div
   class="row"
   style="
     justify-content: center;
-    background-color: #45101a86;
+
     margin-right: unset;
   "
 >
@@ -23,7 +23,14 @@ img-section{%endblock %}
       </p>
       <p>An email confirmation has been sent to: {{ order.email }}</p>
       {% if save_to_profile %}
-      <p>you can check your profile here</p>
+      <p>
+        Your checkout details have been saved on your
+        <strong
+          ><a href="{% url 'profile' %}" style="color: #45101ad2"
+            >Profile</a
+          ></strong
+        >
+      </p>
       {% else %}
       <a href="{% url 'book_list' %}" class="btn btn-black rounded-0"
         >Continue Shopping</a

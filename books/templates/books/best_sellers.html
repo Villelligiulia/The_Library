@@ -6,12 +6,17 @@
     >
   </h2>
 </div>
-{% endblock %} {% block content %} {% include 'books/includes/carousel.html' %}
+{% endblock %}
+ {% block content %} 
+<div class="container">
+    {% include 'books/includes/carousel.html' %}
+</div>
 <div class="best-seller-title-container">
   <h1 class="best-sellers-heading">Best Sellers</h1>
 </div>
+
 <div class="container">
-  <div class="custom-container">
+  <div class="custom-container" style="background-color: #45101ad2">
     <div class="row">
       {% for book in best_seller_books %}
       <div class="col-lg-4 col-md-6">
@@ -35,5 +40,7 @@
       {% endfor %}
     </div>
   </div>
+  </div>
+
   {% endblock %}
-</div>
+
