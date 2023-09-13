@@ -29,7 +29,7 @@ the-library-red{% endblock %} {% load i18n %} {% load account %}
         action="{% url 'account_confirm_email' confirmation.key %}"
       >
         {% csrf_token %}
-        <button type="submit" class="btn" tyle="margin-bottom: 5px">
+        <button type="submit" class="btn" style="margin-bottom: 5px">
           {% trans 'Confirm' %}
         </button>
       </form>
@@ -41,7 +41,7 @@ the-library-red{% endblock %} {% load i18n %} {% load account %}
         Please
         <a href="{{ email_url }}" style="color: #45101ad2"
           >issue a new e-mail confirmation request</a
-        >.{% endblocktrans %}
+        >{% endblocktrans %}
       </p>
 
       {% endif %}
