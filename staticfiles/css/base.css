@@ -126,6 +126,7 @@ li {
 
 .background {
     background-image: url('/books/media/the-library.jpg');
+    height: calc(80vh - 164px);
 
     color: #555;
     background-repeat: no-repeat;
@@ -338,7 +339,7 @@ li {
 
 .empty-cart {
     background-image: url('/books/media/empty-cart.jpg');
-    height: calc(100vh - 164px);
+    height: calc(110vh - 164px);
     color: #555;
     background-repeat: no-repeat;
     background-size: cover;
