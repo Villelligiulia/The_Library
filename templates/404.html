@@ -6,14 +6,16 @@
 {% endblock %}{% block content_container_class%}
 <!-- indent here -->
 empty-cart {% endblock %}{% block content %}
-<div class="row" style="margin-right: unset">
-  <div class="col">
+<div class="row" style="margin-right: unset, justify-content:center">
+  <div class="col-md-12 col-lg-6">
     <div
-      class="custom-container text-center
-      style="background-color: #45101ad2; width: fit-content; margin-left: 20px"
+      class="custom-container"
+      style="background-color: #45101a8a; width: fit-content"
     >
-      <p>The page you are looking for does not exist.</p>
-      <a href="" class="btn btn-primary">Go to Library</a>
+      <p style="color: #fafafafa">
+        The page you are looking for does not exist.
+      </p>
+      <a href="{% url 'book_list' %}" class="btn">Go to Library</a>
     </div>
   </div>
 </div>
