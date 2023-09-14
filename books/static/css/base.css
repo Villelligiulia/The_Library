@@ -45,8 +45,8 @@ li {
 /* Navbars */
 .navbar {
     background-color: #45101ad2;
-
-    border: 8px double rgb(159, 140, 63);
+    /* 
+    border: 8px double rgb(159, 140, 63); */
 
 }
 
@@ -154,7 +154,7 @@ li {
 
 .custom-container {
     background-color: #45101ad2;
-    border: 8px double rgb(159, 140, 63);
+    /* border: 8px double rgb(159, 140, 63); */
     padding: 10px;
     margin-top: 10px;
 
@@ -195,9 +195,9 @@ li {
 
 /* book_detail.html */
 .main-div-content {
-    background: #dab8bbad;
+    background-color: #96676bba;
     padding: 15px;
-    color: #525524;
+    color: #ffffff;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.333);
 }
 
@@ -271,7 +271,7 @@ li {
 
 .best-seller-title-container {
     background-color: #45101ad2;
-    border: 8px double rgb(159, 140, 63);
+    /* border: 8px double rgb(159, 140, 63); */
     padding: 10px;
     margin: 10px;
 }
@@ -361,6 +361,7 @@ li {
 .checkout-div {
 
     background: #e9ecef;
+    border: double 8px #45101ad2;
 }
 
 .order-summary-div {
@@ -448,7 +449,7 @@ p {
 
 .custom-container-admin {
     background-color: #fafafafa;
-    border: 8px double rgb(159, 140, 63);
+    /* border: 8px double rgb(159, 140, 63); */
     padding: 10px;
     margin: 10px;
 }

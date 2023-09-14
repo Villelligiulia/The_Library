@@ -3,6 +3,7 @@ from checkout.views import checkout
 from checkout.models import Order
 from checkout.forms import CheckoutForm
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 # Create your views here.
 
@@ -79,6 +80,9 @@ def edit_profile(request):
                 checkout_save_to_profile=save_to_profile,
             )
             order.save()
+
+            messages.error(
+                request, 'Your profile details have been updated.')
 
             return redirect('profile')
     form = CheckoutForm()

@@ -19,13 +19,13 @@ img-section{%endblock %}
         <button type="submit" class="btn">Update Profile</button>
       </form>
     </div>
+    <a
+      href="{% url 'book_list' %}"
+      style="margin: 5px 0 5px 20px; background-color: #45101a86"
+      class="btn"
+      >Go to Library</a
+    >
   </div>
-  <a
-    href="{% url 'book_list' %}"
-    style="margin-left: 20px; margin-top: 5px; background-color: #45101a86"
-    class="btn"
-    >Go to Library</a
-  >
 </div>
 
 {% endblock %}
