@@ -24,7 +24,7 @@
 <form method="post">
     {% csrf_token %}
     <p>Are you sure you want to delete "{{ book.title }}"?</p>
-    <button type="submit" class="btn">Delete</button>
+    <button type="submit" class="btn" aria-label="Delete">Delete</button>
     <span>
         <a href="{% url 'library_management' %}" class="btn">Go to your Library</a>
     </span>

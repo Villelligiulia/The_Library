@@ -9,7 +9,11 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    {% endblock %} {% block extra_meta %} {% endblock %} {% block corecss %}
+    <meta name="description"
+        content="The Library - Your Online Source for a World of Books, Reviews, and More. Explore a vast collection of books, discover new authors, and share your reading experiences.">
+    <meta name="keywords" content="library, books, reading, reviews, authors, literature">
+    {% endblock %}  
+    {% block corecss %}
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -23,7 +27,8 @@
       href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital@0;1&family=Fasthand&family=Special+Elite&display=swap"
       rel="stylesheet"
     />
-    {% endblock %} {% block extra_css %} {% endblock %} {% block corejs %}
+    {% endblock %}  
+    {% block corejs %}
     <script
       src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
@@ -48,11 +53,11 @@
 
     {% endblock %}
 
-    <title>The Library {% block extra_title %}{% endblock %}</title>
+    <title>The Library</title>
   </head>
 
   <body >
-    {% block page_header %} {% endblock %}
+   
 
     <!-- Navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
@@ -71,7 +76,7 @@
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span><i class="fa-solid fa-info"></i></span>
+            <span><i class="fa-solid fa-info" aria-hidden="true"></i></span>
           </button>
         </div>
 

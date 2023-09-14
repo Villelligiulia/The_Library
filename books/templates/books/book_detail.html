@@ -18,7 +18,7 @@
     <!-- Reviews -->
     <h2 class="detail-main" style="font-weight: 600;">Reviews</h2>
     {% for review in book.review_set.all %}
-    <div class="div-detail"><span class="detail-main">Rating:</span> <span>{{ review.rating }}</span>
+ 
         
         <div class="div-detail"><span class="detail-main">Comment:</span> <span>{{ review.comment }}</span></div>
         <div class="div-detail"><span class="detail-main">By:</span> <span>{{ review.user.username }}</span></div>
@@ -55,7 +55,7 @@
 
         {{ cart_form.as_p }}
         <div style="display: flex; ">
-        <p class="mt-3"><strong>Quantity:</strong></p>
+    <label class="mt-3"><strong>Quantity:</strong></label>
         <div class="form-group w-50">
             <div class="input-group">
                 <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99"

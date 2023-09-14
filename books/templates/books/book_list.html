@@ -14,7 +14,7 @@
             height="300"
           />
           <div class="card-body pb-0">
-            <h5 class="card-title">{{ book.title }}</h5>
+            <h2 class="card-title">{{ book.title }}</h2>
             <p class="card-text">{{ book.category }}</p>
           </div>
           <div class="card-footer bg-white pt-0 border-0 text-left">
@@ -31,7 +31,8 @@
               <div class="col">
                 {% if book.ratings %}
                 <small class="text-muted"
-                  ><i class="fas fa-star mr-1"></i>{{ book.ratings }} / 5</small
+                  ><i class="fas fa-star mr-1" aria-hidden="true"></i>{{
+                  book.ratings }} / 5</small
                 >
                 {% else %}
                 <small class="text-muted">No Rating</small>
@@ -52,7 +53,9 @@
       </div>
 
       {% empty %}
-      <p  class="no-books"style ="color: #fafafa;"">No books available.</p>
+      <p class="no-books" style="color: #fafafa;"">
+        No books available.
+      </p>
       {% endfor %}
     </div>
   </div>

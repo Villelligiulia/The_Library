@@ -38,7 +38,7 @@ li {
 }
 
 .btn:hover {
-    color: rgba(255, 255, 255, .5);
+    color: #B5B5B5;
 
 }
 
@@ -67,7 +67,7 @@ li {
 }
 
 .badge-info:hover {
-    background-color: rgba(255, 255, 255, .5);
+    background-color: #B5B5B5;
 }
 
 
@@ -189,7 +189,7 @@ li {
 
 
 .custom-container p {
-    color: rgba(255, 255, 255, 0.5);
+    color: #B5B5B5;
 }
 
 
@@ -318,7 +318,7 @@ li {
 }
 
 .cart-content:hover {
-    color: rgba(255, 255, 255, .5);
+    color: #B5B5B5;
     text-decoration-line: none;
 }
 
@@ -334,7 +334,7 @@ li {
 #cart-checkout-link:hover {
     text-decoration: none;
     /* color: #ffffffd0; */
-    color: rgba(255, 255, 255, .5);
+    color: #B5B5B5;
 }
 
 .empty-cart {
@@ -440,7 +440,7 @@ p {
 }
 
 .admin-book-detail {
-    color: rgba(255, 255, 255, .5);
+    color: #B5B5B5;
     margin-bottom: 20px !important;
 }
 

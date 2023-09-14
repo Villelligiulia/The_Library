@@ -7,7 +7,7 @@
     </div>
     <form method="post" enctype="multipart/form-data" class="edit-book-form detail-main">
       {% csrf_token %} {{ form.as_p }}
-      <button type="submit" class="btn">Save Changes</button>
+      <button type="submit" class="btn" aria-label="Save">Save Changes</button>
     </form>
 
     {% endblock %}

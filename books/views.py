@@ -8,6 +8,10 @@ from .forms import BookForm, BookFormEdit
 from django.contrib.auth.decorators import login_required
 
 
+def custom_404_view(request, exception):
+    return render(request, '404.html', {})
+
+
 def book_list(request):
     """
     Display a list of books, optionally filtered by category.
