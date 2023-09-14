@@ -65,6 +65,7 @@
         <a class="navbar-brand" href="{% url 'book_list' %}">
           <h1 class="d-none d-lg-inline">The Library</h1>
         </a>
+        {% block nav_bar%}
         {% include 'books/includes/searchforms.html' %}
         <div class="navbar-toggler-right">
           <button
@@ -129,6 +130,7 @@
             
           </ul>
         </div>
+        {% endblock %}
       </div>
     </nav>
 {% for message in messages %}
@@ -144,7 +146,10 @@
         <div class="col-6 col-lg-4 my-auto py-1 py-lg-0"></div>
       </div>
     </div>
-    {% endif %} {% include 'books/includes/main-nav.html' %}
+    {% endif %} 
+    {% block extra_navbar %}
+    {% include 'books/includes/main-nav.html' %}
+    {% endblock %}
 
     
     <div class="{% block content_container_class %}{% endblock %}">{% block content %} {% endblock %}</div>

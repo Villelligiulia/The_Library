@@ -1,15 +1,21 @@
-{% extends 'base.html' %} {% block typewriter %}
+{% extends 'base.html' %}
+<!-- indent here -->
+{% block nav_bar %}
+<!-- indent here -->
+{% endblock %} {% block typewriter %}
 
 <div class="typedtext typewrite">
   <h2 class="message-text" style="text-align: center">We are sorry!</h2>
 </div>
 {% endblock %}{% block content_container_class%}
 <!-- indent here -->
-empty-cart {% endblock %}{% block content %}
-<div class="row" style="margin-right: unset, justify-content:center">
+empty-cart {% endblock %} {% block extra_navbar%} {% endblock %}
+<!-- indent here -->
+{% block content %}
+<div class="row" style="margin-right: unset; justify-content: center">
   <div class="col-md-12 col-lg-6">
     <div
-      class="custom-container"
+      class="custom-container text-center"
       style="background-color: #45101a8a; width: fit-content"
     >
       <p style="color: #fafafafa">
