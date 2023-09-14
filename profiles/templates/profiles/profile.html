@@ -39,6 +39,8 @@ img-section{%endblock %}
       <hr />
       {% for order in order_history %} {% with order_num=forloop.counter %}
       <h3>#{{ order_num }}</h3>
+
+      {% endwith %}
       <ul>
         <li>Order Number: {{ order.order_number }}</li>
 
@@ -50,7 +52,6 @@ img-section{%endblock %}
           {{item.book.title }}
         </li>
         <li>- Quantity: {{ item.quantity }}</li>
-
         {% endfor %}
 
         <li>Email: {{ order.email}}</li>
@@ -59,7 +60,7 @@ img-section{%endblock %}
       </ul>
       <hr />
 
-      {% endwith %} {% endfor %} {% else %}
+      {% endfor %} {% else %}
       <h2>Profile Information</h2>
       <h3>You don't have any profile information saved at the moment.</h3>
       <a href="{% url 'edit_profile' %}" class="btn" style="margin: 10px"

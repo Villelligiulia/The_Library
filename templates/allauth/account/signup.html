@@ -1,6 +1,6 @@
 {% extends "account/base.html" %} {% block content_container_class%}
 <!-- indent here -->
-empty-cart{% endblock %} {% load i18n %} {% block head_title %}
+sign-up {% endblock %} {% load i18n %} {% block head_title %}
 <!-- inent here -->
 {% trans "Signup" %}{% endblock %} {% block content %}
 <div class="row" style="margin-right: unset">
@@ -38,4 +38,4 @@ empty-cart{% endblock %} {% load i18n %} {% block head_title %}
     </div>
   </div>
 </div>
-{% endblock %}
+{% block footer %} {% endblock %} {% endblock %}
