@@ -1,13 +1,13 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 <!-- indent here -->
 
 {% block content_container_class%}
 <!-- indent here -->
 img-section{%endblock %}
 <!-- indent here -->{% block content %}
-<div class="row" style="display:flex; justify-content:space-evenly">
-   <div class="col-md-12 col-lg-3">
-    <div class="custom-container checkout-div">
+<div class="row" style="display: flex; justify-content: space-evenly">
+  <div class="col-md-12 col-lg-3">
+    <div class="custom-container checkout-div" style="width: fit-content">
       {% if show_profile_info %}
       <h2>Profile Information</h2>
 
@@ -20,72 +20,52 @@ img-section{%endblock %}
       <p>State: {{ order.state }}</p>
       <p>Country: {{ order.country }}</p>
     </div>
-    <a href="{% url 'edit_profile' %}" class="btn" style="margin:10px"
+    <a href="{% url 'edit_profile' %}" class="btn" style="margin: 10px"
       >Edit Profile</a
     >
   </div>
 
-   <div class="col-md-12 col-lg-4">
-    <div class=" custom-container checkout-div" style="overflow-wrap:break-word; height: 450px;overflow: scroll;">
-        
+  <div class="col-md-12 col-lg-4">
+    <div
+      class="custom-container checkout-div"
+      style="
+        overflow-wrap: break-word;
+        height: 450px;
+        overflow: scroll;
+        width: fit-content;
+      "
+    >
       <h2>Order History</h2>
+      <hr />
+      {% for order in order_history %} {% with order_num=forloop.counter %}
+      <h3>#{{ order_num }}</h3>
       <ul>
-        <hr>
-        {% for order in order_history %}
-        {% with order_num=forloop.counter %}
-        <h5>#{{ order_num }}</h5>
-        
-      
+        <li>Order Number: {{ order.order_number }}</li>
+
+        <li>Order Date: {{ order.created_at }}</li>
+
         <li>
-          <p>Order Number: {{ order.order_number }}</p>
+          Your Purchase: {% for item in order.lineitems.all %}
+          <!-- indent here  -->
+          {{item.book.title }}
         </li>
-          <br />
-          <li>
-          <p>Order Date: {{ order.created_at }}</p>
-          </li>
-          <br />
-          <li>
-       
-        {% if book.quantity > 1 or book.title > 1 %}
-        <p>Books Purchased:</p>
-        {% else %}
-        <p>Book Purchased</p>
-        
-       
-        {% endif %}
-      
+        <li>- Quantity: {{ item.quantity }}</li>
 
-          <ul>
-            {% for item in order.lineitems.all %}
-            
-              <p>{{ item.book.title }} 
-               
-                - Quantity: {{ item.quantity }}</p>
-            
-            
-            {% endfor %}
-          </li>
-          </ul>
-          <li>
-          <p>Email: {{ order.email}}</p>
-          </li>
-          <br />
-          <li>
-          <p>Delivery Address: {{order.address}}</p>
-          <br />
-        </li>
-        <hr>
-        {% endwith %}
         {% endfor %}
-      </ul>
 
-      {% else %}
+        <li>Email: {{ order.email}}</li>
+
+        <li>Delivery Address: {{order.address}}</li>
+      </ul>
+      <hr />
+
+      {% endwith %} {% endfor %} {% else %}
       <h2>Profile Information</h2>
-      <h3>
-        You don't have any profile information saved at the moment. 
-      </h3>
-    <a href="{% url 'edit_profile' %}" class="btn" style="margin: 10px">Add Profile Info</a>
-    
+      <h3>You don't have any profile information saved at the moment.</h3>
+      <a href="{% url 'edit_profile' %}" class="btn" style="margin: 10px"
+        >Add Profile Info</a
+      >
+
       {% endif %}
     </div>
   </div>

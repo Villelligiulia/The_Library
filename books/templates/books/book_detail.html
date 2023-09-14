@@ -44,7 +44,7 @@
             <button type="submit" class="btn" name="review_form">Submit Review</button>
         </form>
         {% else %}
-        <p><a href="{% url 'account_login' %}">Log in</a> to leave a review.</p>
+        <p><a href="{% url 'account_login' %}" aria-label="Log in to leave a review">Log in</a> to leave a review.</p>
         {% endif %}
     </div>
 
@@ -55,7 +55,7 @@
 
         {{ cart_form.as_p }}
         <div style="display: flex; ">
-    <label class="mt-3"><strong>Quantity:</strong></label>
+    <label for="id_qty_{{ book.id }}" class="mt-3"><strong>Quantity:</strong></label>
         <div class="form-group w-50">
             <div class="input-group">
                 <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99"

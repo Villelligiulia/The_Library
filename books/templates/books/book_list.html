@@ -2,11 +2,11 @@
 'bookshop/includes/main-nav.html' %} {% block content %}
 <div class="container">
   <div class="custom-container">
-    <div class="row">
+    <div class="row" style="display: flex ; justify-content: center">
       {% for book in books %}
       <div class="col-lg-4 col-md-6">
         <div class="card h-90 border-0">
-          <img
+          <imgs
             src="{{ book.cover_image.url }}"
             alt="{{ book.title }} Cover Image"
             class="card-img-top book-list-pic"
@@ -53,9 +53,7 @@
       </div>
 
       {% empty %}
-      <p class="no-books" style="color: #fafafa;"">
-        No books available.
-      </p>
+      <p class="no-books">No books available.</p>
       {% endfor %}
     </div>
   </div>

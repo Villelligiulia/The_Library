@@ -1,10 +1,10 @@
 {% extends 'base.html' %} {% block typewriter %}
 <div class="typedtext typewrite">
-  <h2>
+  <h1>
     <span class="message-text " 
       >Checkout our Best Offers!</span
     >
-  </h2>
+  </h1>
 </div>
 {% endblock %}
  {% block content %} 
@@ -12,7 +12,7 @@
     {% include 'books/includes/carousel.html' %}
 </div>
 <div class="best-seller-title-container">
-  <h1 class="best-sellers-heading">Best Sellers</h1>
+  <h2 class="best-sellers-heading">Best Sellers</h2>
 </div>
 
 <div class="container">
@@ -21,7 +21,7 @@
       {% for book in best_seller_books %}
       <div class="col-lg-4 col-md-6">
         <div class="card h-90 border-0">
-            <a href="{% url 'book_detail' book_id=book.id %}">
+            <a href="{% url 'book_detail' book_id=book.id %}" aria-label="{{book.title}}">
           <img
             src="{{ book.cover_image.url }}"
             alt="{{ book.title }} Cover Image"
@@ -30,7 +30,7 @@
             height="300"
           />
           <div class="card-body pb-0">
-            <h5 class="card-title">{{ book.title }}</h5>
+            <h3 class="card-title">{{ book.title }}</h3>
             <p class="card-text">Author: {{ book.author }}</p>
             <p class="card-text">Price: ${{ book.price }}</p>
           </div>

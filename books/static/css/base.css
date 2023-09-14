@@ -1,7 +1,7 @@
 body {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-    background-color: rgb(85 85 85 / 69%);
+    background-color: rgb(85 85 85 / 13%);
 
 
 }
@@ -58,6 +58,12 @@ li {
 
 .nav-link {
     font-size: 18px;
+    color: rgba(255, 255, 255, 0.7) !important;
+
+}
+
+.nav-link:hover {
+    color: rgba(255, 255, 255, 0.5) !important;
 
 }
 
@@ -145,10 +151,11 @@ li {
 
 .img-section {
     background-image: url('/books/media/the-library.jpg');
-    height: calc(110vh - 164px);
+    /* height: calc(110vh - 164px); */
     color: #555;
     background-repeat: no-repeat;
     background-size: cover;
+    border-bottom: solid 2px #45101ad2;
 
 }
 
@@ -169,6 +176,11 @@ li {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.385) !important;
 }
 
+.card-title,
+.card-text {
+    color: #454d54;
+}
+
 .book-list-pic {
     max-width:
         100%;
@@ -181,9 +193,7 @@ li {
     overflow-wrap: break-word;
 }
 
-.no-books {
-    text-align: center;
-}
+
 
 
 /* content container  */
@@ -195,7 +205,7 @@ li {
 
 /* book_detail.html */
 .main-div-content {
-    background-color: #96676bba;
+    background-color: #5E4042;
     padding: 15px;
     color: #ffffff;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.333);
@@ -208,7 +218,7 @@ li {
 }
 
 .detail-main {
-    color: #45101ad2;
+    color: #F7DFBB;
     font-weight: 600;
     font-size: 20px;
     margin-top: 10px;
@@ -371,7 +381,7 @@ li {
 
 .order-summary-div a,
 p {
-    color: #212529;
+    color: c2c4c6;
 
 }
 
@@ -443,7 +453,7 @@ p {
 }
 
 .admin-book-detail {
-    color: rgba(255, 255, 255, .5);
+    color: rgba(255, 255, 255, 0.7);
     margin-bottom: 20px !important;
 }
 
@@ -489,7 +499,7 @@ p {
 }
 
 .edit-book-form p {
-    color: #45101ad2;
+    color: #F7DFBB;
     font-weight: 600;
 
     margin-top: 10px;
@@ -515,4 +525,10 @@ p {
 .message-text {
     text-align: center;
     color: black;
+}
+
+/* footer */
+.footer-main {
+    color: #45101ad2;
+
 }
