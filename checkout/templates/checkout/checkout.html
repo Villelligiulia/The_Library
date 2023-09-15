@@ -6,18 +6,16 @@
 
 {% block content_container_class%}
 <!-- indent here -->
-{%endblock %}
+{% endblock %}
 <!-- indent here -->{% block content %}
 
 
-<div class="row" style="background-color:#45101a86;display: flex; 
-    justify-content: space-around;margin-right: unset;
-">
+<div class="row checkout-row" >
     <div class="col-md-5 ">
         <div class="custom-container checkout-outer-div" >
         <div class=" border p-3 order-summary-div " >
         
-            <h1 style="max-content">Order Summary</h1>
+            <h1>Order Summary</h1>
 
             <ul>
                 {% for item in cart_items %}
@@ -33,10 +31,10 @@
         </div>
 
 </div>
-        <!-- </div> -->
+        
     </div>
     {% if not user.is_authenticated %}
-    <p class="text-danger">You need to <a href="{% url 'account_login' %}">login</a> or <a href="{% url 'account_signup' %}">create an account</a> to proceed with the checkout.</p>
+    <span><p >You need to <a href="{% url 'account_login' %}">login</a> or <a href="{% url 'account_signup' %}">create an account</a> to proceed with the checkout.</p></span>
   {% else %}
     <div class="col-md-4">
         <div class="custom-container checkout-outer-div"  >
@@ -87,6 +85,7 @@
                             <i class="fas fa-lock"></i>
                         </span>
                     </button>
+
                     <p class="small text-danger my-0">
                         <span class="icon">
                             <i class="fas fa-exclamation-circle"></i>

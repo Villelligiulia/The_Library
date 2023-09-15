@@ -27,7 +27,8 @@ def save_cart(request, cart):
 
 def add_to_cart(request, book_id):
     """
-    Add a book to the shopping cart or update its quantity if it already exists.
+    Add a book to the shopping cart or update its quantity if it
+    already exists.
     """
     quantity = int(request.POST.get('quantity', 1))
     book = get_object_or_404(Book, id=book_id)

@@ -9,11 +9,15 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta name="description"
-        content="The Library - Your Online Source for a World of Books, Reviews, and More. Explore a vast collection of books, discover new authors, and share your reading experiences.">
-    <meta name="keywords" content="library, books, reading, reviews, authors, literature">
-    {% endblock %}  
-    {% block corecss %}
+    <meta
+      name="description"
+      content="The Library - Your Online Source for a World of Books, Reviews, and More. Explore a vast collection of books, discover new authors, and share your reading experiences."
+    />
+    <meta
+      name="keywords"
+      content="library, books, reading, reviews, authors, literature"
+    />
+    {% endblock %} {% block corecss %}
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -27,8 +31,7 @@
       href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital@0;1&family=Fasthand&family=Special+Elite&display=swap"
       rel="stylesheet"
     />
-    {% endblock %}  
-    {% block corejs %}
+    {% endblock %} {% block corejs %}
     <script
       src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
@@ -48,28 +51,40 @@
       src="https://kit.fontawesome.com/40e96c6555.js"
       crossorigin="anonymous"
     ></script>
-   
+
     <!-- Stripe -->
     <script src="https://js.stripe.com/v3/"></script>
 
     {% endblock %}
 
     <title>The Library</title>
-    <script
-        id="mcjs">!function (c, h, i, m, p) { m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m, p); }(document, "script", "https://chimpstatic.com/mcjs-connected/js/users/d5a0c294dd25d0af39e390ecf/8f1b0f1ac23efb3f598c96314.js");</script>
+    <script id="mcjs">
+      !(function (c, h, i, m, p) {
+        (m = c.createElement(h)),
+          (p = c.getElementsByTagName(h)[0]),
+          (m.async = 1),
+          (m.src = i),
+          p.parentNode.insertBefore(m, p);
+      })(
+        document,
+        "script",
+        "https://chimpstatic.com/mcjs-connected/js/users/d5a0c294dd25d0af39e390ecf/8f1b0f1ac23efb3f598c96314.js"
+      );
+    </script>
   </head>
 
-  <body >
-   
-
+  <body>
     <!-- Navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
-        <a class="navbar-brand" href="{% url 'book_list' %}" aria-label="The Library">
+        <a
+          class="navbar-brand"
+          href="{% url 'book_list' %}"
+          aria-label="The Library"
+        >
           <h1 class="d-none d-lg-inline">The Library</h1>
         </a>
-        {% block nav_bar%}
-        {% include 'books/includes/searchforms.html' %}
+        {% block nav_bar%} {% include 'books/includes/searchforms.html' %}
         <div class="navbar-toggler-right">
           <button
             class="navbar-toggler"
@@ -104,22 +119,34 @@
               >
                 <!-- Disable automatic formatting -->
                 {% if request.user.is_authenticated %}
-                    {% if request.user.is_superuser %}
                 <!-- Keep this indented -->
-                    <a class="dropdown-item" href="{% url 'library_management' %}">Library Management</a>
+                {% if request.user.is_superuser %}
+                <!-- Keep this indented -->
+                <a class="dropdown-item" href="{% url 'library_management' %}"
+                  >Library Management</a
+                >
                 <!-- End indentation -->
-                    {% endif %}
+                {% endif %}
                 <!-- Keep this indented -->
-                    <a class="dropdown-item" href="{% url 'profile' %}">Go to Profile</a>
-                    <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
+                <a class="dropdown-item" href="{% url 'profile' %}"
+                  >Go to Profile</a
+                >
+                <a class="dropdown-item" href="{% url 'account_logout' %}"
+                  >Logout</a
+                >
                 <!-- End indentation -->
                 {% else %}
                 <!-- Keep this indented -->
-                    <a class="dropdown-item" href="{% url 'account_signup' %}">Register</a>
-                    <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
+                <a class="dropdown-item" href="{% url 'account_signup' %}"
+                  >Register</a
+                >
+                <a class="dropdown-item" href="{% url 'account_login' %}"
+                  >Login</a
+                >
                 <!-- End indentation -->
                 {% endif %}
-                <!-- Re-enable automatic formatting -->
+              </div>
+              <!-- Re-enable automatic formatting -->
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'view_cart' %}">
@@ -130,58 +157,76 @@
                 </span>
               </a>
             </li>
-            
           </ul>
         </div>
         {% endblock %}
       </div>
     </nav>
-{% for message in messages %}
-<div class="alert alert-dismissible fade show typedtext {{ message.tags }}" role="alert">
-    <button type="button" class="close btn-close" data-dismiss="alert" aria-label="Close">
+    {% for message in messages %}
+    <div
+      class="alert alert-dismissible fade show typedtext {{ message.tags }}"
+      role="alert"
+    >
+      <button
+        type="button"
+        class="close btn-close"
+        data-dismiss="alert"
+        aria-label="Close"
+      >
         <span aria-hidden="true">&times;</span>
-    </button>
-    <p id="message-text" class="message-text">{{ message | safe }}</p>
-</div>
-{% endfor %}{% block typewriter %} {% endblock %}{% if show_picture %}
+      </button>
+      <p id="message-text" class="message-text">{{ message | safe }}</p>
+    </div>
+    {% endfor %}{% block typewriter %} {% endblock %}{% if show_picture %}
     <div class="container-fluid background d-none d-lg-block">
       <div class="row">
         <div class="col-6 col-lg-4 my-auto py-1 py-lg-0"></div>
       </div>
     </div>
-    {% endif %} 
-    {% block extra_navbar %}
+    {% endif %} {% block extra_navbar %}
+    <!-- keep indented  -->
     {% include 'books/includes/main-nav.html' %}
+    <!-- keep indented  -->
     {% endblock %}
 
-    
-    <div class="{% block content_container_class %}{% endblock %}">{% block content %} {% endblock %}</div>
+    <div class="{% block content_container_class %}{% endblock %}">
+      {% block content %} {% endblock %}
+    </div>
     <!-- Footer -->
     <footer class="container-wrapper">
-        <div class="container quotes-container content-container">
-            {% block footer %}
-            <section class="footer">
-                <div class="row">
-                    <div class="col-12 page-header mb-4">
-                        <h2 class="text-uppercase footer-main">Stay in touch:</h2>
-                        <hr class="block-divider block-divider--short ">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 col-md-6">
-                        <h3 class="footer-main">Social</h3>
-                        <p>Keep up to date with all our latest offers</p>
-                        <a href="https://www.facebook.com/profile.php?id=61551466252534" target="_blank" style="color:#45101ad2!important"><i class="fab fa-facebook-square"></i> Follow us on Facebook!</a>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <h2 class="footer-main">Subscribe!</h2>
-                        <p>Get exclusive offers and discount codes by subscribing to our monthly newsletter</p>
-                        <!-- Mailchimp signup form here -->
-                    </div>
-                </div>
-            </section>
-            {% endblock %}
-        </div>
+      <div class="container quotes-container content-container">
+        {% block footer %}
+        <section class="footer">
+          <div class="row">
+            <div class="col-12 page-header mb-4">
+              <h2 class="text-uppercase footer-main">Stay in touch:</h2>
+              <hr class="block-divider block-divider--short" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <h3 class="footer-main">Social</h3>
+              <p>Keep up to date with all our latest offers</p>
+              <a
+                href="https://www.facebook.com/profile.php?id=61551466252534"
+                target="_blank"
+                style="color: #45101ad2 !important"
+                ><i class="fab fa-facebook-square"></i> Follow us on
+                Facebook!</a
+              >
+            </div>
+            <div class="col-12 col-md-6">
+              <h2 class="footer-main">Subscribe!</h2>
+              <p>
+                Get exclusive offers and discount codes by subscribing to our
+                monthly newsletter
+              </p>
+              <!-- Mailchimp signup form here -->
+            </div>
+          </div>
+        </section>
+        {% endblock %}
+      </div>
     </footer>
     <!-- /.footer -->
 
@@ -190,7 +235,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-      // Wait for the document to be fully loaded
       document.addEventListener("DOMContentLoaded", function () {
         // Check if the screen width is below the specified breakpoint
         if (window.innerWidth < 970) {
@@ -201,8 +245,8 @@
           var text = "The Library";
           var typingSpeed = 150; // Adjust the typing speed as desired
 
-          // Function to simulate typewriting effect
-          function typeWriter() {
+          // Function Expression to simulate typewriting effect
+          const typeWriter = function () {
             var i = 0;
             var placeholder = "";
 
@@ -218,44 +262,110 @@
 
             // Start the typewriting animation
             type();
-          }
+          };
 
           // Call the typewriter function
           typeWriter();
         }
       });
+
       $(document).ready(function () {
         $(".alert").each(function () {
           const alertElement = $(this);
           setTimeout(function () {
             alertElement.alert("close");
-          }, 17000); //
+          }, 17000);
         });
       });
 
-// Get all message elements with the 'typewriter' class
-var messageElements = document.querySelectorAll('.typedtext');
+      // Get all message elements with the 'typewriter' class
+      var messageElements = document.querySelectorAll(".typedtext");
 
-var typingSpeed = 100;
+      var typingSpeed = 100;
 
-// Function to apply typewriter effect to a message element
-function typeWriter(element, text, i) {
-if (i < text.length) {
-    element.querySelector('.message-text').innerHTML += text.charAt(i);
-    i++;
-    setTimeout(function () {
-        typeWriter(element, text, i);
-    }, typingSpeed);
-}
-}
+      // Function Expression to apply typewriter effect to a message element
+      const typeWriter = function (element, text, i) {
+        if (i < text.length) {
+          element.querySelector(".message-text").innerHTML += text.charAt(i);
+          i++;
+          setTimeout(function () {
+            typeWriter(element, text, i);
+          }, typingSpeed);
+        }
+      };
 
-// Apply typewriter effect to each message element
-messageElements.forEach(function (element) {
-    var messageText = element.querySelector('.message-text').textContent;
-    element.querySelector('.message-text').textContent = '';
-    typeWriter(element, messageText, 0);
-});
-</script>
+      // Apply typewriter effect to each message element
+      messageElements.forEach(function (element) {
+        var messageText = element.querySelector(".message-text").textContent;
+        element.querySelector(".message-text").textContent = "";
+        typeWriter(element, messageText, 0);
+      });
+      // Wait for the document to be fully loaded
+      //   document.addEventListener("DOMContentLoaded", function () {
+      //     // Check if the screen width is below the specified breakpoint
+      //     if (window.innerWidth < 970) {
+      //       // Get the search input element
+      //       var searchInput = document.querySelector(".typewriter-input");
+
+      //       // Define the typewritten text
+      //       var text = "The Library";
+      //       var typingSpeed = 150; // Adjust the typing speed as desired
+
+      //       // Function to simulate typewriting effect
+      //       function typeWriter() {
+      //         var i = 0;
+      //         var placeholder = "";
+
+      //         // Typewriting animation loop
+      //         function type() {
+      //           if (i < text.length) {
+      //             placeholder += text.charAt(i);
+      //             searchInput.setAttribute("placeholder", placeholder);
+      //             i++;
+      //             setTimeout(type, typingSpeed);
+      //           }
+      //         }
+
+      //         // Start the typewriting animation
+      //         type();
+      //       }
+
+      //       // Call the typewriter function
+      //       typeWriter();
+      //     }
+      //   });
+      //   $(document).ready(function () {
+      //     $(".alert").each(function () {
+      //       const alertElement = $(this);
+      //       setTimeout(function () {
+      //         alertElement.alert("close");
+      //       }, 17000); //
+      //     });
+      //   });
+
+      //   // Get all message elements with the 'typewriter' class
+      //   var messageElements = document.querySelectorAll(".typedtext");
+
+      //   var typingSpeed = 100;
+
+      //   // Function to apply typewriter effect to a message element
+      //   function typeWriter(element, text, i) {
+      //     if (i < text.length) {
+      //       element.querySelector(".message-text").innerHTML += text.charAt(i);
+      //       i++;
+      //       setTimeout(function () {
+      //         typeWriter(element, text, i);
+      //       }, typingSpeed);
+      //     }
+      //   }
+
+      //   // Apply typewriter effect to each message element
+      //   messageElements.forEach(function (element) {
+      //     var messageText = element.querySelector(".message-text").textContent;
+      //     element.querySelector(".message-text").textContent = "";
+      //     typeWriter(element, messageText, 0);
+      //   });
+    </script>
     {% block postloadjs %} {% endblock %}
   </body>
 </html>

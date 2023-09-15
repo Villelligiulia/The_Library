@@ -3,7 +3,7 @@ import stripe
 from django.views.decorators.http import require_POST
 
 from django.contrib import messages
-from django.shortcuts import render, redirect, get_object_or_404, reverse, HttpResponse
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from checkout.forms import CheckoutForm
 from checkout.models import Order, OrderLineItem
 from decimal import Decimal
@@ -111,15 +111,18 @@ def checkout(request):
 
             _send_confirmation_email(order)
 
-            # Redirect the user to the checkout_success page after successful checkout
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            # Redirect the user to the checkout_success page after successful
+            # checkout
+            return redirect(reverse('checkout_success',
+                            args=[order.order_number]))
 
     else:
         # Check if the cart is empty
         cart = request.session.get('cart', {})
         if not cart:
             messages.error(
-                request, 'At the moment our cart is empty. Please add items to your cart.')
+                request, 'At the moment our cart is empty. Please add items\
+                to your cart.')
             return redirect('book_list')
 
         current_cart = cart_content(request)
@@ -136,8 +139,6 @@ def checkout(request):
         saved_checkout_info = request.session.get('checkout_info', {})
         if saved_checkout_info:
             initial_data.update(saved_checkout_info)
-
-
 
         # Initialize the form for the GET request
         form = CheckoutForm(initial=initial_data)

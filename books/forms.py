@@ -32,8 +32,6 @@ class BookForm(forms.ModelForm):
 
 
 class BookFormEdit(forms.ModelForm):
-    
-
     class Meta:
         model = Book
 

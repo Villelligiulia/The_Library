@@ -32,4 +32,4 @@ urlpatterns = [
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
-handler404 ='books.views.custom_404_view'
+handler404 = 'books.views.custom_404_view'

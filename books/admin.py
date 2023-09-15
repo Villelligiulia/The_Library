@@ -12,6 +12,7 @@ class CategoryAdmin(admin.ModelAdmin):
 class ReviewAdmin(admin.ModelAdmin):
     pass
 
+
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
     pass

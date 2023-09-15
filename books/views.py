@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, redirect, get_object_or_404, reverse
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from .models import Book, Category, Author
 from django.contrib import messages
 from django.db.models import Q
@@ -79,7 +79,9 @@ def book_detail(request, book_id):
             review.save()
             messages.success(request, 'Your review has been submitted.')
             return redirect('book_detail', book_id=book_id)
-    return render(request, 'books/book_detail.html', {'book': book, 'review_form': review_form, })
+    return render(request, 'books/book_detail.html', {'book': book,
+                                                      'review_form':
+                                                          review_form, })
 
 
 def all_categories(request):
@@ -141,7 +143,8 @@ def create_book(request):
 
             if existing_book:
                 messages.error(
-                    request, f"A book '{title}' by {author_name} already exists in the library.")
+                    request, f"A book '{title}' by {author_name} already\
+                    exists in the library.")
                 return redirect('create_book')
 
             # Save the form without the author_name field
@@ -161,7 +164,8 @@ def create_book(request):
             book.author = author
             book.save()
             messages.success(
-                request, f"{book.title} by {author_name}, has been added to your Library'.")
+                request, f"{book.title} by {author_name}, has been added to\
+                           your Library.")
 
             new_book_detail_url = reverse('book_detail', args=[book.id])
 
@@ -191,12 +195,13 @@ def edit_book(request, book_id):
             return redirect('library_management')
     else:
         form = BookFormEdit(instance=book)
-    return render(request, 'books/edit_book.html', {'form': form, 'book': book})
+    return render(request, 'books/edit_book.html', {'form': form,
+                                                    'book': book})
 
 
 def admin_search_book(request):
     """
-    Perform book search filtered by book title category or author for 
+    Perform book search filtered by book title category or author for
     library management
     """
     query = request.GET.get('q')
@@ -233,6 +238,7 @@ def delete_book(request, book_id):
     if request.method == 'POST':
         book.delete()
         messages.success(
-            request, f"{book.title} by {book.author}, has been removed from the Library'.")
+            request, f"{book.title} by {book.author}, has been removed from\
+                       the Library.")
         return redirect('library_management')
     return render(request, 'books/delete_book.html', {'book': book, })

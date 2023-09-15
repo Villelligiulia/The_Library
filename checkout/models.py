@@ -62,7 +62,8 @@ class Order(models.Model):
         accounting for delivery costs.
         ADD or 0 in the next line when doing the signal
         """
-        lineitem_total = self.lineitems.aggregate(models.Sum('lineitem_total'))[
+        lineitem_total = self.lineitems.aggregate(models.Sum('lineitem_total'))
+        [
             'lineitem_total__sum'] or 0
         if lineitem_total is not None:
             self.order_total = lineitem_total
