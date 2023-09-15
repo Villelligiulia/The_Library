@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /cart/
+Sitemap: https://the--library-3ca77daf8ee2.herokuapp.com/sitemap.xml
