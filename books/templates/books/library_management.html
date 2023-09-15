@@ -17,7 +17,7 @@
           <a href="{% url 'book_detail' book_id=book.id %}">
             <img
               src="{{ book.cover_image.url }}"
-              alt="{{ book.title }} Cover Image"
+              alt="{{ book.title }} Book Cover Image"
               class="card-img-top book-list-pic"
               width="450"
               height="300"
@@ -33,7 +33,7 @@
             <div class="row">
               <div class="col">
                 <a href="{% url 'edit_book' book.id %}" class="btn btn-admin"
-                  >Edit</a
+                  >Edit Book</a
                 >
               </div>
             </div>
@@ -42,7 +42,7 @@
             <div class="row">
               <div class="col">
                 <a href="{% url 'delete_book' book.id %}" class="btn btn-admin"
-                  >Delete</a
+                  >Delete Book</a
                 >
               </div>
             </div>

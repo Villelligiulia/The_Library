@@ -3,7 +3,7 @@
   <div>
     <form method="post" enctype="multipart/form-data" class="add-book-form">
       {% csrf_token %} {{ form.as_p }}
-      <button type="submit" class="btn" aria-label="Save">Save</button>
+      <button type="submit" class="btn" aria-label="Save">Save Book</button>
       <span>
         <a href="{% url 'library_management' %}" class="btn"
           >Go to your Library</a

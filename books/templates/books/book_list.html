@@ -8,7 +8,7 @@
         <div class="card h-90 border-0">
           <img
             src="{{ book.cover_image.url }}"
-            alt="{{ book.title }} Cover Image"
+            alt="{{ book.title }} Book Cover Image"
             class="card-img-top book-list-pic"
             width="450"
             height="300"
@@ -45,7 +45,7 @@
             <div class="row">
               <div class="col">
                 <a href="{% url 'book_detail' book_id=book.id %}" class="btn"
-                  >View Details</a
+                  >View Book Details</a
                 >
               </div>
             </div>
