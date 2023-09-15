@@ -458,7 +458,7 @@ li {
 }
 
 /* allauth */
-/* .sign-up, */
+.sign-up,
 .verify-email-img,
 .signout {
     background-image: url('/books/media/empty-cart.jpg');
