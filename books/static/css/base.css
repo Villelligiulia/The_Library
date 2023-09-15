@@ -489,3 +489,62 @@ li {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+/* Subscribe newsletter form */
+
+
+#mc_embed_signup {
+    color: white;
+    background: #45101a86 !important;
+    padding: 3px !important;
+    font-family: 'Courier New', Courier, monospace !important;
+
+}
+
+#mc-embedded-subscribe {
+    border: 1px solid transparent !important;
+    padding: 0.375rem 0.75rem !important;
+    ;
+    font-size: 1rem !important;
+    ;
+    line-height: 1.5 !important;
+    ;
+    border-radius: 0.25rem !important;
+    ;
+    background-color: #45101ad2 !important;
+    ;
+    color: #ffffffd0 !important;
+    ;
+    width: fit-content !important;
+    font-weight: unset !important;
+
+
+}
+
+.asterisk {
+    color: #45101ad2 !important;
+}
+
+#mc_embed_signup form,
+#mc_embed_signup h2 {
+    font-weight: 100 !important;
+}
+
+/* paginator */
+.paginator-link {
+    padding: 3px;
+}
+
+.current-page {
+    color: #ffffffd0;
+}
+
+.admin-current-page,
+.admin-paginator-link {
+    color: #45101ad2
+}
+
+.current-page,
+.admin-current-page {
+    text-align: center;
+}

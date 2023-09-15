@@ -6,6 +6,7 @@ from .forms import ReviewForm
 from django.db.models import Avg
 from .forms import BookForm, BookFormEdit
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
 
 
 def custom_404_view(request, exception):
@@ -15,8 +16,14 @@ def custom_404_view(request, exception):
 def book_list(request):
     """
     Display a list of books, optionally filtered by category.
+    Allow 18 books per page via paginator.
     """
     book_queryset = Book.objects.all()
+    books = Book.objects.all()
+    items_per_page = 18
+    paginator = Paginator(books, items_per_page)
+    page_number = request.GET.get('page')
+    page = paginator.get_page(page_number)
     lowest_priced_books = Book.objects.order_by('price')[:5]
     categories = Category.objects.all()
     selected_category = request.GET.get('category')
@@ -33,6 +40,7 @@ def book_list(request):
         'categories': categories,
         'selected_category': selected_category,
         'show_picture': show_picture,
+        'page': page,
 
 
     }
@@ -117,7 +125,13 @@ def library_management(request):
     Display book list to perform admin actions
     """
     books = Book.objects.all()
-    return render(request, 'books/library_management.html', {'books': books})
+    books = Book.objects.all()
+    items_per_page = 18
+    paginator = Paginator(books, items_per_page)
+    page_number = request.GET.get('page')
+    page = paginator.get_page(page_number)
+    return render(request, 'books/library_management.html', {'books': books,
+                                                             'page': page})
 
 
 @login_required

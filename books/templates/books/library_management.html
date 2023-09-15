@@ -2,47 +2,78 @@
 <!-- indent here -->
 
 <div id="admin-newbook-div">
-    <a href="{% url 'create_book'%}" class="btn admin-newbook-button">Create New Book</a>
+  <a href="{% url 'create_book'%}" class="btn admin-newbook-button"
+    >Create New Book</a
+  >
 </div>
 <div class="container">
-    <div class="custom-container-admin">
-        {% include 'books/includes/admin_searchforms.html' %}
+  <div class="custom-container-admin">
+    {% include 'books/includes/admin_searchforms.html' %}
 
-        <div class="row" style="display: flex; justify-content: center">
-            {% for book in books %}
-            <div class="col-lg-4 col-md-6">
-                <div class="card card-admin h-90 border-0">
-                    <a href="{% url 'book_detail' book_id=book.id %}">
-                        <img src="{{ book.cover_image.url }}" alt="{{ book.title }} Cover Image"
-                            class="card-img-top book-list-pic" width="450" height="300" /></a>
-                    <div class="card-body pb-0">
-                        <h5 class="card-title admin-book-detail" style="color: white">
-                            {{ book.title }}
-                        </h5>
-                        <p class="card-text admin-book-detail">{{ book.category }}</p>
-                    </div>
+    <div class="row" style="display: flex; justify-content: center">
+      {% for book in page %}
+      <div class="col-lg-4 col-md-6">
+        <div class="card card-admin h-90 border-0">
+          <a href="{% url 'book_detail' book_id=book.id %}">
+            <img
+              src="{{ book.cover_image.url }}"
+              alt="{{ book.title }} Cover Image"
+              class="card-img-top book-list-pic"
+              width="450"
+              height="300"
+          /></a>
+          <div class="card-body pb-0">
+            <h5 class="card-title admin-book-detail" style="color: white">
+              {{ book.title }}
+            </h5>
+            <p class="card-text admin-book-detail">{{ book.category }}</p>
+          </div>
 
-                    <div class="card-footer bg pt-0 border-0 text-left">
-                        <div class="row">
-                            <div class="col">
-                                <a href="{% url 'edit_book' book.id %}" class="btn btn-admin">Edit</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-footer bg pt-0 border-0 text-left">
-                        <div class="row">
-                            <div class="col">
-                                <a href="{% url 'delete_book' book.id %}" class="btn btn-admin">Delete</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <div class="card-footer bg pt-0 border-0 text-left">
+            <div class="row">
+              <div class="col">
+                <a href="{% url 'edit_book' book.id %}" class="btn btn-admin"
+                  >Edit</a
+                >
+              </div>
             </div>
-
-            {% empty %}
-            <p class="no-books" style="color: #45101ad2">No books available.</p>
-            {% endfor %}
+          </div>
+          <div class="card-footer bg pt-0 border-0 text-left">
+            <div class="row">
+              <div class="col">
+                <a href="{% url 'delete_book' book.id %}" class="btn btn-admin"
+                  >Delete</a
+                >
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+
+      {% empty %}
+      <p class="no-books" style="color: #45101ad2">No books available.</p>
+      {% endfor %}
+      <div>
+        {% if page.has_previous %}
+        <a href="?page=1" class="admin-paginator-link">First</a>
+        <a
+          href="?page={{ page.previous_page_number }}"
+          class="admin-paginator-link"
+          >Previous</a
+        >
+        {% endif %} {% if page.has_next %}
+        <a href="?page={{ page.next_page_number }}" class="admin-paginator-link"
+          >Next</a
+        >
+        <a
+          href="?page={{ page.paginator.num_pages }}"
+          class="admin-paginator-link"
+          >Last</a
+        >
+        {% endif %}
+        <div class="admin-current-page">{{ page.number }}</div>
+      </div>
     </div>
+  </div>
 </div>
 {% endblock %}
