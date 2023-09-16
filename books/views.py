@@ -66,7 +66,7 @@ def search_book(request):
         messages.warning(request, f"No books found for '{query}'.")
 
     context = {
-        'books': searched_books,
+        'page': searched_books,
     }
 
     return render(request, 'books/book_list.html', context)
@@ -232,7 +232,7 @@ def admin_search_book(request):
         messages.warning(request, f"No books found for '{query}'.")
 
     context = {
-        'books': admin_searched_books,
+        'page': admin_searched_books,
     }
 
     return render(request, 'books/library_management.html', context)

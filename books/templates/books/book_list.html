@@ -1,9 +1,9 @@
-{% extends 'base.html'%} {% load static %} {% include
-'bookshop/includes/main-nav.html' %} {% block content %}
+{% extends 'base.html'%} {% load static %} {% block content %}
 <div class="container">
   <div class="custom-container">
     <div class="row" style="display: flex; justify-content: center">
       {% for book in page %}
+
       <div class="col-lg-4 col-md-6">
         <div class="card h-90 border-0">
           <img
@@ -52,10 +52,10 @@
           </div>
         </div>
       </div>
-
       {% empty %}
       <p class="no-books">No books available.</p>
       {% endfor %}
+
       <div>
         {% if page.has_previous %}
         <a href="?page=1" class="paginator-link">First</a>
