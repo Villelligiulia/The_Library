@@ -150,11 +150,9 @@ def create_book(request):
     if request.method == 'POST':
         form = BookForm(request.POST, request.FILES)
         if form.is_valid():
-            # Extract the author name from the form
             author_name = form.cleaned_data['author_name']
             title = form.cleaned_data['title']
 
-            # Check if a book with the same title and author already exists
             existing_book = Book.objects.filter(
                 title=title, author__name=author_name).first()
 
@@ -164,20 +162,16 @@ def create_book(request):
                     exists in the library.")
                 return redirect('create_book')
 
-            # Save the form without the author_name field
             book = form.save(commit=False)
 
-            # Check if the book's author already exists in the database
             author = None
             if author_name:
                 author = Book.objects.filter(author__name=author_name).first()
 
-            # Create a new author entry if it doesn't exist
             if not author:
                 from .models import Author
                 author = Author.objects.create(name=author_name)
 
-            # Link the book to the author and save
             book.author = author
             book.save()
             messages.success(
@@ -186,7 +180,6 @@ def create_book(request):
 
             new_book_detail_url = reverse('book_detail', args=[book.id])
 
-            # Redirect to the book detail page
             return redirect(new_book_detail_url)
     else:
         form = BookForm()

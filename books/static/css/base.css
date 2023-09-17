@@ -34,8 +34,6 @@ li {
 /* Navbars */
 .navbar {
     background-color: #45101ad2;
-    /* border: 8px double rgb(159, 140, 63);
-     */
 }
 
 .navbar-brand {
@@ -126,8 +124,6 @@ li {
 
 .custom-container {
     background-color: #45101ad2;
-    /* border: 8px double rgb(159, 140, 63);
-     */
     padding: 10px;
     margin-top: 10px;
 }
@@ -248,8 +244,6 @@ li {
 
 .best-seller-title-container {
     background-color: #45101ad2;
-    /* border: 8px double rgb(159, 140, 63);
-     */
     padding: 10px;
     margin: 10px;
 }
@@ -303,8 +297,6 @@ li {
 
 #cart-checkout-link:hover {
     text-decoration: none;
-    /* color: #ffffffd0;
-     */
     color: rgba(255, 255, 255, .5);
 }
 
@@ -407,8 +399,6 @@ li {
 
 .custom-container-admin {
     background-color: #fafafafa;
-    /* border: 8px double rgb(159, 140, 63);
-     */
     padding: 10px;
     margin: 10px;
 }

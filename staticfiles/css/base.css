@@ -34,8 +34,6 @@ li {
 /* Navbars */
 .navbar {
     background-color: #45101ad2;
-    /* border: 8px double rgb(159, 140, 63);
-     */
 }
 
 .navbar-brand {
@@ -126,8 +124,6 @@ li {
 
 .custom-container {
     background-color: #45101ad2;
-    /* border: 8px double rgb(159, 140, 63);
-     */
     padding: 10px;
     margin-top: 10px;
 }
@@ -145,8 +141,9 @@ li {
 .card-text {
     color: #454d54;
 }
+
 .card-title {
-    font-size:unset;
+    font-size: unset;
 }
 
 .book-list-pic {
@@ -157,6 +154,15 @@ li {
 
 .container {
     overflow-wrap: break-word;
+}
+
+.no-books {
+    color: #ffffff;
+}
+
+.no-books-library-management {
+    color: #45101ad2;
+
 }
 
 /* content container */
@@ -238,8 +244,6 @@ li {
 
 .best-seller-title-container {
     background-color: #45101ad2;
-    /* border: 8px double rgb(159, 140, 63);
-     */
     padding: 10px;
     margin: 10px;
 }
@@ -293,8 +297,6 @@ li {
 
 #cart-checkout-link:hover {
     text-decoration: none;
-    /* color: #ffffffd0;
-     */
     color: rgba(255, 255, 255, .5);
 }
 
@@ -397,8 +399,6 @@ li {
 
 .custom-container-admin {
     background-color: #fafafafa;
-    /* border: 8px double rgb(159, 140, 63);
-     */
     padding: 10px;
     margin: 10px;
 }
@@ -469,7 +469,8 @@ li {
     background-size: cover;
 }
 
-.sign-in {
+.sign-in,
+.confirm-email {
     background-image: url('/books/media/the-library-red.jpg');
     height: calc(110vh - 164px);
     color: #555;
@@ -530,9 +531,25 @@ li {
 }
 
 /* paginator */
+.paginator-container {
+    text-align: center;
+}
+
 .paginator-link {
     padding: 3px;
+
 }
+
+.admin-paginator-link:hover {
+    color: #45101a86 !important;
+    text-decoration-line: none;
+}
+
+.paginator-link:hover {
+    color: #fafafafa;
+    text-decoration-line: none;
+}
+
 
 .current-page {
     color: #ffffffd0;

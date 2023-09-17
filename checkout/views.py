@@ -1,7 +1,6 @@
 import os
 import stripe
 from django.views.decorators.http import require_POST
-
 from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404, reverse
 from checkout.forms import CheckoutForm
@@ -33,19 +32,14 @@ def stripe_webhook(request):
                 payload, sig_header, endpoint_secret
             )
         except ValueError as e:
-            # Invalid payload
             return HttpResponse(status=400)
         except stripe.error.SignatureVerificationError as e:
-            # Invalid signature
             return HttpResponse(status=400)
 
-        # Handle the specific event type
         if event.type == "charge.succeeded":
-            # Perform actions when a charge succeeds
 
             print("Charge succeeded:", event.data.object)
 
-        # Return a 200 OK response to Stripe
         return HttpResponse(status=200)
 
 
@@ -56,7 +50,6 @@ def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
-    # Retrieve cart items and total price
     items = []
 
     if request.method == 'POST':
@@ -84,7 +77,7 @@ def checkout(request):
                 country=form.cleaned_data['country'],
                 postal_code=form.cleaned_data['postal_code'],
                 save_to_profile=save_to_profile,
-                # Save the checkout form
+                
                 checkout_first_name=form.cleaned_data['first_name'],
                 checkout_last_name=form.cleaned_data['last_name'],
                 checkout_email=form.cleaned_data['email'],
@@ -98,7 +91,6 @@ def checkout(request):
 
             order.save()
 
-            # Add the order to the user's order history
             request.user.userprofile.order_history.add(order)
 
             for item in cart.values():
@@ -106,18 +98,14 @@ def checkout(request):
                 OrderLineItem.objects.create(
                     order=order, book=book, quantity=item['quantity'])
 
-            # Clear the cart
             request.session['cart'] = {}
 
             _send_confirmation_email(order)
 
-            # Redirect the user to the checkout_success page after successful
-            # checkout
             return redirect(reverse('checkout_success',
                             args=[order.order_number]))
 
     else:
-        # Check if the cart is empty
         cart = request.session.get('cart', {})
         if not cart:
             messages.error(
@@ -140,7 +128,6 @@ def checkout(request):
         if saved_checkout_info:
             initial_data.update(saved_checkout_info)
 
-        # Initialize the form for the GET request
         form = CheckoutForm(initial=initial_data)
 
         for item in cart.values():

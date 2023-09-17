@@ -56,31 +56,12 @@ class Order(models.Model):
             self.order_number = self._generate_order_number()
         super().save(*args, **kwargs)
 
-    # def update_total(self):
-    #     """
-    #     Update grand total each time a line item is added,
-    #     accounting for delivery costs.
-    #     ADD or 0 in the next line when doing the signal
-    #     """
-    #     lineitem_total = self.lineitems.aggregate(models.Sum('lineitem_total'))
-    #     [
-    #         'lineitem_total__sum'] or 0
-    #     if lineitem_total is not None:
-    #         self.order_total = lineitem_total
-    #         if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
-    #             self.delivery_cost = self.order_total * \
-    #                 settings.STANDARD_DELIVERY_PERCENTAGE / 100
-    #         else:
-    #             self.delivery_cost = 0
-    #         self.grand_total = self.order_total + self.delivery_cost
-    #         self.save()
     def update_total(self):
         """
         Update grand total each time a line item is added,
         accounting for delivery costs.
         """
         lineitem_total = self.lineitems.aggregate(models.Sum('lineitem_total'))
-        # Calculate the order total
         order_total = lineitem_total['lineitem_total__sum'] or 0
         self.order_total = order_total
 

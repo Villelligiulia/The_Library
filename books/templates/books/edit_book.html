@@ -5,12 +5,14 @@
     <div class="div-detail">
       <span class="detail-main">Author:</span> <span>{{ book.author }}</span>
     </div>
-    <form method="post" enctype="multipart/form-data" class="edit-book-form detail-main">
+    <form
+      method="post"
+      enctype="multipart/form-data"
+      class="edit-book-form detail-main"
+    >
       {% csrf_token %} {{ form.as_p }}
       <button type="submit" class="btn" aria-label="Save">Save Changes</button>
     </form>
-
-    {% endblock %}
   </div>
 </div>
-</div>
+{% endblock %}

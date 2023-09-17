@@ -41,7 +41,6 @@ class Book(models.Model):
 
 class Review(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    # Reference the Book model
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
     rating = models.IntegerField(blank=True, null=True)
     comment = models.TextField()

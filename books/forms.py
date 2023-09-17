@@ -22,12 +22,10 @@ class ReviewForm(forms.ModelForm):
 
 
 class BookForm(forms.ModelForm):
-    # Add the custom_author field
     author_name = forms.CharField(max_length=100, required=True)
 
     class Meta:
         model = Book
-        # Exclude the original author field
         exclude = ['author', 'quantity']
 
 

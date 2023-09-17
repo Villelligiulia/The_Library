@@ -4,7 +4,6 @@ from django.contrib import messages
 from django.shortcuts import get_object_or_404, redirect, render
 from books.models import Book
 
-# Create your views here.
 
 CART_SESSION_KEY = 'cart'
 
