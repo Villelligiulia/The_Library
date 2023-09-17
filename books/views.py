@@ -30,7 +30,7 @@ def book_list(request):
     show_picture = True
 
     if selected_category:
-        books = Book.objects.filter(category__name=selected_category)
+        page = Book.objects.filter(category__name=selected_category)
     else:
         books = book_queryset
 
@@ -66,7 +66,7 @@ def search_book(request):
         messages.warning(request, f"No books found for '{query}'.")
 
     context = {
-        'books': searched_books,
+        'page': searched_books,
     }
 
     return render(request, 'books/book_list.html', context)
@@ -99,7 +99,10 @@ def all_categories(request):
 
     categorys = Category.objects.order_by('name')
     context = {
-        'categorys': categorys,
+        'page': categorys,
+
+
+
 
     }
     return render(request, 'books/all-categories.html', context)
@@ -232,7 +235,7 @@ def admin_search_book(request):
         messages.warning(request, f"No books found for '{query}'.")
 
     context = {
-        'books': admin_searched_books,
+        'page': admin_searched_books,
     }
 
     return render(request, 'books/library_management.html', context)

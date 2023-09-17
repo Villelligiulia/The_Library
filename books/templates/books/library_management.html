@@ -51,27 +51,31 @@
       </div>
 
       {% empty %}
-      <p class="no-books" style="color: #45101ad2">No books available.</p>
+      <p class="no-books-library-management">No books available.</p>
       {% endfor %}
-      <div>
-        {% if page.has_previous %}
-        <a href="?page=1" class="admin-paginator-link">First</a>
-        <a
-          href="?page={{ page.previous_page_number }}"
-          class="admin-paginator-link"
-          >Previous</a
-        >
-        {% endif %} {% if page.has_next %}
-        <a href="?page={{ page.next_page_number }}" class="admin-paginator-link"
-          >Next</a
-        >
-        <a
-          href="?page={{ page.paginator.num_pages }}"
-          class="admin-paginator-link"
-          >Last</a
-        >
-        {% endif %}
-        <div class="admin-current-page">{{ page.number }}</div>
+      <div class="col-12 paginator-container">
+        <div>
+          {% if page.has_previous %}
+          <a href="?page=1" class="admin-paginator-link">First</a>
+          <a
+            href="?page={{ page.previous_page_number }}"
+            class="admin-paginator-link"
+            >Previous</a
+          >
+          {% endif %} {% if page.has_next %}
+          <a
+            href="?page={{ page.next_page_number }}"
+            class="admin-paginator-link"
+            >Next</a
+          >
+          <a
+            href="?page={{ page.paginator.num_pages }}"
+            class="admin-paginator-link"
+            >Last</a
+          >
+          {% endif %}
+          <div class="admin-current-page">{{ page.number }}</div>
+        </div>
       </div>
     </div>
   </div>
