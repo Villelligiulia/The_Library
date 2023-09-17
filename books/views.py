@@ -32,10 +32,10 @@ def book_list(request):
     if selected_category:
         page = Book.objects.filter(category__name=selected_category)
     else:
-        page = book_queryset
+        book = book_queryset
 
     context = {
-        'books': page,
+        'books': books,
         'lowest_priced_books': lowest_priced_books,
         'categories': categories,
         'selected_category': selected_category,
@@ -100,7 +100,6 @@ def all_categories(request):
     categorys = Category.objects.order_by('name')
     context = {
         'page': categorys,
-
 
 
 
