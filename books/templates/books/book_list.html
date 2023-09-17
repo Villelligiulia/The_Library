@@ -55,7 +55,6 @@
       {% empty %}
       <p class="no-books">No books available.</p>
       {% endfor %}
-<<<<<<< HEAD
       <div class="col-12 paginator-container">
         <div>
           {% if page.has_previous %}
@@ -73,24 +72,6 @@
           {% endif %}
           <div class="current-page">{{ page.number }}</div>
         </div>
-=======
-
-      <div>
-        {% if page.has_previous %}
-        <a href="?page=1" class="paginator-link">First</a>
-        <a href="?page={{ page.previous_page_number }}" class="paginator-link"
-          >Previous</a
-        >
-        {% endif %} {% if page.has_next %}
-        <a href="?page={{ page.next_page_number }}" class="paginator-link"
-          >Next</a
-        >
-        <a href="?page={{ page.paginator.num_pages }}" class="paginator-link"
-          >Last</a
-        >
-        {% endif %}
-        <div class="current-page">{{ page.number }}</div>
->>>>>>> 4a7cc4c0932cb4e6fa755442b6ca19dcbec1ee02
       </div>
     </div>
   </div>
