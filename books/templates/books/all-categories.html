@@ -12,8 +12,9 @@
       {% for category in page %}
       <div class="col-md-4">
         <div class="category-card">
-          <a href="{% url 'book_list' %}?category={{ category.name }}"
-            ><img
+          <a href="{% url 'book_list' %}?category={{ category.name }}">
+            <!-- indent here  -->
+            <img
               src="{{ category.image.url }}"
               alt="{{ category.name }} Book Category Image"
               class="category-image"
