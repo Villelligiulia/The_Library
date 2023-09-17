@@ -32,7 +32,7 @@ def book_list(request):
     if selected_category:
         page = Book.objects.filter(category__name=selected_category)
     else:
-        book = book_queryset
+        books = book_queryset
 
     context = {
         'books': books,
