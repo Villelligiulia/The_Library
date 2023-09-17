@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django_countries.fields import CountryField
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 class Author(models.Model):
@@ -28,7 +29,10 @@ class Book(models.Model):
     cover_image = models.ImageField(
         upload_to='book_covers', default='book_covers/default.jpg')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    ratings = models.DecimalField(max_digits=3, decimal_places=1)
+    ratings = models.IntegerField(validators=[
+        MinValueValidator(1, message="Rating must be at least 1."),
+        MaxValueValidator(5, message="Rating must be at most 5.")
+    ])
     quantity = models.IntegerField(default=0)
 
     def __str__(self):
