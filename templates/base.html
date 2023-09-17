@@ -426,71 +426,7 @@
         element.querySelector(".message-text").textContent = "";
         typeWriter(element, messageText, 0);
       });
-      // Wait for the document to be fully loaded
-      //   document.addEventListener("DOMContentLoaded", function () {
-      //     // Check if the screen width is below the specified breakpoint
-      //     if (window.innerWidth < 970) {
-      //       // Get the search input element
-      //       var searchInput = document.querySelector(".typewriter-input");
-
-      //       // Define the typewritten text
-      //       var text = "The Library";
-      //       var typingSpeed = 150; // Adjust the typing speed as desired
-
-      //       // Function to simulate typewriting effect
-      //       function typeWriter() {
-      //         var i = 0;
-      //         var placeholder = "";
-
-      //         // Typewriting animation loop
-      //         function type() {
-      //           if (i < text.length) {
-      //             placeholder += text.charAt(i);
-      //             searchInput.setAttribute("placeholder", placeholder);
-      //             i++;
-      //             setTimeout(type, typingSpeed);
-      //           }
-      //         }
-
-      //         // Start the typewriting animation
-      //         type();
-      //       }
-
-      //       // Call the typewriter function
-      //       typeWriter();
-      //     }
-      //   });
-      //   $(document).ready(function () {
-      //     $(".alert").each(function () {
-      //       const alertElement = $(this);
-      //       setTimeout(function () {
-      //         alertElement.alert("close");
-      //       }, 17000); //
-      //     });
-      //   });
-
-      //   // Get all message elements with the 'typewriter' class
-      //   var messageElements = document.querySelectorAll(".typedtext");
-
-      //   var typingSpeed = 100;
-
-      //   // Function to apply typewriter effect to a message element
-      //   function typeWriter(element, text, i) {
-      //     if (i < text.length) {
-      //       element.querySelector(".message-text").innerHTML += text.charAt(i);
-      //       i++;
-      //       setTimeout(function () {
-      //         typeWriter(element, text, i);
-      //       }, typingSpeed);
-      //     }
-      //   }
-
-      //   // Apply typewriter effect to each message element
-      //   messageElements.forEach(function (element) {
-      //     var messageText = element.querySelector(".message-text").textContent;
-      //     element.querySelector(".message-text").textContent = "";
-      //     typeWriter(element, messageText, 0);
-      //   });
+   
     </script>
     {% block postloadjs %} {% endblock %}
   </body>

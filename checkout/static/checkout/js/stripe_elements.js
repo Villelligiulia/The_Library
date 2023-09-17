@@ -6,7 +6,7 @@ var elements = stripe.elements();
 var style = {
     base: {
         color: '#000',
-        fontFamily: 'Courier New', Courier, monospace,
+        fontFamily: 'Courier New',
         fontSmoothing: 'antialiased',
         borderColor: 'red',
         fontSize: '16px',

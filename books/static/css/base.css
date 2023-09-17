@@ -145,8 +145,9 @@ li {
 .card-text {
     color: #454d54;
 }
+
 .card-title {
-    font-size:unset;
+    font-size: unset;
 }
 
 .book-list-pic {
@@ -469,7 +470,8 @@ li {
     background-size: cover;
 }
 
-.sign-in {
+.sign-in,
+.confirm-email {
     background-image: url('/books/media/the-library-red.jpg');
     height: calc(110vh - 164px);
     color: #555;

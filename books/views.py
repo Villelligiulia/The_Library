@@ -30,12 +30,12 @@ def book_list(request):
     show_picture = True
 
     if selected_category:
-        books = Book.objects.filter(category__name=selected_category)
+        page = Book.objects.filter(category__name=selected_category)
     else:
-        books = book_queryset
+        page = book_queryset
 
     context = {
-        'books': books,
+        'books': page,
         'lowest_priced_books': lowest_priced_books,
         'categories': categories,
         'selected_category': selected_category,
@@ -100,6 +100,7 @@ def all_categories(request):
     categorys = Category.objects.order_by('name')
     context = {
         'categorys': categorys,
+
 
     }
     return render(request, 'books/all-categories.html', context)
