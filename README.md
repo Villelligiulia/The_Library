@@ -177,54 +177,54 @@ Through an intuitive and engaging interface, the website aims to:
 
 For the development of the project, 20 Epics with 20 User Stories were created. Details of the Agile Design Thinking approach can be found in the project Kanban board [here](https://github.com/users/Villelligiulia/projects/7)
 
-1# Book List/ must-have label
+1# User Story 1  Book List/ must-have label
  Library Mvp : Essential Features
 
-# 2 Book Details/ must-have label
-
- Library Mvp : Essential Features
-
-# 3 Category Exploration/ could have label
-
-# 4 Discover Best Sellers/ could have label
-
-# 5 User Story 5: Manage Cart/ must-have label
+#2 User Story 2  Book Details/ must-have label
 
  Library Mvp : Essential Features
 
-# 6 User Story 6: User Registration, Login, Logout, and Email Verification/ must-have label
+#3 User Story 3  Category Exploration/ could have label
+
+#4 User Story 4 Discover Best Sellers/ could have label
+
+#5 User Story 5: Manage Cart/ must-have label
 
  Library Mvp : Essential Features
 
-# 7 User Story 7: Checkout Process/ must-have label
+#6 User Story 6: User Registration, Login, Logout, and Email Verification/ must-have label
 
  Library Mvp : Essential Features
 
-# 8 User Story 8: Successful Checkout and Email Notification must-have
+#7 User Story 7: Checkout Process/ must-have label
 
-# 9 User Story 9: User Profile and Edit Profile /could have label
+ Library Mvp : Essential Features
 
-# 10 User Story 10: Library Management - Add - Super User /could have label
+#8 User Story 8: Successful Checkout and Email Notification must-have
 
-# 11 User Story 11: Library Management - Edit - Super User/ could have label
+#9 User Story 9: User Profile and Edit Profile /could have label
 
-# 12 User Story 12: Library Management - Delete - Super User/ could have label
+#10 User Story 10: Library Management - Add - Super User /could have label
 
-# 13 User Story 13: Search Functionality in Library Management/ shoul have label
+#11 User Story 11: Library Management - Edit - Super User/ could have label
 
-# 14 User Story 14: Custom 404 Page shoul have label
+#12 User Story 12: Library Management - Delete - Super User/ could have label
 
-# 15 User Story 15: Add Social Media Link in the Footer/ could have wont have label
+#13 User Story 13: Search Functionality in Library Management/ shoul have label
 
-# 16 User Story 16: Newsletter Subscription/ could have wont have label
+#14 User Story 14: Custom 404 Page shoul have label
 
-# 17 User Story 17: Reader's Community Blog/ could have wont have label
+#15 User Story 15: Add Social Media Link in the Footer/ could have wont have label
 
-# 18 User Story 18: Promotional Discounts and Coupons/ could have wont have label
+#16 User Story 16: Newsletter Subscription/ could have wont have label
 
-# 19 User Story 19: Author Pages/ could have wont have label
+#17 User Story 17: Reader's Community Blog/ could have wont have label
 
-# 20 User Story 20: Book Previews or Sample Chapters/ could have wont have
+#18 User Story 18: Promotional Discounts and Coupons/ could have wont have label
+
+#19 User Story 19: Author Pages/ could have wont have label
+
+#20 User Story 20: Book Previews or Sample Chapters/ could have wont have
 
 ## User Stories and Mvp Prioritaziotion
 
