@@ -45,7 +45,7 @@ def book_list(request):
 
     }
 
-    return render(request, 'books/book_list.html', context)
+    return render(request, 'books/index.html', context)
 
 
 def search_book(request):
@@ -69,7 +69,7 @@ def search_book(request):
         'page': searched_books,
     }
 
-    return render(request, 'books/book_list.html', context)
+    return render(request, 'books/index.html', context)
 
 
 def book_detail(request, book_id):
