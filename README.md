@@ -240,9 +240,9 @@ For the development of the project, 20 Epics with 20 User Stories were created. 
 
 -The first 16 user stories have been successfully implemented to create the core functionality of the library website. Here's a brief overview of their implementation:
 
-- - Book List (Must-Have): The landing page of the website functions as a virtual bookshelf, displaying a wide range of books across various categories. Users can easily navigate and explore the library's collection.
+-  Book List (Must-Have): The landing page of the website functions as a virtual bookshelf, displaying a wide range of books across various categories. Users can easily navigate and explore the library's collection.
 
-- - Book Details (Must-Have): Clicking on a book's "View Details" button opens a dedicated page displaying essential information about the book, including its title, author, cover image, category, price, rating, and a detailed description.
+-  Book Details (Must-Have): Clicking on a book's "View Details" button opens a dedicated page displaying essential information about the book, including its title, author, cover image, category, price, rating, and a detailed description.
 
 - Category Exploration (Could Have): Users can filter books by category, improving navigation and helping readers find specific genres of interest.
 
@@ -433,7 +433,7 @@ Category Filtering:
 Select a category filter (e.g., "Mystery") and verify that only books of the selected category are displayed.
 
 - Sorting:
-Test sorting options (e.g., by title, price).
+Test sorting options (e.g., by title, category or author ).
 Check if the books are arranged correctly according to the selected sorting option.
 
 - Pagination:
@@ -723,7 +723,7 @@ All the tests performed by Lighthouse toll scored 100 for Accessibility and SEO.
 
 ## Documentation
 
-For the development of the project a wide rane of documentation and a deep reference to the Django documentation was used.
+For the development of the project a wide range of documentation and a deep reference to the Django documentation was used.
 
 - Django general documentation:
   - -  (<https://docs.djangoproject.com/en/4.2/>)
@@ -796,7 +796,7 @@ set region to be yopur local region
 - click into your bucket via its name
 - click the properties tab, at the bottom of this page click edit for Static website hosting click enable and index.html for index and error for error.html
 - On permission page:
-- - [Cors configuration](books/static/images/cors.png)
+- - ![Cors configuration](books/static/images/cors.png)
 
 ## IAM
 
