@@ -495,7 +495,7 @@ li {
 /* Subscribe newsletter form */
 #mc_embed_signup {
     color: white;
-    background: #45101a86 !important;
+    background: #45101ab3 !important;
     padding: 3px !important;
     font-family: 'Courier New', Courier, monospace !important;
 
@@ -512,22 +512,18 @@ li {
     border-radius: 0.25rem !important;
     ;
     background-color: #45101ad2 !important;
-    ;
     color: #ffffffd0 !important;
     ;
     width: fit-content !important;
-    font-weight: unset !important;
+
 
 
 }
+
+
 
 .asterisk {
     color: #45101ad2 !important;
-}
-
-#mc_embed_signup form,
-#mc_embed_signup h2 {
-    font-weight: 100 !important;
 }
 
 /* paginator */

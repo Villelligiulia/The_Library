@@ -26,7 +26,6 @@ class Order(models.Model):
     grand_total = models.DecimalField(
         max_digits=10, decimal_places=2, null=False, default=0)
     save_to_profile = models.BooleanField(default=False)
-    # New fields to store checkout form data
     checkout_first_name = models.CharField(
         max_length=100, blank=True, null=True)
     checkout_last_name = models.CharField(
