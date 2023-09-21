@@ -85,7 +85,7 @@ library's e-commerce experience. Once users have made their book selections, the
 ![Cart Page: book in cart](books/static/images/the-library-cart.jpg)
 ![Cart Page: empty cart](books/static/images/the-library-cart-empty.jpg)
 
-## The Checkout
+### The Checkout
 
 The Checkout feature is designed to streamline the purchasing process while ensuring the security of user information. As per other advanced services,  to initiate checkout, users are prompted to either log in or register an account. Once on the checkout page, users encounter an Order Summary, providing a comprehensive overview of their selections. Next to this summary, an intuitive checkout form awaits user input, requiring essential details for a successful transaction. Users are presented with the convenient option to 'Save to Profile,' enabling the storage of key information for future checkouts.
 To ensure  security and efficiency, the payment process has been integrated using  [Stripe](https://stripe.com/docs/payments/accept-a-payment#web-collect-card-details) for secure payment processing. The user receives immediate feedback should the card details be incorrect or omitted. Upon successful submission of the form, an overlay spinner indicates processing, and users are seamlessly redirected to an 'Order Successful' page. Here, they receive confirmation of their order, including an order number, along with the assurance that an email containing order details will be sent to the provided email address.
@@ -96,7 +96,7 @@ To ensure  security and efficiency, the payment process has been integrated usin
 ![checkout page](books/static/images/the-library-checkout-success.jpg)
 ![checkout page](books/static/images/the-library-checkout-failed-payment.jpg)
 
-## Profile and Edit Profile
+### Profile and Edit Profile
 
 The Profile app takes center stage in enhancing user experience and order management. Located under the "My Account" section, users can set up and store and their personal information which will then be used for any future checkout. This ensures a seamless checkout process, with personal information readily available. Furthermore, users have the option to save this data to their profile, during the checkout processby checking the "SAve to profile" boc significantly simplifying future transactions. Should the need arise to modify their information, users can easily do so through the "Edit Profile" link, with updates reflected during subsequent checkouts. To further assist users, the app includes an order history feature, empowering them to track past purchases effortlessly.
 
@@ -104,14 +104,14 @@ The Profile app takes center stage in enhancing user experience and order manage
 ![The Library profile page info saved and order history](books/static/images/the-library-saved-profile-and-order-history.jpg)
 ![The Library edit profile](books/static/images/the-library-edit-profile.jpg)
 
-## Library management
+### Library management
 
 The Library Management app, is perhaps the most powerfull feature of the project,as it empowers authorized users with comprehensive control over our virtual library. To access this  management tool, users must not only be authenticated but also granted superuser privileges. The Library Management interface resembles the familiar layout of the book list page, with one key distinction: it offers an array of powerful administrative actions, such as "create a new book" allowing users to add entirely new books to the library collection . Below, all existing books are listed, each accompanied by two additional buttons: "Edit Book" and "Delete Book." These buttons enable superusers to make instant modifications or remove books from the library. To facilitate efficient management, the Library Management app also integrates a search bar, offering administrators quick access to the books they wish to oversee. Through this intuitive tool, the site aims to provide  superusers with the means to curate and maintain the virtual Library.
 
 ![Library management top page](books/static/images/the-library-library-management.jpg)
 ![Library management bottom page](books/static/images/the-library-library-management2.jpg)
 
-### Library Management CRUD funcionality
+#### Library Management CRUD funcionality
 
 - Create New Book
 
@@ -146,7 +146,7 @@ Each page for authentication has been customized to keep consintency with the ov
 ![The Library Allauth sign up](books/static/images/the-library-signup.jpg)
 ![The Library Allauth signout](books/static/images/the-library-sign-out.jpg)
 
-## Messages
+### Messages
 
 - Messages are displayed throughout our application, enriching the user experience and streamlining site navigation. They serve as informative cues, keeping users well informed about every action they take. These messages, designed with user-friendliness in mind, fade away after 17 seconds or can be conveniently dismissed with a simple "x" button. To align with the project's theme, messages are introduced with a typewriting effect. This not only maintains consistency with our project's style but also elevates the overall user experience
 
@@ -168,6 +168,15 @@ Each page for authentication has been customized to keep consintency with the ov
 
 ![The Library Management deleted book message](books/static/images/the-library-message-delete-book.jpg)
 
+### Custom 404 page
+
+A customized 404 page, has been implemented for when when a visitor on the website attempts to access a URL or page that doesn't exist or has moved. It's primary purpose is to inform users that the requested content couldn't be found while providing a helpful and engaging experience.
+It provides navigation options to guide users back to the main website.
+The layout matches the overall look and feel of the website ensuring consistency in branding and design.
+
+![404 custom page](books/static/images/the-library-404.jpg)
+
+
 ## The Site Goal
 
 The primary goal of the library website is to provide a comprehensive and user-friendly online platform for book enthusiasts and reading lovers. It serves as a virtual and always accessible libray for discovering, exploring, and purchasing a wide variety of books across various categories and genres providing a pleasant and easy online shopping experience for all book enthusiasts.
@@ -182,54 +191,44 @@ Through an intuitive and engaging interface, the website aims to:
 
 For the development of the project, 20 Epics with 20 User Stories were created. Details of the Agile Design Thinking approach can be found in the project Kanban board [here](https://github.com/users/Villelligiulia/projects/7)
 
-1# User Story 1  Book List/ must-have label
- Library Mvp : Essential Features
+User Story 1  Book List/ must-have label
 
-# 2 User Story 2  Book Details/ must-have label
+User Story 2  Book Details/ must-have label
 
- Library Mvp : Essential Features
+User Story 3  Category Exploration/ could have label
 
-# 3 User Story 3  Category Exploration/ could have label
+User Story 4 Discover Best Sellers/ could have label
 
-# 4 User Story 4 Discover Best Sellers/ could have label
+User Story 5: Manage Cart/ must-have label
 
-# 5 User Story 5: Manage Cart/ must-have label
+User Story 6: User Registration, Login, Logout, and Email Verification/ must-have label
 
- Library Mvp : Essential Features
+User Story 7: Checkout Process/ must-have label
 
-# 6 User Story 6: User Registration, Login, Logout, and Email Verification/ must-have label
+User Story 8: Successful Checkout and Email Notification must-have
 
- Library Mvp : Essential Features
+User Story 9: User Profile and Edit Profile /could have label
 
-# 7 User Story 7: Checkout Process/ must-have label
+User Story 10: Library Management - Add - Super User /could have label
 
- Library Mvp : Essential Features
+User Story 11: Library Management - Edit - Super User/ could have label
 
-# 8 User Story 8: Successful Checkout and Email Notification must-have
+User Story 12: Library Management - Delete - Super User/ could have label
 
-# 9 User Story 9: User Profile and Edit Profile /could have label
+User Story 13: Search Functionality in Library Management/ shoul have label
 
-# 10 User Story 10: Library Management - Add - Super User /could have label
+User Story 14: Custom 404 Page shoul have label
 
-# 11 User Story 11: Library Management - Edit - Super User/ could have label
+User Story 15: Add Social Media Link in the Footer/ could have wont have label
 
-# 12 User Story 12: Library Management - Delete - Super User/ could have label
+User Story 16: Newsletter Subscription/ could have wont have label
 
-# 13 User Story 13: Search Functionality in Library Management/ shoul have label
+User Story 17: Reader's Community Blog/ could have wont have label
 
-# 14 User Story 14: Custom 404 Page shoul have label
+User Story 18: Promotional Discounts and Coupons/ could have wont have label
 
-# 15 User Story 15: Add Social Media Link in the Footer/ could have wont have label
-
-# 16 User Story 16: Newsletter Subscription/ could have wont have label
-
-# 17 User Story 17: Reader's Community Blog/ could have wont have label
-
-# 18 User Story 18: Promotional Discounts and Coupons/ could have wont have label
-
-# 19 User Story 19: Author Pages/ could have wont have label
-
-# 20 User Story 20: Book Previews or Sample Chapters/ could have wont have
+User Story 19: Author Pages/ could have wont have label
+User Story 20: Book Previews or Sample Chapters/ could have wont have
 
 ## User Stories and Mvp Prioritaziotion
 
