@@ -17,8 +17,8 @@ The navigation bars and footer provide a consistent presence across almost every
  ![ first Navbar image](books/static/images/the-library-navbar.jpg)
 
 - The first nav bar is placed on top of the page. It consist of :
-  - - "The Library" link : title and name of the bookstore, is a linkable heading which redirects to the main page when clicked.
-  - - Main search bar: the user will be able to filter the books in the library. By entering keywords such as book titles, author names, or categories, users can conduct detailed searches, simplifying the process of finding their desired content. The search bar efficiently retrieves search results, presenting users with relevant books, or when necessary, informative messages, guiding users when there are no matching results or invalid inputs.
+  - -   "The Library" link : title and name of the bookstore, is a linkable heading which redirects to the main page when clicked.
+   - - Main search bar: the user will be able to filter the books in the library. By entering keywords such as book titles, author names, or categories, users can conduct detailed searches, simplifying the process of finding their desired content. The search bar efficiently retrieves search results, presenting users with relevant books, or when necessary, informative messages, guiding users when there are no matching results or invalid inputs.
   - - "My Account" dropdown link : in this section, the user will have access to authentication system. If logged out or unregistered, the "Login" and "Register" link will be displayed. Although the user would be able to navigate the site, searching for books, or looking for book details, best offers, best sellers, adding books to cart etc, withouth being authenticated, the user will be asked to do so to access more usefull and advanced features such as proceed with the checkout process, leaving book reviews and access to user profile info, where the user could store iformation details for future checkout. The Profile will be then shown in the "My Account" dropdown when the user is logged in. If logged in a "Library Management" link will be also displayed in this section, with the additional condition of the user being admin of the website. The "Library Management" link will give access to an admin-like page, where whoever has access to it, will have direct control of the Library and be able to perform actions such as create a new book, edit or delete an exiting one.
 
 ![ My account section user not authenticathed](books/static/images/the-library-myaccount-nouser.jpg)
@@ -824,5 +824,6 @@ set region to be yopur local region
 - add custom_storages.py file to the root directory
 
 ## Credits 
+
 - The Botique Ado project played an important role for the development of this project as it helped in developing step by step the features of my website. as also html and js structure taken from the Code Institute Project such as the implementation of the navbar, integration of footer with fb page and newsletter subscribe form , and stripe component.
   
