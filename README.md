@@ -17,55 +17,60 @@ The navigation bars and footer provide a consistent presence across almost every
  ![ first Navbar image](books/static/images/the-library-navbar.jpg)
 
 - The first nav bar is placed on top of the page. It consist of :
-  - -   "The Library" link : title and name of the bookstore, is a linkable heading which redirects to the main page when clicked.
-   - - Main search bar: the user will be able to filter the books in the library. By entering keywords such as book titles, author names, or categories, users can conduct detailed searches, simplifying the process of finding their desired content. The search bar efficiently retrieves search results, presenting users with relevant books, or when necessary, informative messages, guiding users when there are no matching results or invalid inputs.
-  - - "My Account" dropdown link : in this section, the user will have access to authentication system. If logged out or unregistered, the "Login" and "Register" link will be displayed. Although the user would be able to navigate the site, searching for books, or looking for book details, best offers, best sellers, adding books to cart etc, withouth being authenticated, the user will be asked to do so to access more usefull and advanced features such as proceed with the checkout process, leaving book reviews and access to user profile info, where the user could store iformation details for future checkout. The Profile will be then shown in the "My Account" dropdown when the user is logged in. If logged in a "Library Management" link will be also displayed in this section, with the additional condition of the user being admin of the website. The "Library Management" link will give access to an admin-like page, where whoever has access to it, will have direct control of the Library and be able to perform actions such as create a new book, edit or delete an exiting one.
+  - "The Library" link : title and name of the bookstore, is a linkable heading which redirects to the main page when clicked.
+  - Main search bar: the user will be able to filter the books in the library. By entering keywords such as book titles, author names, or categories, users can conduct detailed searches, simplifying the process of finding their desired content. The search bar efficiently retrieves search results, presenting users with relevant books, or when necessary, informative messages, guiding users when there are no matching results or invalid inputs.
+  - "My Account" dropdown link : in this section, the user will have access to authentication system. If logged out or unregistered, the "Login" and "Register" link will be displayed. Although the user would be able to navigate the site, searching for books, or looking for book details, best offers, best sellers, adding books to cart etc, withouth being authenticated, the user will be asked to do so to access more usefull and advanced features such as proceed with the checkout process, leaving book reviews and access to user profile info, where the user could store iformation details for future checkout. The Profile will be then shown in the "My Account" dropdown when the user is logged in. If logged in a "Library Management" link will be also displayed in this section, with the additional condition of the user being admin of the website. The "Library Management" link will give access to an admin-like page, where whoever has access to it, will have direct control of the Library and be able to perform actions such as create a new book, edit or delete an exiting one.
 
 ![ My account section user not authenticathed](books/static/images/the-library-myaccount-nouser.jpg)
 ![ My account section user authenticated](books/static/images/the-library-myaccount-authenticated.jpg)
 ![ My account section user authenticated and superuser ](books/static/images/the-library-myaccount-authenticated-superuser.jpg)
 
-  - - Cart : the Cart link will be found on the top right hand side of the navbar, together with a cart icon and the dollar amount of the cart content.
+- Cart : the Cart link will be found on the top right hand side of the navbar, together with a cart icon and the dollar amount of the cart content.
 
-  - - Placed below the main nav bar, the second navbar is about book related section. It consists of three links placed in the center of the width of the navbar:
-        - - - All Books : ie the landing page, a virtual bookshelve , where the user has visibility of all the books of the library.
-        - - - All Categories: here the user will see all the books grouped by category.
-        - - - Best Seller : in this section the user will be able to see Best offers books ie books with lowest price among the Library and the Best sellers, which are the books with the highest rating.
+  - Placed below the main nav bar, the second navbar is about book related section. It consists of three links placed in the center of the width of the navbar:
+  - All Books : ie the landing page, a virtual bookshelve , where the user has visibility of all the books of the library.
+  - All Categories: here the user will see all the books grouped by category.
+    - Best Seller : in this section the user will be able to see Best offers books ie books with lowest price among the Library and the Best sellers, which are the books with the highest rating.
 
 ![ second Navbar image](books/static/images/the-library-navbar2.jpg)
 
-  - - On responsive devices the two navbars collapse into 2 different dropdown menu,represented by an info icon for the main nav bar and a book icon for the second one.
+- On responsive devices the two navbars collapse into 2 different dropdown menu,represented by an info icon for the main nav bar and a book icon for the second one.
 
 ![responsive navabars](books/static/images/the-library-navbar-responsive.jpg)
 
-- The footer is a concise yet valuable section that includes two significant elements. Firstly, it provides users with a direct link to ['The Library's []](https://www.facebook.com/profile.php?id=61551466252534)official Facebook page, enhancing the platform's social engagement. Secondly, it features a user-friendly newsletter subscription mechanism, seamlessly integrated with [Mailchimp](https://mailchimp.com/), enabling readers to subscribe for updates and exclusive offers.
+- The footer is a concise yet valuable section that includes two significant elements. Firstly, it provides users with a direct link to ['The Library's](https://www.facebook.com/profile.php?id=61551466252534)official Facebook page, enhancing the platform's social engagement. Secondly, it features a user-friendly newsletter subscription mechanism, seamlessly integrated with [Mailchimp](https://mailchimp.com/), enabling readers to subscribe for updates and exclusive offers.
 
 ![The Library footer image](books/static/images/the-library-footer.jpg)
+![The Library facebook page](books/static/images/the-library-fb-page.jpg)
+![The Library facebook page](books/static/images/the-library-fb-page2.jpg)
+![The Library facebook page](books/static/images/the-library-fb-page3.jpg)
 
 ### Book list landing page
 
-- The Book List Page serves as the landing point for users, a virtual bookshelf. Upon arrival, users are greeted with a introductory image of a typewriter, which encapsulates the website's theme also seen in the typewriting effect for all displayed messages throughout the website navigation. This page presents a diverse collection of books across various categories. Each book is showcased with its cover image, accompanied by essential details such as category, price, and rating. To explore a book further, users can click the 'View Book Details' button and navigate to dedicated page for more details about the selcted book."
+The Book List Page serves as the landing point for users, a virtual bookshelf. Upon arrival, users are greeted with a introductory image of a typewriter, which encapsulates the website's theme also seen in the typewriting effect for all displayed messages throughout the website navigation. This page presents a diverse collection of books across various categories. Each book is showcased with its cover image, accompanied by essential details such as category, price, and rating. To explore a book further, users can click the 'View Book Details' button and navigate to dedicated page for more details about the selcted book.
+
 ![book-list page top](books/static/images/the-library-booklist.jpg)
 ![book-list page bottom](books/static/images/the-library-booklist2.jpg)
 
 ### The Book Detail Page
 
-- This page opens up a wealth of information for users once they click the 'View Book Details' button. Here, they can delve into the specifics of a book, including its title, author, cover image, category, price, rating, and a detailed description. For those logged in, the page also offers the opportunity to submit a review, contributing to the community's collective insights. Additionally, users can effortlessly add the book to their cart, selecting the desired quantity.
+This page opens up a wealth of information for users once they click the 'View Book Details' button. Here, they can delve into the specifics of a book, including its title, author, cover image, category, price, rating, and a detailed description. For those logged in, the page also offers the opportunity to submit a review, contributing to the community's collective insights. Additionally, users can effortlessly add the book to their cart, selecting the desired quantity.
 
 ![book detail page top](books/static/images/the-library-bookdetail.jpg)
 ![book detail page bottom](books/static/images/the-library-book-detail-add-review.jpg)
 ![book detail login for review](books/static/images/the-library-bookdetail-login-for-review.jpg)
+![book detail login for review](books/static/images/the-library-review-submitted.jpg)
 
 ### All Categories
 
-- On this page are displayed all categories available in the bookstore. Every category is rapresented by a cover image, that resembles the cover image of a book, with the name of the category on it. By clicking on top of each book category the user will be shown all books grouped by the selected category. The same result could be also achieved by typing the category name in the search bar.
+On this page are displayed all categories available in the bookstore. Every category is rapresented by a cover image, that resembles the cover image of a book, with the name of the category on it. By clicking on top of each book category the user will be shown all books grouped by the selected category. The same result could be also achieved by typing the category name in the search bar.
   
 ![all categories page](books/static/images/the-library-all-categories.jpg)  
 ![books by category](books/static/images/the-library-all-categories-selected-category.jpg)
 
 ### Best Sellers
 
-- This page is designed to captivate users with enticing book offers. It features a dynamic carousel showcasing the more convient deals, complete with book covers and prices. These irresistible offers are meticulously selected, presenting users with the lowest-priced books in the library. Below, users can explore the most popular books, neatly categorized by their ratings.
+- This page is designed to captivate users with enticing book offers. It features a dynamic carousel showcasing the more convient deals, complete with book covers and prices. These irresistible offers are meticulously selected, presenting users with the lowest-priced books in the library. Below, users can explore the most popular books, neatly categorized by their ratings
 -
 
 ![Best sellers page : best offers ](books/static/images/the-library-bestsellers-carousel.jpg)
@@ -110,7 +115,7 @@ The Library Management app, is perhaps the most powerfull feature of the project
 
 - Create New Book
 
-  - - Placed in the top center of the page the "Create New Book" button allows the user to populate the library by introducing entirely new book entries. This feature empowers administrators with the capability to increase the collection, on the model adopted by the other books. Admins can specify essential details for each new addition, including the book's title, a descriptive overview, optionally a cover image, where for added convenience, in the absence of a selected cover image, a default one will be automatically assigned. Furthermore, administrators can specify the book's rating and price. Upon creation, the new book integrates into the  library, enriching the library bookshelve.
+  - Placed in the top center of the page the "Create New Book" button allows the user to populate the library by introducing entirely new book entries. This feature empowers administrators with the capability to increase the collection, on the model adopted by the other books. Admins can specify essential details for each new addition, including the book's title, a descriptive overview, optionally a cover image, where for added convenience, in the absence of a selected cover image, a default one will be automatically assigned. Furthermore, administrators can specify the book's rating and price. Upon creation, the new book integrates into the  library, enriching the library bookshelve.
 
 ![Library Management: Create a new book](books/static/images/the-library-create-book-library-management.jpg)
 ![Library Management: Create a new book with cover](books/static/images/the-library-created-book-book-list.jpg)
@@ -119,20 +124,20 @@ The Library Management app, is perhaps the most powerfull feature of the project
 
 - Edit book :
 
-  - - Within the Library Management interface, the "Edit Book" function grants administrators the power to refine and enhance existing entries in the library. This feature enables users to make selective modifications to certain attributes of a book, including its description, price, ratings, and cover image. However, it's important to note that the foundational details of a book, such as its title and author, remain unaltered to maintain accuracy and consistency within our collection. This flexibility ensures that our library evolves, reflecting the latest information and providing our readers with the most up-to-date details about their favorite literary works.
+  - Within the Library Management interface, the "Edit Book" function grants administrators the power to refine and enhance existing entries in the library. This feature enables users to make selective modifications to certain attributes of a book, including its description, price, ratings, and cover image. However, it's important to note that the foundational details of a book, such as its title and author, remain unaltered to maintain accuracy and consistency within our collection. This flexibility ensures that our library evolves, reflecting the latest information and providing our readers with the most up-to-date details about their favorite literary works.
 
 ![Library Management: Edit book](books/static/images/the-library-edit-book-library-management.jpg)
 ![Library Management: Edited book](books/static/images/the-library-edited-book-booklist.jpg)
 
 - Delete book :
 
-  - -  With this option the admin of the Library will be able to permanetly remove a book from the collection.
+  - With this option the admin of the Library will be able to permanetly remove a book from the collection.
 ![Library Management: Delete book](books/static/images/the-library-delete-book-library-management.jpg)
 ![Library Management: Delete book](books/static/images/the-library-message-deleted-book-library-management.jpg)
 
-- Authentication :
+### Authentication
 
-  - - Authentication is at the core of The Library project, utilizing the Django Allauth system to ensure user accounts are not only secure but also accessible. To unlock the full spectrum of the project's functionality, users are required to log in or register for an account. This process is fortified by email verification, bolstering the security of user data. After successfully logging in or registering, users will receive a confirmation email. Upon confirming this email, they gain active access to the features and capabilities the library has to offer.
+- Authentication is at the core of The Library project, utilizing the Django Allauth system to ensure user accounts are not only secure but also accessible. To unlock the full spectrum of the project's functionality, users are required to log in or register for an account. This process is fortified by email verification, bolstering the security of user data. After successfully logging in or registering, users will receive a confirmation email. Upon confirming this email, they gain active access to the features and capabilities the library has to offer.
 Each page for authentication has been customized to keep consintency with the overall structure of the project.
 
 ![The Library Allauth login](books/static/images/the-library-login.jpg)
@@ -180,69 +185,69 @@ For the development of the project, 20 Epics with 20 User Stories were created. 
 1# User Story 1  Book List/ must-have label
  Library Mvp : Essential Features
 
-#2 User Story 2  Book Details/ must-have label
+# 2 User Story 2  Book Details/ must-have label
 
  Library Mvp : Essential Features
 
-#3 User Story 3  Category Exploration/ could have label
+# 3 User Story 3  Category Exploration/ could have label
 
-#4 User Story 4 Discover Best Sellers/ could have label
+# 4 User Story 4 Discover Best Sellers/ could have label
 
-#5 User Story 5: Manage Cart/ must-have label
-
- Library Mvp : Essential Features
-
-#6 User Story 6: User Registration, Login, Logout, and Email Verification/ must-have label
+# 5 User Story 5: Manage Cart/ must-have label
 
  Library Mvp : Essential Features
 
-#7 User Story 7: Checkout Process/ must-have label
+# 6 User Story 6: User Registration, Login, Logout, and Email Verification/ must-have label
 
  Library Mvp : Essential Features
 
-#8 User Story 8: Successful Checkout and Email Notification must-have
+# 7 User Story 7: Checkout Process/ must-have label
 
-#9 User Story 9: User Profile and Edit Profile /could have label
+ Library Mvp : Essential Features
 
-#10 User Story 10: Library Management - Add - Super User /could have label
+# 8 User Story 8: Successful Checkout and Email Notification must-have
 
-#11 User Story 11: Library Management - Edit - Super User/ could have label
+# 9 User Story 9: User Profile and Edit Profile /could have label
 
-#12 User Story 12: Library Management - Delete - Super User/ could have label
+# 10 User Story 10: Library Management - Add - Super User /could have label
 
-#13 User Story 13: Search Functionality in Library Management/ shoul have label
+# 11 User Story 11: Library Management - Edit - Super User/ could have label
 
-#14 User Story 14: Custom 404 Page shoul have label
+# 12 User Story 12: Library Management - Delete - Super User/ could have label
 
-#15 User Story 15: Add Social Media Link in the Footer/ could have wont have label
+# 13 User Story 13: Search Functionality in Library Management/ shoul have label
 
-#16 User Story 16: Newsletter Subscription/ could have wont have label
+# 14 User Story 14: Custom 404 Page shoul have label
 
-#17 User Story 17: Reader's Community Blog/ could have wont have label
+# 15 User Story 15: Add Social Media Link in the Footer/ could have wont have label
 
-#18 User Story 18: Promotional Discounts and Coupons/ could have wont have label
+# 16 User Story 16: Newsletter Subscription/ could have wont have label
 
-#19 User Story 19: Author Pages/ could have wont have label
+# 17 User Story 17: Reader's Community Blog/ could have wont have label
 
-#20 User Story 20: Book Previews or Sample Chapters/ could have wont have
+# 18 User Story 18: Promotional Discounts and Coupons/ could have wont have label
+
+# 19 User Story 19: Author Pages/ could have wont have label
+
+# 20 User Story 20: Book Previews or Sample Chapters/ could have wont have
 
 ## User Stories and Mvp Prioritaziotion
 
-- For each Epic, one User Story has been developed for a total of 20 User Stories. Each story was assigned a label of Must-Have, Should-Have, Could-Have or Won't Have. Out of those Epics and respective User Stories, 17 were completed and implemented of which 6 with "must have" label, assigned to "Library Mvp : Essential Features" that provides core functionlity and essential Library component , 8 with a "could have" label and and 1 with "should have" label providing additional elements and increasing the overall user experience. Individual user stories were categorised according to whether they had to be implemented to produce a Minimum Viable Product , with priority for development to be given to those that were part of the MVP specification.
+For each Epic, one User Story has been developed for a total of 20 User Stories. Each story was assigned a label of Must-Have, Should-Have, Could-Have or Won't Have. Out of those Epics and respective User Stories, 17 were completed and implemented of which 6 with "must have" label, assigned to "Library Mvp : Essential Features" that provides core functionlity and essential Library component , 8 with a "could have" label and and 1 with "should have" label providing additional elements and increasing the overall user experience. Individual user stories were categorised according to whether they had to be implemented to produce a Minimum Viable Product , with priority for development to be given to those that were part of the MVP specification.
 
-- The development of the library website has followed a structured approach, with a clear focus on implementing essential features first to create a Minimum Viable Product (MVP). These essential features, labeled as "must-have," were prioritized to ensure that the core functionality of the website is in place and provides a solid foundation for users.
+The development of the library website has followed a structured approach, with a clear focus on implementing essential features first to create a Minimum Viable Product (MVP). These essential features, labeled as "must-have," were prioritized to ensure that the core functionality of the website is in place and provides a solid foundation for users.
 
-- The labels "should have" and "could have" were carefully chosen to categorize additional features based on their importance and their potential to enhance the user experience. "Should have" features, while not essential for the MVP, are considered functionality-related and provide valuable capabilities to users. On the other hand, "could have" features, while not essential, are focused on further improving the user experience and adding extra value to the website.
+The labels "should have" and "could have" were carefully chosen to categorize additional features based on their importance and their potential to enhance the user experience. "Should have" features, while not essential for the MVP, are considered functionality-related and provide valuable capabilities to users. On the other hand, "could have" features, while not essential, are focused on further improving the user experience and adding extra value to the website.
 
-- This prioritization approach ensures that the library website meets its fundamental goals, such as book discovery, user registration and checkout,search funcionality  before delving into additional enhancements like social media integration, newsletter subscriptions, and a reader's community blog. By following this strategy, it has been possible to deliver a  functional  product while leaving room for future improvements that will enrich the user experience and community engagement.
+This prioritization approach ensures that the library website meets its fundamental goals, such as book discovery, user registration and checkout,search funcionality  before delving into additional enhancements like social media integration, newsletter subscriptions, and a reader's community blog. By following this strategy, it has been possible to deliver a  functional  product while leaving room for future improvements that will enrich the user experience and community engagement.
 
 ## Impleented Used Stories and Feature Features
 
--The first 16 user stories have been successfully implemented to create the core functionality of the library website. Here's a brief overview of their implementation:
+The first 16 user stories have been successfully implemented to create the core functionality of the library website. Here's a brief overview of their implementation:
 
--  Book List (Must-Have): The landing page of the website functions as a virtual bookshelf, displaying a wide range of books across various categories. Users can easily navigate and explore the library's collection.
+- Book List (Must-Have): The landing page of the website functions as a virtual bookshelf, displaying a wide range of books across various categories. Users can easily navigate and explore the library's collection.
 
--  Book Details (Must-Have): Clicking on a book's "View Details" button opens a dedicated page displaying essential information about the book, including its title, author, cover image, category, price, rating, and a detailed description.
+- Book Details (Must-Have): Clicking on a book's "View Details" button opens a dedicated page displaying essential information about the book, including its title, author, cover image, category, price, rating, and a detailed description.
 
 - Category Exploration (Could Have): Users can filter books by category, improving navigation and helping readers find specific genres of interest.
 
@@ -276,7 +281,7 @@ These implemented features establish the library website's core functionality, e
 
 ## Wireframe Design and Styling Approach
 
-- The wireframe of the project,was developed using [Balsamiq](https://balsamiq.cloud/srbtn91/p1u93z6/r945A), that contributed to create the initial layout and structure of the website.
+The wireframe of the project,was developed using [Balsamiq](https://balsamiq.cloud/srbtn91/p1u93z6/r945A), that contributed to create the initial layout and structure of the website.
 With its simple and effective wireframing capabilities, not only helped visualize the structural layout of the library website but also played a significant role in inspiring the typewriting effect and the overall bookish atmosphere that defines the platform and enabled the creation of wireframes that illustrated how books would be displayed, including book covers, categories, prices, and ratings.
 The planning stage served as a foundation for the subsequent design and development phases, ensuring that the library website became more than just an online bookstore– as the bookish atmosphere with the images, the style, the font and the effects became integrating part of the design.
 
@@ -289,36 +294,36 @@ The planning stage served as a foundation for the subsequent design and developm
 
 ![The library responsive wireframe](books/static/images/the-library-responsive-wireframe.jpg)
 
-- The development of Balsamiq wireframe also helped in visualize the responsive design  of the website, where the title and main heading of the site "The Library" disappears on smaller screen, to be replaced by drop down icons on the right hand side, containing the links on the navbar, and the search bar placed at the top center populated by the title "The library" as placeholder, that is displayed to the user with a typewriting effect applied to it, every time the responsive page is loaded.
+The development of Balsamiq wireframe also helped in visualize the responsive design  of the website, where the title and main heading of the site "The Library" disappears on smaller screen, to be replaced by drop down icons on the right hand side, containing the links on the navbar, and the search bar placed at the top center populated by the title "The library" as placeholder, that is displayed to the user with a typewriting effect applied to it, every time the responsive page is loaded.
 
 ![The library responsive image from website](books/static/images/the-library-book-list-responsive2.jpg)
 
 ## The Database schema
 
-- The database schema was implemented using [Lucidchart](https://lucid.app/documents#/documents?folder_id=recent).
+The database schema was implemented using [Lucidchart](https://lucid.app/documents#/documents?folder_id=recent).
   
 ![The library database schema image](books/static/images/the-library-database-schema.jpg)
 
 Below a detailed explanation of the models and their fields and the relationships between the models.
 
-Author Model:
+### Author Model
 
-Fields:
+#### Fields
 
 - id (Primary Key, Integer Field): A unique identifier for each author.
 - name (CharField): The name of the author.
 
-Category Model:
+### Category Model
 
-Fields:
+#### Fields
 
 - id (Primary Key, Integer Field): A unique identifier for each category.
 - name (CharField): The name of the category.
 - image (ImageField): An image associated with the category.
 
-Book Model:
+### Book Model
 
-Fields:
+#### Fields
 
 - id (Primary Key, Integer Field): A unique identifier for each book.
 - title (CharField): The title of the book.
@@ -329,9 +334,10 @@ Fields:
 - category (Foreign Key to Category): Indicates the category to which the book belongs.
 - ratings (Integer Field): User ratings for the book.
 - quantity (Integer Field): The available quantity of the book.
-- Review Model:
+  
+### Review Model
 
-Fields:
+#### Fields
 
 - id (Primary Key, Integer Field): A unique identifier for each review.
 - user (Foreign Key to User): Represents the user who wrote the review.
@@ -340,9 +346,9 @@ Fields:
 - comment (Text Field): Comments and feedback on the book.
 - created_at (DateTime Field): Timestamp for when the review was created.
 
-User Model:
+### User Model
 
-Fields:
+#### Fields  
 
 - id (Primary Key, Integer Field): A unique identifier for each user.
 - username (CharField): The username of the user.
@@ -351,17 +357,17 @@ Fields:
 - first_name (CharField): The user's first name.
 - last_name (CharField): The user's last name.
 
-UserProfile Model:
+### UserProfile Model
 
-Fields:
+#### Fields
 
 - id (Primary Key, Integer Field): A unique identifier for each user profile.
 - user (OneToOne Relationship with User): A one-to-one relationship with the User model, linking the user profile to a specific user.
 - order_history (Many-to-Many Relationship with Order): Represents a many-to-many relationship with Order, allowing a user profile to be associated with multiple orders and vice versa.
 
-Order Model:
+### Order Model
 
-Fields:
+#### Fields
 
 - id (Primary Key, Integer Field): A unique identifier for each order.
 - user (Foreign Key to User): Represents the user who placed the order.
@@ -389,9 +395,9 @@ Fields:
 - checkout_postal_code (CharField): Postal code as entered during checkout.
 - checkout_save_to_profile (Boolean Field): Indicates whether the user chose to save checkout details to their profile.
 
-OrderLineItem Model:
+### OrderLineItem Model
 
-Fields:
+#### Fields
 
 - id (Primary Key, Integer Field): A unique identifier for each line item.
 - order (Foreign Key to Order): Represents the order to which the line item belongs.
@@ -706,58 +712,59 @@ All the tests performed by Lighthouse toll scored 100 for Accessibility and SEO.
 - Balsamiq was used to implement the scheleton design of the project.
 - Lucidchart was used to create the visual representation of project model.
 - [Kaggle](https://www.kaggle.com/) book dataset was used to populate the database with all the book and their information. After downloading the csv file this has been imported into the repositary :
-    - - - Create a new management folder
-    - - - Create command folder inside management folder
-    - - - Create import_books.py file
-    - - - Implement BaseCommand Command:
-    - - - Import books from CSV file
-    - - - Load CSV file using pandas
-    - - - Iterate over each row in the DataFrame
-    - - - Download the image from the URL
-    - - - Create a book_covers folder to store the images
-    - - - Save the image locally
-    - - - Get or create the author
-    - - - Get or create the category
-    - - - Run the command import_books.py data/book_ex.csv
-    - - - The databse is now been populated.
+      - - - Create a new management folder
+      - - - Create command folder inside management folder
+      - - - Create import_books.py file
+      - - - Implement BaseCommand Command:
+      - - - Import books from CSV file
+      - - - Load CSV file using pandas
+      - - - Iterate over each row in the DataFrame
+      - - - Download the image from the URL
+      - - - Create a book_covers folder to store the images
+      - - - Save the image locally
+      - - - Get or create the author
+      - - - Get or create the category
+      - - - Run the command import_books.py data/book_ex.csv
+      - - - The databse is now been populated.
 
 ## Documentation
 
-For the development of the project a wide range of documentation and a deep reference to the Django documentation was used.
+### For the development of the project a wide range of documentation and a deep reference to the Django documentation was used
 
 - Django general documentation:
-  - -  (<https://docs.djangoproject.com/en/4.2/>)
+  - (<https://docs.djangoproject.com/en/4.2/>)
 - Django allauth:
-  - - (<https://django-allauth.readthedocs.io/en/latest/>)
+  - (<https://django-allauth.readthedocs.io/en/latest/>)
 - Django class based view documentation:
-  - - (<https://docs.djangoproject.com/en/4.2/topics/class-based-views/>)
+  - (<https://docs.djangoproject.com/en/4.2/topics/class-based-views/>)
 - Django template language:
-  - - (<https://docs.djangoproject.com/en/4.2/ref/templates/language/>)
+  - (<https://docs.djangoproject.com/en/4.2/ref/templates/language/>)
 - Django making queries:
-  - - (<https://docs.djangoproject.com/en/4.2/topics/db/queries/>)
+  - (<https://docs.djangoproject.com/en/4.2/topics/db/queries/>)
 - Django applications:
-  - - (<https://docs.djangoproject.com/en/3.2/ref/applications/>)
+  - (<https://docs.djangoproject.com/en/3.2/ref/applications/>)
 - Django URL handling:
-  - - (<https://docs.djangoproject.com/en/3.2/topics/http/urls/>)
+  - (<https://docs.djangoproject.com/en/3.2/topics/http/urls/>)
 - Django working with forms:
-  - - (<https://docs.djangoproject.com/en/3.2/topics/forms/>)
+  - (<https://docs.djangoproject.com/en/3.2/topics/forms/>)
 - Django render, redirect and get_object_or_404 shortcut functions:
-  - - (<https://docs.djangoproject.com/en/3.2/topics/http/shortcuts/>)
+  - (<https://docs.djangoproject.com/en/3.2/topics/http/shortcuts/>)
 - Django working with forms:
-  - - <https://docs.djangoproject.com/en/4.2/topics/forms/>
+  - <https://docs.djangoproject.com/en/4.2/topics/forms/>
 - Stripe accept payment:
-  - - <https://stripe.com/docs/payments/accept-a-payment#web-collect-card-details>
+  - <https://stripe.com/docs/payments/accept-a-payment#web-collect-card-details>
 - stripe api documentation:
-  - - <https://stripe.com/docs/api/payment_intents/confirm#confirm_payment_intent-payment_method-billing_details>
-- D jango Views: <https://docs.djangoproject.com/en/3.2/topics/http/views/>
+  - <https://stripe.com/docs/api/payment_intents/confirm#confirm_payment_intent-payment_method-billing_details>
+- Django Views:
+  - <https://docs.djangoproject.com/en/3.2/topics/http/views/>
 - Django Sessions:
-  - - <https://docs.djangoproject.com/en/3.2/topics/http/sessions/>
+  - <https://docs.djangoproject.com/en/3.2/topics/http/sessions/>
 - <https://stripe.com/docs/stripe-js>
 
--import csv file:
-  - - <https://stackoverflow.com/questions/49610125/whats-the-easiest-way-to-import-a-csv-file-into-a-django-model#:~:text=import%20csv%20from%20django.core.management%20import%20BaseCommand%20from%20app.models>,dialect%3D%27excel%27%29%20for%20row%20in%20reader%3A%20Question.objects.create%20%28attr1%3Drow%2C%20attr2%3Drow%2C%29
-  - - <https://docs.djangoproject.com/en/3.1/howto/custom-management-commands/>
-  - - <https://www.youtube.com/watch?v=7wyvV5R_M5I>
+- import csv file:
+  - <https://stackoverflow.com/questions/49610125/whats-the-easiest-way-to-import-a-csv-file-into-a-django-model#:~:text=import%20csv%20from%20django.core.management%20import%20BaseCommand%20from%20app.models>,dialect%3D%27excel%27%29%20for%20row%20in%20reader%3A%20Question.objects.create%20%28attr1%3Drow%2C%20attr2%3Drow%2C%29
+  - <https://docs.djangoproject.com/en/3.1/howto/custom-management-commands/>
+  - <https://www.youtube.com/watch?v=7wyvV5R_M5I>
 
 ## Deployment
 
@@ -796,7 +803,7 @@ set region to be yopur local region
 - click into your bucket via its name
 - click the properties tab, at the bottom of this page click edit for Static website hosting click enable and index.html for index and error for error.html
 - On permission page:
-- - ![Cors configuration](books/static/images/cors.png)
+  - ![Cors configuration](books/static/images/cors.png)
 
 ## IAM
 
@@ -820,10 +827,10 @@ set region to be yopur local region
 - update requirements.txt by freeze to requirements.txt
 - add storages to installed apps in settings.py
 - add heroku config vars:
--  - ![Aws settings](books/static/images/aws_setting.png)
+  - ![Aws settings](books/static/images/aws_setting.png)
 - add custom_storages.py file to the root directory
 
-## Credits 
+## Credits
 
 - The Botique Ado project played an important role for the development of this project as it helped in developing step by step the features of my website. as also html and js structure taken from the Code Institute Project such as the implementation of the navbar, integration of footer with fb page and newsletter subscribe form , and stripe component.
   

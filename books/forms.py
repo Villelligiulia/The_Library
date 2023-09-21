@@ -14,12 +14,6 @@ class ReviewForm(forms.ModelForm):
 
         }
 
-    # def clean_rating(self):
-    #     rating = self.cleaned_data['rating']
-    #     if rating < 1 or rating > 5:
-    #         raise forms.ValidationError("Rating must be between 1 and 5.")
-    #     return rating
-
 
 class BookForm(forms.ModelForm):
     author_name = forms.CharField(max_length=100, required=True)
